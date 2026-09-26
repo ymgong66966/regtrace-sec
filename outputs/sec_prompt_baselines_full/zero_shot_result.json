@@ -1,0 +1,3925 @@
+{
+  "mode": "zero_shot",
+  "model": "gpt-4o-mini",
+  "eval_path": "data/sec_response_gap_canonical_v1/sec_response_gap_test.jsonl",
+  "train_path": "data/sec_response_gap_canonical_v1/sec_response_gap_train.jsonl",
+  "num_eval": 258,
+  "num_shots": 0,
+  "seed": 17,
+  "model_input_fields": [
+    "sec_comment",
+    "company_response"
+  ],
+  "forbidden_test_prompt_fields": [
+    "text_gap_type",
+    "feedback_reason",
+    "feedback_sec_request",
+    "feedback_company_action",
+    "feedback_unmet_requirement",
+    "feedback_evidence",
+    "full_feedback"
+  ],
+  "demo_ids": [],
+  "summary": {
+    "accuracy": 0.7868,
+    "classification_report": {
+      "resolved": {
+        "precision": 0.6637,
+        "recall": 0.8152,
+        "f1": 0.7317,
+        "support": 92
+      },
+      "unresolved": {
+        "precision": 0.8828,
+        "recall": 0.7711,
+        "f1": 0.8232,
+        "support": 166
+      },
+      "macro_avg": {
+        "f1": 0.7774
+      },
+      "accuracy": 0.7868
+    },
+    "gold_counts": {
+      "resolved": 92,
+      "unresolved": 166
+    },
+    "pred_counts": {
+      "resolved": 113,
+      "unresolved": 145
+    },
+    "estimated_cost_usd": 0.02705
+  },
+  "predictions": [
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::1",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company clarified that there are no distinctions for their disclosure purposes and revised the filing to use a single defined term 'digital assets', satisfying the SEC request.",
+      "correct": true,
+      "latency_sec": 1.114,
+      "usage": {
+        "prompt_tokens": 349,
+        "completion_tokens": 45,
+        "total_tokens": 394
+      },
+      "estimated_cost_usd": 7.935e-05
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::10",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the SEC's request to describe which other crypto assets are held and staked, planned activities with respect to staking those assets, program features, eligibility to participate, and the validation process. It only elaborates on solo-staking with ETH.",
+      "correct": true,
+      "latency_sec": 2.781,
+      "usage": {
+        "prompt_tokens": 988,
+        "completion_tokens": 69,
+        "total_tokens": 1057
+      },
+      "estimated_cost_usd": 0.0001896
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::11",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company states that it has revised the disclosure, but does not provide specific details about the KYC and AML policies and procedures in the response, leaving a gap relative to the SEC's request for greater detail.",
+      "correct": true,
+      "latency_sec": 1.595,
+      "usage": {
+        "prompt_tokens": 260,
+        "completion_tokens": 57,
+        "total_tokens": 317
+      },
+      "estimated_cost_usd": 7.319999999999999e-05
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::12",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company confirmed it has exited the business of providing staking tools to third parties for staking as a service, clarified that all revenues in the specified line item were related to this service, and revised disclosures to indicate that these operations are historical and not ongoing.",
+      "correct": true,
+      "latency_sec": 1.421,
+      "usage": {
+        "prompt_tokens": 483,
+        "completion_tokens": 64,
+        "total_tokens": 547
+      },
+      "estimated_cost_usd": 0.00011085
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::13",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not clarify the period during which the 5.7 ETH was earned, nor did it revise the disclosure for consistency regarding the earnings from staking rewards and technology tools as requested by the SEC.",
+      "correct": true,
+      "latency_sec": 1.106,
+      "usage": {
+        "prompt_tokens": 308,
+        "completion_tokens": 56,
+        "total_tokens": 364
+      },
+      "estimated_cost_usd": 7.979999999999999e-05
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::14",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not provide a current response regarding whether crypto assets issued serve as collateral for any loans or similar activities, nor did it address the impact of recent market disruptions on the value of collateral or any associated financing and liquidity risks.",
+      "correct": true,
+      "latency_sec": 1.321,
+      "usage": {
+        "prompt_tokens": 723,
+        "completion_tokens": 61,
+        "total_tokens": 784
+      },
+      "estimated_cost_usd": 0.00014504999999999997
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::16",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not address the specific request to reconcile disclosures regarding non-custodial staking services not being available to U.S. residents, leaving a gap in the response.",
+      "correct": true,
+      "latency_sec": 1.418,
+      "usage": {
+        "prompt_tokens": 639,
+        "completion_tokens": 50,
+        "total_tokens": 689
+      },
+      "estimated_cost_usd": 0.00012585
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::17",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not address the SEC's request to break out the material components of the expense category 'Professional fees, general administrative and other' for the specified interim periods. The response focused on digital asset exchanges and did not provide the required disclosure or analysis related to the expense category.",
+      "correct": true,
+      "latency_sec": 1.592,
+      "usage": {
+        "prompt_tokens": 847,
+        "completion_tokens": 71,
+        "total_tokens": 918
+      },
+      "estimated_cost_usd": 0.00016965
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::18",
+      "gold": "resolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company states that they revised the table on page 38, but the SEC comment specifically requested a revision on page 36. This does not address the SEC's request adequately.",
+      "correct": false,
+      "latency_sec": 1.091,
+      "usage": {
+        "prompt_tokens": 226,
+        "completion_tokens": 51,
+        "total_tokens": 277
+      },
+      "estimated_cost_usd": 6.45e-05
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::19",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company deleted the term 'highly liquid' as requested, addressing the SEC's comment directly.",
+      "correct": true,
+      "latency_sec": 1.377,
+      "usage": {
+        "prompt_tokens": 220,
+        "completion_tokens": 34,
+        "total_tokens": 254
+      },
+      "estimated_cost_usd": 5.34e-05
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::2",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company revised its disclosure on multiple pages to clarify the status of its listing after the Redomicile Merger, addressing the SEC's request.",
+      "correct": false,
+      "latency_sec": 0.962,
+      "usage": {
+        "prompt_tokens": 232,
+        "completion_tokens": 43,
+        "total_tokens": 275
+      },
+      "estimated_cost_usd": 6.0599999999999996e-05
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::20",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the specific requests regarding the solo staking program, including details on how staking rewards are calculated, the use of staked crypto assets, and the nature and quantification of staking expenses.",
+      "correct": true,
+      "latency_sec": 1.908,
+      "usage": {
+        "prompt_tokens": 270,
+        "completion_tokens": 57,
+        "total_tokens": 327
+      },
+      "estimated_cost_usd": 7.47e-05
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::21",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the SEC's request to expand disclosure regarding the specific technology tools related to solo-staking and proof-of-stake technology. It only mentions a revision about stablecoins, which is unrelated to the comment.",
+      "correct": true,
+      "latency_sec": 1.294,
+      "usage": {
+        "prompt_tokens": 236,
+        "completion_tokens": 61,
+        "total_tokens": 297
+      },
+      "estimated_cost_usd": 7.199999999999999e-05
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::24",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The response does not adequately explain why there was no cost of revenue related to the aircraft leasing business, as it only states that significant costs were not incurred and mentions depreciation expenses without addressing the SEC's specific inquiry about the absence of cost of revenue.",
+      "correct": true,
+      "latency_sec": 1.378,
+      "usage": {
+        "prompt_tokens": 222,
+        "completion_tokens": 64,
+        "total_tokens": 286
+      },
+      "estimated_cost_usd": 7.17e-05
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::25",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised its policy disclosure to remove Tether USD as a financial instrument, indicated how it accounts for stablecoins that are financial instruments, and referenced the authoritative literature for USD Coin, thus satisfying the SEC's requests.",
+      "correct": true,
+      "latency_sec": 1.311,
+      "usage": {
+        "prompt_tokens": 287,
+        "completion_tokens": 59,
+        "total_tokens": 346
+      },
+      "estimated_cost_usd": 7.845e-05
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::26",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not provide the average holding period for ETH and BNB, nor did it specify how it plans to ultimately use or dispose of the ETH it still holds. Additionally, while the company discussed its classification of activities, it did not fully address how it considered the guidance in ASC 230-10-45-11 through 13 regarding the classification of productive assets and intangible assets as investing activities.",
+      "correct": true,
+      "latency_sec": 1.66,
+      "usage": {
+        "prompt_tokens": 748,
+        "completion_tokens": 96,
+        "total_tokens": 844
+      },
+      "estimated_cost_usd": 0.00016979999999999998
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::27",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not provide a materiality analysis for each period presented for all digital assets and stablecoins, only for ETH. Additionally, the response lacks a comprehensive assessment of the impact on revenues recorded, digital asset impairment, and stablecoins carried at fair value for all periods and assets as requested.",
+      "correct": true,
+      "latency_sec": 1.528,
+      "usage": {
+        "prompt_tokens": 852,
+        "completion_tokens": 74,
+        "total_tokens": 926
+      },
+      "estimated_cost_usd": 0.00017219999999999998
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::28",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not fully address several aspects of the SEC comment, including the lack of clarity on the nature of the contract, the explanation of performance obligations, and the rationale for the daily contract despite the ability to cancel at any time. Additionally, the response does not provide sufficient information regarding the simultaneous consumption of benefits by the customer or the removal of disclosure of network-based smart contracts from the annual financial statement policy note.",
+      "correct": true,
+      "latency_sec": 2.407,
+      "usage": {
+        "prompt_tokens": 1217,
+        "completion_tokens": 99,
+        "total_tokens": 1316
+      },
+      "estimated_cost_usd": 0.00024195
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::29",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company's response does not adequately explain why there were no realized gains or losses for the exchanges, particularly in relation to the guidance in ASC 610-20-32-2 and 32-3. The explanation regarding the measurement at cost and the treatment of stablecoins does not directly address the SEC's request for clarity on the exchange price determination and the lack of gain or loss recorded for the specific transactions mentioned.",
+      "correct": true,
+      "latency_sec": 1.882,
+      "usage": {
+        "prompt_tokens": 1014,
+        "completion_tokens": 98,
+        "total_tokens": 1112
+      },
+      "estimated_cost_usd": 0.00021089999999999998
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::3",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The response provides some information about costs and earnings but does not present a comprehensive breakeven analysis that clearly compares the cost to earn one Ethereum with the market value of one Ethereum. It lacks a quantitative tabular disclosure and does not identify and explain all relevant inputs in a clear and organized manner.",
+      "correct": true,
+      "latency_sec": 1.663,
+      "usage": {
+        "prompt_tokens": 565,
+        "completion_tokens": 74,
+        "total_tokens": 639
+      },
+      "estimated_cost_usd": 0.00012914999999999997
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::30",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not provide detailed disclosure regarding its StaaS platform, including everything offered on the platform and whether it only provided staking services. Additionally, there is no information on specific plans to resume the StaaS business or the mechanics of the new platform.",
+      "correct": true,
+      "latency_sec": 3.248,
+      "usage": {
+        "prompt_tokens": 610,
+        "completion_tokens": 67,
+        "total_tokens": 677
+      },
+      "estimated_cost_usd": 0.0001317
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::4",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The response does not describe the material terms of the agreements with MarsLand Global Limited for staking services and trademark authorization, nor does it address the filing of those agreements as material contracts.",
+      "correct": true,
+      "latency_sec": 1.189,
+      "usage": {
+        "prompt_tokens": 276,
+        "completion_tokens": 51,
+        "total_tokens": 327
+      },
+      "estimated_cost_usd": 7.199999999999999e-05
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::5",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not provide expanded disclosure regarding the 'other crypto related business' and 'other crypto-related business models' it is considering, nor did it disclose any discussions or agreements with individuals or businesses in this regard, which were specifically requested by the SEC.",
+      "correct": true,
+      "latency_sec": 1.806,
+      "usage": {
+        "prompt_tokens": 577,
+        "completion_tokens": 66,
+        "total_tokens": 643
+      },
+      "estimated_cost_usd": 0.00012615
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::6",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not address the inconsistency between the disclosures regarding CoinMarketCap and Coinbase as the principal market for valuing digital assets, nor did it clarify the status of Bitcoin holdings or trading.",
+      "correct": true,
+      "latency_sec": 2.299,
+      "usage": {
+        "prompt_tokens": 253,
+        "completion_tokens": 54,
+        "total_tokens": 307
+      },
+      "estimated_cost_usd": 7.035e-05
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::7",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the SEC's request to describe material risks from unauthorized access to products and services outside of licensed jurisdictions, nor does it outline steps taken to restrict access of U.S. persons to its products and services.",
+      "correct": true,
+      "latency_sec": 1.363,
+      "usage": {
+        "prompt_tokens": 462,
+        "completion_tokens": 61,
+        "total_tokens": 523
+      },
+      "estimated_cost_usd": 0.0001059
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::8",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not address the SEC's request to describe any material gaps identified in risk management processes and policies related to recent crypto asset market conditions, nor did it mention any changes made to address those gaps.",
+      "correct": true,
+      "latency_sec": 1.274,
+      "usage": {
+        "prompt_tokens": 291,
+        "completion_tokens": 56,
+        "total_tokens": 347
+      },
+      "estimated_cost_usd": 7.725000000000001e-05
+    },
+    {
+      "example_id": "0000000000-23-010965::0001213900-23-099881::9",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates revisions but does not specify the actual impact of the discontinuation of the Mano game and the alSpace platform on business activities, nor does it reconcile the conflicting disclosures regarding the reasons for discontinuation.",
+      "correct": true,
+      "latency_sec": 1.832,
+      "usage": {
+        "prompt_tokens": 298,
+        "completion_tokens": 58,
+        "total_tokens": 356
+      },
+      "estimated_cost_usd": 7.95e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::10",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to describe the circumstances under which the Trust's bitcoin investments may be valued using techniques other than the MarketVector Bitcoin Benchmark Rate and specified that the Sponsor will make this determination.",
+      "correct": true,
+      "latency_sec": 1.208,
+      "usage": {
+        "prompt_tokens": 386,
+        "completion_tokens": 54,
+        "total_tokens": 440
+      },
+      "estimated_cost_usd": 9.03e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::11",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the SEC comment regarding providing an example of the impact of hard forks on crypto assets, including quantitative information about price changes before and after the fork.",
+      "correct": true,
+      "latency_sec": 2.443,
+      "usage": {
+        "prompt_tokens": 230,
+        "completion_tokens": 50,
+        "total_tokens": 280
+      },
+      "estimated_cost_usd": 6.45e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::12",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide specific details on the mechanics of how the Sponsor will arrange to sell new cryptocurrency resulting from a fork, nor does it address the use of third parties or any associated risks or conflicts of interest. Additionally, it lacks information on how investors will be informed of changes in the Trust's procedures.",
+      "correct": true,
+      "latency_sec": 3.433,
+      "usage": {
+        "prompt_tokens": 392,
+        "completion_tokens": 78,
+        "total_tokens": 470
+      },
+      "estimated_cost_usd": 0.00010559999999999999
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::13",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the SEC's request to update the table with market share information for each constituent exchange or to provide a brief description of each exchange, including their location and regulatory status.",
+      "correct": true,
+      "latency_sec": 1.821,
+      "usage": {
+        "prompt_tokens": 292,
+        "completion_tokens": 54,
+        "total_tokens": 346
+      },
+      "estimated_cost_usd": 7.62e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::14",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide the requested quantitative information demonstrating the volatility of the price of bitcoin, but instead focuses on hard forks, which does not address the SEC's specific request.",
+      "correct": true,
+      "latency_sec": 2.849,
+      "usage": {
+        "prompt_tokens": 223,
+        "completion_tokens": 51,
+        "total_tokens": 274
+      },
+      "estimated_cost_usd": 6.405e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::15",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not provide the requested chart comparing the historical index to the prices on each of the bitcoin exchanges, and their reasoning for not including it does not satisfy the SEC's request. The response only mentions a revision regarding the removal of exchanges but does not detail what that revision entails.",
+      "correct": true,
+      "latency_sec": 2.344,
+      "usage": {
+        "prompt_tokens": 328,
+        "completion_tokens": 72,
+        "total_tokens": 400
+      },
+      "estimated_cost_usd": 9.24e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::16",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to include how the Sponsor will notify investors of changes, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 0.955,
+      "usage": {
+        "prompt_tokens": 356,
+        "completion_tokens": 37,
+        "total_tokens": 393
+      },
+      "estimated_cost_usd": 7.56e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::17",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates a revision but does not provide the requested sample calculation or detailed explanation of the methodology for calculating the equal-weighted average of the volume-weighted median price.",
+      "correct": true,
+      "latency_sec": 1.609,
+      "usage": {
+        "prompt_tokens": 252,
+        "completion_tokens": 50,
+        "total_tokens": 302
+      },
+      "estimated_cost_usd": 6.78e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::18",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to provide greater detail on the valuation policies and procedures, pre-determined criteria, who can correct the price, and the impact of such corrections, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.251,
+      "usage": {
+        "prompt_tokens": 415,
+        "completion_tokens": 55,
+        "total_tokens": 470
+      },
+      "estimated_cost_usd": 9.525e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::19",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to clarify how the intraday indicative value is calculated and updated, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.146,
+      "usage": {
+        "prompt_tokens": 248,
+        "completion_tokens": 39,
+        "total_tokens": 287
+      },
+      "estimated_cost_usd": 6.06e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::2",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to define the term 'Seed Creation Baskets,' which satisfies the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.334,
+      "usage": {
+        "prompt_tokens": 235,
+        "completion_tokens": 37,
+        "total_tokens": 272
+      },
+      "estimated_cost_usd": 5.7449999999999994e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::20",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates a revision but does not provide specific details on what constitutes an 'economically viable size' or 'sufficient assets to remain open,' nor does it describe the consequences of not achieving this size, leaving a gap in the response to the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.514,
+      "usage": {
+        "prompt_tokens": 300,
+        "completion_tokens": 70,
+        "total_tokens": 370
+      },
+      "estimated_cost_usd": 8.7e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::21",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates that the disclosure has been revised, but it does not provide specific examples of 'other extraordinary expenses' or clarify whether any expenses are capped, leaving a gap relative to the SEC request.",
+      "correct": true,
+      "latency_sec": 1.194,
+      "usage": {
+        "prompt_tokens": 214,
+        "completion_tokens": 56,
+        "total_tokens": 270
+      },
+      "estimated_cost_usd": 6.57e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::22",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to include how the Administrator will calculate the market price of bitcoin, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.263,
+      "usage": {
+        "prompt_tokens": 234,
+        "completion_tokens": 39,
+        "total_tokens": 273
+      },
+      "estimated_cost_usd": 5.85e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::23",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates that the disclosure has been revised, but it does not provide specific details about the mechanics of how bitcoins will be exchanged for U.S. dollars, the involvement of the Bitcoin Custodian or third parties, potential risks or conflicts of interest, or the responsibility for costs associated with the transfer or sale of bitcoins. Therefore, it leaves concrete gaps relative to the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.628,
+      "usage": {
+        "prompt_tokens": 420,
+        "completion_tokens": 94,
+        "total_tokens": 514
+      },
+      "estimated_cost_usd": 0.0001194
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::24",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company clarified that Shareholders will be entitled to cash upon termination of the Trust and explained how the Trust's bitcoins will be sold, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.765,
+      "usage": {
+        "prompt_tokens": 243,
+        "completion_tokens": 47,
+        "total_tokens": 290
+      },
+      "estimated_cost_usd": 6.465e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::26",
+      "gold": "resolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company states that it has revised the disclosure but does not provide the specific details of the revised disclosure or confirm that it fully addresses the SEC's request for greater detail on the Sponsor's experience.",
+      "correct": false,
+      "latency_sec": 1.131,
+      "usage": {
+        "prompt_tokens": 243,
+        "completion_tokens": 54,
+        "total_tokens": 297
+      },
+      "estimated_cost_usd": 6.884999999999999e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::27",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates that they revised the disclosure but does not provide specific details about the experience and qualifications of Gemini Trust Company, LLC as a Bitcoin Custodian or a risk factor related to those aspects, leaving a gap relative to the SEC request.",
+      "correct": true,
+      "latency_sec": 1.272,
+      "usage": {
+        "prompt_tokens": 191,
+        "completion_tokens": 64,
+        "total_tokens": 255
+      },
+      "estimated_cost_usd": 6.705e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::28",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The response does not clarify under what circumstances the Trust will instruct the Bitcoin Custodian to loan, hypothecate, pledge, or otherwise encumber the Trust's bitcoin, nor does it address the specific request regarding the payment of the Sponsor Fee or the Trust's expenses and liabilities.",
+      "correct": true,
+      "latency_sec": 1.901,
+      "usage": {
+        "prompt_tokens": 459,
+        "completion_tokens": 71,
+        "total_tokens": 530
+      },
+      "estimated_cost_usd": 0.00011145
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::29",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates that the disclosure has been revised, but it does not provide specific details about the custody arrangements, material terms of the custody agreement, procedures for moving assets, geographic location of private keys, or verification of bitcoin existence, leaving gaps relative to the SEC request.",
+      "correct": true,
+      "latency_sec": 1.959,
+      "usage": {
+        "prompt_tokens": 228,
+        "completion_tokens": 70,
+        "total_tokens": 298
+      },
+      "estimated_cost_usd": 7.62e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::3",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates a revision but does not provide specific support or concrete details for the claims regarding trading volume, lending market, custody services, or insurance, leaving a gap relative to the SEC request.",
+      "correct": true,
+      "latency_sec": 3.047,
+      "usage": {
+        "prompt_tokens": 262,
+        "completion_tokens": 55,
+        "total_tokens": 317
+      },
+      "estimated_cost_usd": 7.23e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::30",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company revised the disclosure to remove the reference to ether addresses, clarifying that the Trust will not hold ether, which satisfies the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.072,
+      "usage": {
+        "prompt_tokens": 239,
+        "completion_tokens": 44,
+        "total_tokens": 283
+      },
+      "estimated_cost_usd": 6.225e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::31",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company states it will identify the Authorized Participants prior to effectiveness, but does not provide their names at this time, leaving a gap in the response.",
+      "correct": true,
+      "latency_sec": 1.174,
+      "usage": {
+        "prompt_tokens": 227,
+        "completion_tokens": 45,
+        "total_tokens": 272
+      },
+      "estimated_cost_usd": 6.104999999999999e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::32",
+      "gold": "resolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates a revision but does not provide the specific reconciled disclosure or clarify how the two statements are aligned, leaving a gap in addressing the SEC's request.",
+      "correct": false,
+      "latency_sec": 1.453,
+      "usage": {
+        "prompt_tokens": 241,
+        "completion_tokens": 49,
+        "total_tokens": 290
+      },
+      "estimated_cost_usd": 6.555e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::37",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the SEC's request to disclose the material provisions of each material agreement, including the parties to the agreement and the term and termination provisions.",
+      "correct": true,
+      "latency_sec": 1.157,
+      "usage": {
+        "prompt_tokens": 478,
+        "completion_tokens": 48,
+        "total_tokens": 526
+      },
+      "estimated_cost_usd": 0.00010049999999999999
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::39",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the specific requests regarding the revised financial statement accounting policy for determining the fair value of bitcoin in accordance with ASC Topic 820, the determination of the principal market from the perspective of the Authorized Participant, or the involvement of third parties in determining fair value. It only mentions the use of the average cost method without providing the necessary details requested by the SEC.",
+      "correct": true,
+      "latency_sec": 2.0,
+      "usage": {
+        "prompt_tokens": 575,
+        "completion_tokens": 91,
+        "total_tokens": 666
+      },
+      "estimated_cost_usd": 0.00014084999999999998
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::4",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to include separate risk factor subheadings for manipulation, front-running, and wash trading, and has addressed the different risks associated with bitcoin mining compared to other crypto asset mining, along with relevant regulations.",
+      "correct": true,
+      "latency_sec": 1.183,
+      "usage": {
+        "prompt_tokens": 531,
+        "completion_tokens": 60,
+        "total_tokens": 591
+      },
+      "estimated_cost_usd": 0.00011564999999999999
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::40",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the SEC's request regarding the appropriateness of using the average cost method for determining realized gains and losses on the sale of bitcoin, nor does it cite any relevant accounting literature.",
+      "correct": true,
+      "latency_sec": 1.404,
+      "usage": {
+        "prompt_tokens": 377,
+        "completion_tokens": 56,
+        "total_tokens": 433
+      },
+      "estimated_cost_usd": 9.015e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::5",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to include a discussion on halving, the maximum number of bitcoins that may be released into circulation, and the number of bitcoins currently in circulation, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 0.94,
+      "usage": {
+        "prompt_tokens": 243,
+        "completion_tokens": 55,
+        "total_tokens": 298
+      },
+      "estimated_cost_usd": 6.945000000000001e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::6",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the specific request to revise the risk factor disclosure regarding the Trust's ability to meet in-cash creation and redemption orders in light of bitcoin's potential illiquidity and volatility. The response focuses on updating market share information and descriptions of exchanges, which does not satisfy the SEC's request.",
+      "correct": true,
+      "latency_sec": 2.041,
+      "usage": {
+        "prompt_tokens": 292,
+        "completion_tokens": 78,
+        "total_tokens": 370
+      },
+      "estimated_cost_usd": 9.06e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::7",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the SEC's request for a description of AML, KYC, and other procedures related to counterparty transactions, nor does it enhance risk factor disclosure regarding the potential risk of transactions with sanctioned entities.",
+      "correct": true,
+      "latency_sec": 1.158,
+      "usage": {
+        "prompt_tokens": 523,
+        "completion_tokens": 60,
+        "total_tokens": 583
+      },
+      "estimated_cost_usd": 0.00011444999999999999
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::8",
+      "gold": "resolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company states that it has revised the disclosure to clarify 'extraordinary circumstances,' but it does not provide the specific examples requested by the SEC in the response.",
+      "correct": false,
+      "latency_sec": 0.879,
+      "usage": {
+        "prompt_tokens": 250,
+        "completion_tokens": 47,
+        "total_tokens": 297
+      },
+      "estimated_cost_usd": 6.57e-05
+    },
+    {
+      "example_id": "0000000000-23-012633::0000930413-23-002546::9",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the SEC's request to expand the risk factor regarding what constitutes an 'emergency' and the factors the Sponsor will consider for suspending creations and redemptions. It focuses instead on the mechanics of the creation and redemption process without providing the necessary risk factor details.",
+      "correct": true,
+      "latency_sec": 1.227,
+      "usage": {
+        "prompt_tokens": 874,
+        "completion_tokens": 74,
+        "total_tokens": 948
+      },
+      "estimated_cost_usd": 0.00017549999999999998
+    },
+    {
+      "example_id": "0000000000-23-013783::0001104659-24-004331::1",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not provide a separate quantification of advertising and third-party commissions as requested by the SEC. Instead, it reiterated its position that such separation would not provide meaningful insights, which does not address the SEC's request for specific quantification.",
+      "correct": true,
+      "latency_sec": 1.469,
+      "usage": {
+        "prompt_tokens": 955,
+        "completion_tokens": 64,
+        "total_tokens": 1019
+      },
+      "estimated_cost_usd": 0.00018165
+    },
+    {
+      "example_id": "0000000000-23-013783::0001104659-24-004331::2",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates intentions to improve future disclosures but does not provide current, concrete revisions that fully address the SEC's request for quantification of the impact of individual factors on revenue and expenses. The response lacks specific tables or quantified data as requested.",
+      "correct": true,
+      "latency_sec": 1.463,
+      "usage": {
+        "prompt_tokens": 786,
+        "completion_tokens": 64,
+        "total_tokens": 850
+      },
+      "estimated_cost_usd": 0.0001563
+    },
+    {
+      "example_id": "0000000000-23-013783::0001104659-24-004331::3",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company provided a quantification of the decrease in sales and marketing expenses, specifically attributing the 15% decrease to improved operating efficiency and cost optimization in the China Commerce segment, which addresses the SEC's request for specific segments impacting consolidated expenses.",
+      "correct": false,
+      "latency_sec": 1.401,
+      "usage": {
+        "prompt_tokens": 387,
+        "completion_tokens": 63,
+        "total_tokens": 450
+      },
+      "estimated_cost_usd": 9.585e-05
+    },
+    {
+      "example_id": "0000000000-23-013783::0001104659-24-004331::4",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company provided additional details about governmental ownership interests but stated it was unable to calculate the exact percentage of governmental ownership for overseas subsidiaries and consolidated entities. This leaves a gap in the required disclosure as the SEC requested quantification of ownership interests held by governmental entities.",
+      "correct": true,
+      "latency_sec": 1.155,
+      "usage": {
+        "prompt_tokens": 765,
+        "completion_tokens": 66,
+        "total_tokens": 831
+      },
+      "estimated_cost_usd": 0.00015434999999999998
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::1",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates that the initial price per Share and the names of the Authorized Participants will be provided in a subsequent amendment, which does not satisfy the SEC's request for current disclosure in the amended registration statement.",
+      "correct": true,
+      "latency_sec": 1.209,
+      "usage": {
+        "prompt_tokens": 302,
+        "completion_tokens": 57,
+        "total_tokens": 359
+      },
+      "estimated_cost_usd": 7.950000000000001e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::10",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates that the disclosure has been revised, but it does not specify the frequency and intervals at which the IIV is updated or where the calculation is published, leaving a gap relative to the SEC request.",
+      "correct": true,
+      "latency_sec": 1.509,
+      "usage": {
+        "prompt_tokens": 242,
+        "completion_tokens": 58,
+        "total_tokens": 300
+      },
+      "estimated_cost_usd": 7.11e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::11",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates that revisions were made, but it does not provide specific details on the mechanics of how bitcoins will be exchanged for U.S. dollars, whether a third party or affiliate will be used, or how the market price of bitcoin is calculated. Therefore, it leaves concrete gaps relative to the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.715,
+      "usage": {
+        "prompt_tokens": 423,
+        "completion_tokens": 79,
+        "total_tokens": 502
+      },
+      "estimated_cost_usd": 0.00011084999999999998
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::12",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates that the disclosure has been revised, but it does not provide specific details about Gemini Clearing's experience, operating history, policies and procedures, compensation structure, fee responsibilities, or conflicts of interest as requested by the SEC.",
+      "correct": true,
+      "latency_sec": 1.226,
+      "usage": {
+        "prompt_tokens": 305,
+        "completion_tokens": 62,
+        "total_tokens": 367
+      },
+      "estimated_cost_usd": 8.295e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::13",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide the specific support requested regarding the Bitcoin Custodian's track record, the commencement of operations, or the number of bitcoin ETFs it custodies and supports.",
+      "correct": true,
+      "latency_sec": 1.255,
+      "usage": {
+        "prompt_tokens": 254,
+        "completion_tokens": 51,
+        "total_tokens": 305
+      },
+      "estimated_cost_usd": 6.869999999999999e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::14",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to include the geographic location where the private keys will be stored and has addressed the verification of the existence of the bitcoins, satisfying the SEC's request.",
+      "correct": true,
+      "latency_sec": 0.965,
+      "usage": {
+        "prompt_tokens": 238,
+        "completion_tokens": 50,
+        "total_tokens": 288
+      },
+      "estimated_cost_usd": 6.57e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::15",
+      "gold": "resolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates that the disclosure has been revised, but it does not specify the certain circumstances under which the Authorized Participants may be indemnified by the Sponsor, which is the specific request from the SEC.",
+      "correct": false,
+      "latency_sec": 1.163,
+      "usage": {
+        "prompt_tokens": 189,
+        "completion_tokens": 56,
+        "total_tokens": 245
+      },
+      "estimated_cost_usd": 6.195e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::16",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates that revisions were made, but it does not provide specific details about the risks associated with broker-dealers' compliance with federal securities laws or the potential consequences of non-compliance, leaving a gap relative to the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.447,
+      "usage": {
+        "prompt_tokens": 422,
+        "completion_tokens": 65,
+        "total_tokens": 487
+      },
+      "estimated_cost_usd": 0.00010229999999999999
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::17",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to address both parts of the SEC comment regarding the sale of bitcoins in connection with redemptions and the impact of market volatility on the Trust's ability to transact at the same value as the Creation Basket or redemption distribution.",
+      "correct": true,
+      "latency_sec": 1.298,
+      "usage": {
+        "prompt_tokens": 303,
+        "completion_tokens": 64,
+        "total_tokens": 367
+      },
+      "estimated_cost_usd": 8.385e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::18",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to discuss who bears the risk of price movements with respect to cash creations and cash redemptions, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.026,
+      "usage": {
+        "prompt_tokens": 261,
+        "completion_tokens": 46,
+        "total_tokens": 307
+      },
+      "estimated_cost_usd": 6.675e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::19",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to describe how the Administrator determines the cash amount needed for a Creation Basket Deposit, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 0.967,
+      "usage": {
+        "prompt_tokens": 211,
+        "completion_tokens": 42,
+        "total_tokens": 253
+      },
+      "estimated_cost_usd": 5.685e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::2",
+      "gold": "resolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates that the disclosure has been revised, but it does not provide specific details about the revisions made to address each part of the SEC comment regarding the Trust's investment strategy, asset management, and use of leverage or derivatives.",
+      "correct": false,
+      "latency_sec": 1.297,
+      "usage": {
+        "prompt_tokens": 258,
+        "completion_tokens": 62,
+        "total_tokens": 320
+      },
+      "estimated_cost_usd": 7.59e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::20",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to describe whether and how Shareholders will be notified if the Trust has suspended creations and redemptions, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.17,
+      "usage": {
+        "prompt_tokens": 271,
+        "completion_tokens": 47,
+        "total_tokens": 318
+      },
+      "estimated_cost_usd": 6.884999999999999e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::21",
+      "gold": "resolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates a revision was made, but it does not confirm whether the revised disclosure explicitly states that the consent applies to actions arising under the Securities Act or Exchange Act, nor does it address the uncertainty of enforcement by a court, which are key components of the SEC's request.",
+      "correct": false,
+      "latency_sec": 1.697,
+      "usage": {
+        "prompt_tokens": 206,
+        "completion_tokens": 73,
+        "total_tokens": 279
+      },
+      "estimated_cost_usd": 7.47e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::22",
+      "gold": "resolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates that they have revised the disclosure, but it does not specify what the revisions are or confirm that they address the SEC's concern about the inconsistency with GAAP and the methodology for determining the fair value of bitcoin.",
+      "correct": false,
+      "latency_sec": 4.662,
+      "usage": {
+        "prompt_tokens": 291,
+        "completion_tokens": 62,
+        "total_tokens": 353
+      },
+      "estimated_cost_usd": 8.085000000000001e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::3",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates a revision but does not provide specific support or details for the cited volume and dollar amount of Bitcoin Futures contracts, the OCC's confirmation regarding custody services, or the prevalence of insurance on custodied assets, leaving gaps relative to the SEC request.",
+      "correct": true,
+      "latency_sec": 1.406,
+      "usage": {
+        "prompt_tokens": 303,
+        "completion_tokens": 67,
+        "total_tokens": 370
+      },
+      "estimated_cost_usd": 8.565e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::4",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to clarify how and when the Sponsor will notify investors of decisions regarding bitcoin custodians, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.09,
+      "usage": {
+        "prompt_tokens": 262,
+        "completion_tokens": 43,
+        "total_tokens": 305
+      },
+      "estimated_cost_usd": 6.51e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::5",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to specifically address the risks related to the Bitcoin Custodian, Cash Custodian, and the Liquidity Providers, which satisfies the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.793,
+      "usage": {
+        "prompt_tokens": 194,
+        "completion_tokens": 49,
+        "total_tokens": 243
+      },
+      "estimated_cost_usd": 5.85e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::6",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to include a discussion on the impact of cash creations and redemptions on the efficiency of the arbitrage mechanism, as well as a comparison to in-kind creations and redemptions, thereby addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.853,
+      "usage": {
+        "prompt_tokens": 260,
+        "completion_tokens": 64,
+        "total_tokens": 324
+      },
+      "estimated_cost_usd": 7.739999999999998e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::7",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to specifically address the risks associated with replacing Gemini Clearing or the Liquidity Providers, including the requested risks of insolvency, business failure, default, and security breaches.",
+      "correct": true,
+      "latency_sec": 1.419,
+      "usage": {
+        "prompt_tokens": 385,
+        "completion_tokens": 53,
+        "total_tokens": 438
+      },
+      "estimated_cost_usd": 8.955e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::8",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to clarify the circumstances under which the Trust would retain or hold incidental rights and to explain any differences in handling incidental rights via forks compared to airdrops, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.923,
+      "usage": {
+        "prompt_tokens": 264,
+        "completion_tokens": 57,
+        "total_tokens": 321
+      },
+      "estimated_cost_usd": 7.38e-05
+    },
+    {
+      "example_id": "0000000000-23-013913::0000930413-23-002751::9",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to explain how the equal-weighted average of the volume-weighted median price is calculated, addressing the SEC's request for a sample calculation or similar disclosure.",
+      "correct": true,
+      "latency_sec": 1.892,
+      "usage": {
+        "prompt_tokens": 208,
+        "completion_tokens": 51,
+        "total_tokens": 259
+      },
+      "estimated_cost_usd": 6.18e-05
+    },
+    {
+      "example_id": "0000000000-24-000022::0001683168-24-000281::1",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has disclosed prominently on the cover page and in the prospectus summary that Yuyang Cui controls the company through her ownership of 100% of the voting power of the company's outstanding capital stock, satisfying the SEC request.",
+      "correct": true,
+      "latency_sec": 1.438,
+      "usage": {
+        "prompt_tokens": 236,
+        "completion_tokens": 59,
+        "total_tokens": 295
+      },
+      "estimated_cost_usd": 7.08e-05
+    },
+    {
+      "example_id": "0000000000-24-000022::0001683168-24-000281::10",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to include Yuyang Cui's address in the beneficial ownership table as requested by the SEC.",
+      "correct": true,
+      "latency_sec": 0.971,
+      "usage": {
+        "prompt_tokens": 264,
+        "completion_tokens": 38,
+        "total_tokens": 302
+      },
+      "estimated_cost_usd": 6.24e-05
+    },
+    {
+      "example_id": "0000000000-24-000022::0001683168-24-000281::11",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide specific disclosures regarding the nature of consulting contracts (fixed-price or time-and-materials), the identification of contracts involving third-party IT service providers, or a reconciliation of the billing statement with the deferred revenue disclosure. Additionally, it does not clarify the last two sentences in the revenue recognition policy as requested.",
+      "correct": true,
+      "latency_sec": 1.474,
+      "usage": {
+        "prompt_tokens": 448,
+        "completion_tokens": 80,
+        "total_tokens": 528
+      },
+      "estimated_cost_usd": 0.0001152
+    },
+    {
+      "example_id": "0000000000-24-000022::0001683168-24-000281::12",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not clarify how its presentation complies with ASC 805-50-45-2 to 45-5 or address the retrospective adjustment of historical financial statements as requested by the SEC.",
+      "correct": true,
+      "latency_sec": 1.344,
+      "usage": {
+        "prompt_tokens": 320,
+        "completion_tokens": 54,
+        "total_tokens": 374
+      },
+      "estimated_cost_usd": 8.04e-05
+    },
+    {
+      "example_id": "0000000000-24-000022::0001683168-24-000281::13",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company confirms that Yuyang Cui has signed the registration statement in her capacity as the principal executive officer, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.153,
+      "usage": {
+        "prompt_tokens": 245,
+        "completion_tokens": 41,
+        "total_tokens": 286
+      },
+      "estimated_cost_usd": 6.135e-05
+    },
+    {
+      "example_id": "0000000000-24-000022::0001683168-24-000281::14",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company confirms it will provide the requested written communications if they are used, and states that no such communications have been presented to potential investors as of the date of the response, satisfying the SEC's request.",
+      "correct": false,
+      "latency_sec": 1.271,
+      "usage": {
+        "prompt_tokens": 319,
+        "completion_tokens": 55,
+        "total_tokens": 374
+      },
+      "estimated_cost_usd": 8.085e-05
+    },
+    {
+      "example_id": "0000000000-24-000022::0001683168-24-000281::2",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has provided a concrete definition of small and medium businesses by stating that it is based on the number of employees being 200 or less, which satisfies the SEC's request for expanded disclosure.",
+      "correct": true,
+      "latency_sec": 1.188,
+      "usage": {
+        "prompt_tokens": 212,
+        "completion_tokens": 53,
+        "total_tokens": 265
+      },
+      "estimated_cost_usd": 6.36e-05
+    },
+    {
+      "example_id": "0000000000-24-000022::0001683168-24-000281::3",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company confirms that it has disclosed in the prospectus summary that it has generated minimal revenue to date, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.225,
+      "usage": {
+        "prompt_tokens": 250,
+        "completion_tokens": 41,
+        "total_tokens": 291
+      },
+      "estimated_cost_usd": 6.209999999999999e-05
+    },
+    {
+      "example_id": "0000000000-24-000022::0001683168-24-000281::4",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to reflect the sale of 25%, 50%, and 75% of the shares offered, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.225,
+      "usage": {
+        "prompt_tokens": 235,
+        "completion_tokens": 46,
+        "total_tokens": 281
+      },
+      "estimated_cost_usd": 6.285e-05
+    },
+    {
+      "example_id": "0000000000-24-000022::0001683168-24-000281::5",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company states that it has revised the disclosure but does not provide specific details about the minimum period of time it can conduct operations, the minimum additional capital needed for 12 months, or the monthly usage of funds, leaving gaps in the response to the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.625,
+      "usage": {
+        "prompt_tokens": 250,
+        "completion_tokens": 69,
+        "total_tokens": 319
+      },
+      "estimated_cost_usd": 7.89e-05
+    },
+    {
+      "example_id": "0000000000-24-000022::0001683168-24-000281::6",
+      "gold": "resolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company claims to have disclosed the anticipated sources of revenue on page 15, but does not provide any specific details or excerpts from that page in the response, leaving uncertainty about whether the disclosure fully addresses the SEC's request.",
+      "correct": false,
+      "latency_sec": 1.349,
+      "usage": {
+        "prompt_tokens": 203,
+        "completion_tokens": 60,
+        "total_tokens": 263
+      },
+      "estimated_cost_usd": 6.645e-05
+    },
+    {
+      "example_id": "0000000000-24-000022::0001683168-24-000281::7",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates that they have revised the section but does not provide specific information regarding material events, steps required for planned activities, contingencies, timelines, or associated costs as requested by the SEC.",
+      "correct": true,
+      "latency_sec": 1.229,
+      "usage": {
+        "prompt_tokens": 279,
+        "completion_tokens": 55,
+        "total_tokens": 334
+      },
+      "estimated_cost_usd": 7.485e-05
+    },
+    {
+      "example_id": "0000000000-24-000022::0001683168-24-000281::8",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company indicates that it has disclosed the terms of the material client contracts, including the term and termination provisions, on page 21 of the Registration Statement, which satisfies the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.538,
+      "usage": {
+        "prompt_tokens": 200,
+        "completion_tokens": 52,
+        "total_tokens": 252
+      },
+      "estimated_cost_usd": 6.12e-05
+    },
+    {
+      "example_id": "0000000000-24-000022::0001683168-24-000281::9",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to include Yuyang Cui's business experience during the past five years and other material information, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.114,
+      "usage": {
+        "prompt_tokens": 227,
+        "completion_tokens": 44,
+        "total_tokens": 271
+      },
+      "estimated_cost_usd": 6.044999999999999e-05
+    },
+    {
+      "example_id": "0000000000-24-000194::0000930413-24-000043::1",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to clarify that the timing of in-kind regulatory approval is unknown and that there is no guarantee that the Exchange will receive such approval. Additionally, the company has indicated how shareholders will be informed if the Exchange receives in-kind regulatory approval and if the Sponsor chooses to allow in-kind creations and redemptions. The company also confirmed its understanding regarding the filing of a post-effective amendment as required by Regulation S-K.",
+      "correct": true,
+      "latency_sec": 2.143,
+      "usage": {
+        "prompt_tokens": 1033,
+        "completion_tokens": 101,
+        "total_tokens": 1134
+      },
+      "estimated_cost_usd": 0.00021555
+    },
+    {
+      "example_id": "0000000000-24-000194::0000930413-24-000043::2",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company response specifies that neither the Trust nor Shareholders are responsible for any fees and expenses, including Bitcoin network fees, incurred by the Sponsor in connection with the withdrawal of bitcoin from the Trust’s Bitcoin Account. This directly addresses the SEC's request for clarity on who is responsible for on-chain transaction fees.",
+      "correct": true,
+      "latency_sec": 4.304,
+      "usage": {
+        "prompt_tokens": 819,
+        "completion_tokens": 75,
+        "total_tokens": 894
+      },
+      "estimated_cost_usd": 0.00016785
+    },
+    {
+      "example_id": "0000000000-24-000194::0000930413-24-000043::3",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to clarify the circumstances under which bitcoin may be temporarily stored in the Trust's Clearing Account, addressing the SEC's request for reconciliation between the two disclosures.",
+      "correct": true,
+      "latency_sec": 0.98,
+      "usage": {
+        "prompt_tokens": 623,
+        "completion_tokens": 50,
+        "total_tokens": 673
+      },
+      "estimated_cost_usd": 0.00012345
+    },
+    {
+      "example_id": "0000000000-24-000194::0000930413-24-000043::4",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to clarify that the only crypto asset to be held by the Trust will be bitcoin and that the Sponsor will cause the Trust to irrevocably abandon any Incidental Rights or IR Virtual Currency in the event of a fork, airdrop, or similar event. Additionally, it states that an application would need to be filed with the SEC if the Trust seeks to change this position, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.611,
+      "usage": {
+        "prompt_tokens": 1033,
+        "completion_tokens": 102,
+        "total_tokens": 1135
+      },
+      "estimated_cost_usd": 0.00021615
+    },
+    {
+      "example_id": "0000000000-24-000194::0000930413-24-000043::5",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to specifically address the risks associated with replacing the Liquidity Providers, including insolvency, business failure, and other related issues, thereby satisfying the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.432,
+      "usage": {
+        "prompt_tokens": 676,
+        "completion_tokens": 52,
+        "total_tokens": 728
+      },
+      "estimated_cost_usd": 0.00013259999999999997
+    },
+    {
+      "example_id": "0000000000-24-000194::0000930413-24-000043::6",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to describe Gemini Clearing's policies and procedures regarding assets held on behalf of the Trust and clarified the responsibility for fees associated with bitcoin transactions, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.317,
+      "usage": {
+        "prompt_tokens": 684,
+        "completion_tokens": 53,
+        "total_tokens": 737
+      },
+      "estimated_cost_usd": 0.00013440000000000001
+    },
+    {
+      "example_id": "0000000000-24-000194::0000930413-24-000043::7",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to identify the Liquidity Providers as JSCT, LLC, Nonco LLC, and Cumberland DRW LLC, thereby satisfying the SEC's request.",
+      "correct": true,
+      "latency_sec": 0.897,
+      "usage": {
+        "prompt_tokens": 910,
+        "completion_tokens": 49,
+        "total_tokens": 959
+      },
+      "estimated_cost_usd": 0.00016589999999999997
+    },
+    {
+      "example_id": "0000000000-24-000194::0000930413-24-000043::8",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company confirms its understanding of the SEC's comments regarding fair value accounting policy and acknowledges the potential for future comments, addressing the SEC's request adequately.",
+      "correct": false,
+      "latency_sec": 1.144,
+      "usage": {
+        "prompt_tokens": 493,
+        "completion_tokens": 44,
+        "total_tokens": 537
+      },
+      "estimated_cost_usd": 0.00010035
+    },
+    {
+      "example_id": "0000000000-24-000281::0000930413-24-000043::1",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to clarify the timing of in-kind regulatory approval, how shareholders will be informed, and confirmed its understanding regarding the filing of a post-effective amendment, addressing all aspects of the SEC's comment.",
+      "correct": false,
+      "latency_sec": 1.295,
+      "usage": {
+        "prompt_tokens": 822,
+        "completion_tokens": 58,
+        "total_tokens": 880
+      },
+      "estimated_cost_usd": 0.0001581
+    },
+    {
+      "example_id": "0000000000-24-000281::0000930413-24-000043::2",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the SEC's request to clarify the affiliations or material relationships between Liquidity Providers and Authorized Participants. Instead, it focuses on the Trust's holdings and the implications of forks, which does not satisfy the specific inquiry regarding relationships.",
+      "correct": true,
+      "latency_sec": 1.253,
+      "usage": {
+        "prompt_tokens": 903,
+        "completion_tokens": 65,
+        "total_tokens": 968
+      },
+      "estimated_cost_usd": 0.00017445
+    },
+    {
+      "example_id": "0000000000-24-000281::0000930413-24-000043::3",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response addresses risks related to Liquidity Providers but does not specifically address the risks associated with Authorized Participants acting in the same capacity for several competing products, as requested by the SEC.",
+      "correct": true,
+      "latency_sec": 0.994,
+      "usage": {
+        "prompt_tokens": 699,
+        "completion_tokens": 52,
+        "total_tokens": 751
+      },
+      "estimated_cost_usd": 0.00013604999999999997
+    },
+    {
+      "example_id": "0000000000-24-000281::0000930413-24-000043::4",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the disclosure to specify who will be responsible for fees associated with bitcoin transactions between the Authorized Participants, Bitcoin Custodian, and Gemini Clearing, as requested by the SEC.",
+      "correct": false,
+      "latency_sec": 0.935,
+      "usage": {
+        "prompt_tokens": 732,
+        "completion_tokens": 51,
+        "total_tokens": 783
+      },
+      "estimated_cost_usd": 0.0001404
+    },
+    {
+      "example_id": "0000000000-24-000301::0001493152-24-002232::1",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company acknowledges the comment but does not provide specific details on how the amendment filed as Exhibit 10.27 has been reconciled with the revised disclosure regarding the lock-up period for the founder shares.",
+      "correct": true,
+      "latency_sec": 1.151,
+      "usage": {
+        "prompt_tokens": 223,
+        "completion_tokens": 55,
+        "total_tokens": 278
+      },
+      "estimated_cost_usd": 6.645e-05
+    },
+    {
+      "example_id": "0000000000-24-000301::0001493152-24-002232::2",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has filed the requested agreement as an exhibit and clarified the VWAP measurement and repricing details in the revised disclosure, addressing the SEC's comments.",
+      "correct": false,
+      "latency_sec": 0.939,
+      "usage": {
+        "prompt_tokens": 556,
+        "completion_tokens": 45,
+        "total_tokens": 601
+      },
+      "estimated_cost_usd": 0.0001104
+    },
+    {
+      "example_id": "0000000000-24-000301::0001493152-24-002232::3",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The response does not clearly specify the exact date on which the shares will be purchased or the definitive number of shares being purchased, as it discusses potential adjustments and scenarios without providing concrete figures or a specific date.",
+      "correct": true,
+      "latency_sec": 4.057,
+      "usage": {
+        "prompt_tokens": 501,
+        "completion_tokens": 56,
+        "total_tokens": 557
+      },
+      "estimated_cost_usd": 0.00010874999999999999
+    },
+    {
+      "example_id": "0000000000-24-000301::0001493152-24-002232::4",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company provides a legal analysis explaining why the primary issuance of the Combined Entity Ordinary Shares to the PIPE Investor is appropriate for registration under the Securities Act, detailing the registration of shares, the timing of the exchange, and compliance with relevant sections of the Securities Act.",
+      "correct": false,
+      "latency_sec": 1.429,
+      "usage": {
+        "prompt_tokens": 444,
+        "completion_tokens": 66,
+        "total_tokens": 510
+      },
+      "estimated_cost_usd": 0.00010619999999999999
+    },
+    {
+      "example_id": "0000000000-24-000301::0001493152-24-002232::5",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company clarified that Graphjet is responsible for returning the Purchase Price to the PIPE Investor and revised the Share Purchase Agreement to specify that Energem has no liability for the return of the Purchase Price or interest, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.368,
+      "usage": {
+        "prompt_tokens": 492,
+        "completion_tokens": 61,
+        "total_tokens": 553
+      },
+      "estimated_cost_usd": 0.0001104
+    },
+    {
+      "example_id": "0000000000-24-000301::0001493152-24-002232::6",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The response does not identify the specific entity responsible for cancelling the Graphjet shares issued to the Purchaser, which is the key aspect of the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.144,
+      "usage": {
+        "prompt_tokens": 277,
+        "completion_tokens": 47,
+        "total_tokens": 324
+      },
+      "estimated_cost_usd": 6.975e-05
+    },
+    {
+      "example_id": "0000000000-24-000301::0001493152-24-002232::7",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company amended the Share Purchase Agreement to correct the expiry date, addressing the inconsistency noted by the SEC.",
+      "correct": true,
+      "latency_sec": 0.987,
+      "usage": {
+        "prompt_tokens": 325,
+        "completion_tokens": 36,
+        "total_tokens": 361
+      },
+      "estimated_cost_usd": 7.035e-05
+    },
+    {
+      "example_id": "0000000000-24-000301::0001493152-24-002232::8",
+      "gold": "resolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company states it has revised Note 3(B) but does not provide specific details on how the Difference in Amount will be calculated or whether a cash payment will be required, leaving a gap in the response to the SEC's request.",
+      "correct": false,
+      "latency_sec": 1.167,
+      "usage": {
+        "prompt_tokens": 275,
+        "completion_tokens": 62,
+        "total_tokens": 337
+      },
+      "estimated_cost_usd": 7.845000000000001e-05
+    },
+    {
+      "example_id": "0000000000-24-000804::0001104659-24-007036::1",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has committed to revising its Annual Report to ensure that IFRS measures are presented with equal or greater prominence compared to non-IFRS measures, addressing the SEC's request directly.",
+      "correct": false,
+      "latency_sec": 1.358,
+      "usage": {
+        "prompt_tokens": 592,
+        "completion_tokens": 52,
+        "total_tokens": 644
+      },
+      "estimated_cost_usd": 0.00011999999999999999
+    },
+    {
+      "example_id": "0000000000-24-000871::0001493152-24-003807::1",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company amended its disclosure to clarify that the securities acquired by the PIPE purchaser are not part of the registered offering and that a registration statement will be filed for the resale or transfer of those shares, addressing the SEC's concern.",
+      "correct": false,
+      "latency_sec": 1.254,
+      "usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 59,
+        "total_tokens": 497
+      },
+      "estimated_cost_usd": 0.00010109999999999999
+    },
+    {
+      "example_id": "0000000000-24-000871::0001493152-24-003807::2",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company clarified the discrepancy by confirming that as of September 30, 2023, the assets were indeed held in government securities, and it provided a corrected disclosure regarding the liquidation and subsequent management of the Trust Account funds, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 2.806,
+      "usage": {
+        "prompt_tokens": 536,
+        "completion_tokens": 65,
+        "total_tokens": 601
+      },
+      "estimated_cost_usd": 0.0001194
+    },
+    {
+      "example_id": "0000000000-24-000915::0001683168-24-000460::1",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the relevant disclosure to provide a detailed description of the AI-Development Tool, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 0.953,
+      "usage": {
+        "prompt_tokens": 206,
+        "completion_tokens": 39,
+        "total_tokens": 245
+      },
+      "estimated_cost_usd": 5.43e-05
+    },
+    {
+      "example_id": "0000000000-24-000915::0001683168-24-000460::2",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company states that it has revised the disclosure but does not provide sufficient detail regarding its principal versus agent considerations for the contracts as requested by the SEC. The response lacks specific information on how the analysis aligns with the guidance in ASC 606-10-55-36 through 55-40, particularly 55-38.",
+      "correct": true,
+      "latency_sec": 3.837,
+      "usage": {
+        "prompt_tokens": 357,
+        "completion_tokens": 80,
+        "total_tokens": 437
+      },
+      "estimated_cost_usd": 0.00010155
+    },
+    {
+      "example_id": "0000000000-24-000915::0001683168-24-000460::3",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has filed the auditor's consent as requested in the SEC comment, providing a concrete action that satisfies the request.",
+      "correct": true,
+      "latency_sec": 0.955,
+      "usage": {
+        "prompt_tokens": 228,
+        "completion_tokens": 38,
+        "total_tokens": 266
+      },
+      "estimated_cost_usd": 5.7e-05
+    },
+    {
+      "example_id": "0000000000-24-001029::0000833444-24-000014::1",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the SEC's request for disclosure of metrics related to customer retention, acquisition, or sales expansion. It only acknowledges receipt of the comment letter and requests an extension for a response.",
+      "correct": true,
+      "latency_sec": 1.433,
+      "usage": {
+        "prompt_tokens": 584,
+        "completion_tokens": 56,
+        "total_tokens": 640
+      },
+      "estimated_cost_usd": 0.00012119999999999999
+    },
+    {
+      "example_id": "0000000000-24-001029::0000833444-24-000014::4",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the SEC comment regarding the presentation of the non-GAAP ratio and does not indicate any concrete action taken to revise future filings as requested.",
+      "correct": true,
+      "latency_sec": 3.022,
+      "usage": {
+        "prompt_tokens": 507,
+        "completion_tokens": 48,
+        "total_tokens": 555
+      },
+      "estimated_cost_usd": 0.00010484999999999999
+    },
+    {
+      "example_id": "0000000000-24-001029::0000833444-24-000014::7",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the SEC comment regarding the revision of reconciliations to start with the most directly comparable GAAP measure and reconcile to the non-GAAP measures. It only acknowledges the receipt of the comment and requests an extension for the response.",
+      "correct": true,
+      "latency_sec": 1.877,
+      "usage": {
+        "prompt_tokens": 507,
+        "completion_tokens": 66,
+        "total_tokens": 573
+      },
+      "estimated_cost_usd": 0.00011564999999999999
+    },
+    {
+      "example_id": "0000000000-24-001064::0001104659-24-024857::1",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has clarified that it does not anticipate becoming a reporting company during the course of the offering, addressing the SEC's request for relevance regarding the disclosure of reduced reporting requirements under the JOBS Act.",
+      "correct": true,
+      "latency_sec": 1.763,
+      "usage": {
+        "prompt_tokens": 249,
+        "completion_tokens": 54,
+        "total_tokens": 303
+      },
+      "estimated_cost_usd": 6.974999999999999e-05
+    },
+    {
+      "example_id": "0000000000-24-001064::0001104659-24-024857::10",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has updated its disclosures to include the nature of the restricted cash and provided information on how it determined that the restricted cash is a long-term asset, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.255,
+      "usage": {
+        "prompt_tokens": 222,
+        "completion_tokens": 51,
+        "total_tokens": 273
+      },
+      "estimated_cost_usd": 6.39e-05
+    },
+    {
+      "example_id": "0000000000-24-001064::0001104659-24-024857::11",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The response does not specifically reconcile the differences between the number of leased units and the revenue recognition policy, nor does it address the items related to cost of net revenues. Additionally, it does not expand the disclosure on page 17 to explain how revenue is generated in detail.",
+      "correct": true,
+      "latency_sec": 1.477,
+      "usage": {
+        "prompt_tokens": 334,
+        "completion_tokens": 69,
+        "total_tokens": 403
+      },
+      "estimated_cost_usd": 9.15e-05
+    },
+    {
+      "example_id": "0000000000-24-001064::0001104659-24-024857::12",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has updated page F-12 to include the requested table of disaggregated revenue, satisfying the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.054,
+      "usage": {
+        "prompt_tokens": 265,
+        "completion_tokens": 39,
+        "total_tokens": 304
+      },
+      "estimated_cost_usd": 6.314999999999999e-05
+    },
+    {
+      "example_id": "0000000000-24-001064::0001104659-24-024857::13",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has confirmed that the placeholders have been updated and that the tables are now included, addressing the SEC's request for the missing amounts in the footnote disclosure.",
+      "correct": false,
+      "latency_sec": 2.797,
+      "usage": {
+        "prompt_tokens": 245,
+        "completion_tokens": 47,
+        "total_tokens": 292
+      },
+      "estimated_cost_usd": 6.494999999999999e-05
+    },
+    {
+      "example_id": "0000000000-24-001064::0001104659-24-024857::2",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has provided a chart disclosing the maintenance fee deadlines for its unissued patent applications, which satisfies the SEC request for disclosure of deadlines for maintaining the status of significant patents.",
+      "correct": false,
+      "latency_sec": 1.416,
+      "usage": {
+        "prompt_tokens": 229,
+        "completion_tokens": 50,
+        "total_tokens": 279
+      },
+      "estimated_cost_usd": 6.435e-05
+    },
+    {
+      "example_id": "0000000000-24-001064::0001104659-24-024857::3",
+      "gold": "resolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The response mentions an update to page 16 regarding customer concentration but does not provide the actual narrative disclosure or address the consideration of filing agreements with the two customers as requested by the SEC.",
+      "correct": false,
+      "latency_sec": 0.974,
+      "usage": {
+        "prompt_tokens": 231,
+        "completion_tokens": 52,
+        "total_tokens": 283
+      },
+      "estimated_cost_usd": 6.585e-05
+    },
+    {
+      "example_id": "0000000000-24-001064::0001104659-24-024857::4",
+      "gold": "resolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company has removed the disclosure about repayment of debt instead of including it in the Use of Proceeds section as requested by the SEC.",
+      "correct": false,
+      "latency_sec": 1.135,
+      "usage": {
+        "prompt_tokens": 207,
+        "completion_tokens": 42,
+        "total_tokens": 249
+      },
+      "estimated_cost_usd": 5.625e-05
+    },
+    {
+      "example_id": "0000000000-24-001064::0001104659-24-024857::5",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has updated the disclosure to clarify what 'efforts' refers to, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 0.889,
+      "usage": {
+        "prompt_tokens": 173,
+        "completion_tokens": 36,
+        "total_tokens": 209
+      },
+      "estimated_cost_usd": 4.7550000000000004e-05
+    },
+    {
+      "example_id": "0000000000-24-001064::0001104659-24-024857::6",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has updated the disclosure to explain how their product uses artificial intelligence and machine learning, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.129,
+      "usage": {
+        "prompt_tokens": 194,
+        "completion_tokens": 38,
+        "total_tokens": 232
+      },
+      "estimated_cost_usd": 5.19e-05
+    },
+    {
+      "example_id": "0000000000-24-001064::0001104659-24-024857::7",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company response indicates that the disclosure has been updated to include the term of office and approximate number of hours per week that part-time employees work, which satisfies the SEC request.",
+      "correct": true,
+      "latency_sec": 0.894,
+      "usage": {
+        "prompt_tokens": 246,
+        "completion_tokens": 49,
+        "total_tokens": 295
+      },
+      "estimated_cost_usd": 6.63e-05
+    },
+    {
+      "example_id": "0000000000-24-001064::0001104659-24-024857::9",
+      "gold": "resolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The response indicates that the voting securities beneficially owned by executive officers and directors have been updated, but it does not confirm whether the disclosure includes the natural person or persons who exercise the voting and/or dispositive powers for the entities identified, which is also part of the SEC's request.",
+      "correct": false,
+      "latency_sec": 1.47,
+      "usage": {
+        "prompt_tokens": 220,
+        "completion_tokens": 72,
+        "total_tokens": 292
+      },
+      "estimated_cost_usd": 7.620000000000001e-05
+    },
+    {
+      "example_id": "0000000000-24-001084::0001683168-24-002261::1",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company confirms it will include the required discussion of Critical Accounting Estimates in future filings, addressing the SEC's request.",
+      "correct": false,
+      "latency_sec": 1.23,
+      "usage": {
+        "prompt_tokens": 191,
+        "completion_tokens": 37,
+        "total_tokens": 228
+      },
+      "estimated_cost_usd": 5.0849999999999996e-05
+    },
+    {
+      "example_id": "0000000000-24-001084::0001683168-24-002261::2",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The response confirms future inclusion of a discussion but does not provide the specific quantitative and qualitative details requested regarding the significant increase in revenue and the convertible loan valuation expense for the years ended August 31, 2022, and 2023.",
+      "correct": true,
+      "latency_sec": 1.161,
+      "usage": {
+        "prompt_tokens": 327,
+        "completion_tokens": 63,
+        "total_tokens": 390
+      },
+      "estimated_cost_usd": 8.685e-05
+    },
+    {
+      "example_id": "0000000000-24-001084::0001683168-24-002261::3",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company acknowledges the omission of the August 31, 2023 date in the Internal Control section but does not provide a concrete amendment or revision to include management's assessment of internal controls as requested by the SEC.",
+      "correct": true,
+      "latency_sec": 1.331,
+      "usage": {
+        "prompt_tokens": 308,
+        "completion_tokens": 58,
+        "total_tokens": 366
+      },
+      "estimated_cost_usd": 8.099999999999999e-05
+    },
+    {
+      "example_id": "0000000000-24-001084::0001683168-24-002261::4",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company confirms it will clarify the accounting treatment in future filings but does not provide specific current disclosures or actions addressing the SEC's detailed requests regarding the convertible loans, including the treatment under ASC 815 and ASC 820, and the inconsistencies noted.",
+      "correct": true,
+      "latency_sec": 1.368,
+      "usage": {
+        "prompt_tokens": 463,
+        "completion_tokens": 65,
+        "total_tokens": 528
+      },
+      "estimated_cost_usd": 0.00010844999999999998
+    },
+    {
+      "example_id": "0000000000-24-001084::0001683168-24-002261::5",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not provide a specific disclosure regarding their revenue recognition for laboratory services or explain why the recognition over the period entitled to payments is consistent with ASC 606, as requested by the SEC.",
+      "correct": true,
+      "latency_sec": 0.919,
+      "usage": {
+        "prompt_tokens": 359,
+        "completion_tokens": 54,
+        "total_tokens": 413
+      },
+      "estimated_cost_usd": 8.625e-05
+    },
+    {
+      "example_id": "0000000000-24-001097::0001903596-24-000044::1",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has confirmed that it updated the director compensation table as requested for the fiscal year ended December 31, 2023.",
+      "correct": true,
+      "latency_sec": 1.036,
+      "usage": {
+        "prompt_tokens": 175,
+        "completion_tokens": 40,
+        "total_tokens": 215
+      },
+      "estimated_cost_usd": 5.025e-05
+    },
+    {
+      "example_id": "0000000000-24-001097::0001903596-24-000044::2",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has amended the Registration Statement to remove references to incorporation by reference, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.189,
+      "usage": {
+        "prompt_tokens": 455,
+        "completion_tokens": 35,
+        "total_tokens": 490
+      },
+      "estimated_cost_usd": 8.924999999999999e-05
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::1",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has removed the specified references to 'crypto assets,' 'crypto currency,' and 'digital currency' and has defined 'digital assets' while clarifying the distinction between 'cryptocurrencies' and 'digital assets,' satisfying the SEC's request.",
+      "correct": true,
+      "latency_sec": 2.4,
+      "usage": {
+        "prompt_tokens": 392,
+        "completion_tokens": 64,
+        "total_tokens": 456
+      },
+      "estimated_cost_usd": 9.719999999999999e-05
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::10",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised its disclosure to explain and quantify the cactus fees charged by Matrixport Cactus, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.371,
+      "usage": {
+        "prompt_tokens": 198,
+        "completion_tokens": 40,
+        "total_tokens": 238
+      },
+      "estimated_cost_usd": 5.37e-05
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::11",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised its disclosures to avoid using the term 'stable cryptocurrencies', addressing the SEC's request for reconciliation with the term 'stablecoin'.",
+      "correct": true,
+      "latency_sec": 0.985,
+      "usage": {
+        "prompt_tokens": 169,
+        "completion_tokens": 44,
+        "total_tokens": 213
+      },
+      "estimated_cost_usd": 5.175e-05
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::12",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not clarify the circumstances under which it acquired or plans to acquire USDC and/or USDT, how it calculates the prices at which it acquires USDC and/or USDT, or whether it has plans to loan or pledge any of its crypto assets or provide them as collateral for any loan or similar arrangement.",
+      "correct": true,
+      "latency_sec": 1.798,
+      "usage": {
+        "prompt_tokens": 558,
+        "completion_tokens": 81,
+        "total_tokens": 639
+      },
+      "estimated_cost_usd": 0.00013230000000000002
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::15",
+      "gold": "resolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The response does not confirm that the December 31, 2022 balance sheet presented with the interim financial statements is labeled 'As Restated,' which is a specific requirement from the SEC comment.",
+      "correct": false,
+      "latency_sec": 1.031,
+      "usage": {
+        "prompt_tokens": 311,
+        "completion_tokens": 54,
+        "total_tokens": 365
+      },
+      "estimated_cost_usd": 7.905e-05
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::16",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has omitted the interim period as requested, addressing the SEC's comment regarding the heading on the Index to Financial Statements.",
+      "correct": true,
+      "latency_sec": 1.006,
+      "usage": {
+        "prompt_tokens": 204,
+        "completion_tokens": 39,
+        "total_tokens": 243
+      },
+      "estimated_cost_usd": 5.4e-05
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::17",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the SEC's request to revise the amendment to properly reflect the black line between the Predecessor and Successor periods. It only mentions a clarification of the principal market.",
+      "correct": true,
+      "latency_sec": 1.371,
+      "usage": {
+        "prompt_tokens": 217,
+        "completion_tokens": 55,
+        "total_tokens": 272
+      },
+      "estimated_cost_usd": 6.555e-05
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::18",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The response does not address how the company measures and accounts for USDC both initially and subsequently, nor does it clarify whether the fair value option under ASC 825-10-25-1 is applied, leaving a gap in the requested disclosure.",
+      "correct": true,
+      "latency_sec": 1.549,
+      "usage": {
+        "prompt_tokens": 386,
+        "completion_tokens": 64,
+        "total_tokens": 450
+      },
+      "estimated_cost_usd": 9.63e-05
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::20",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company revised its disclosure to specifically indicate that digital assets awarded through its GameFi and solo-staking business are non-cash operating activities included in the statements of cash flows, satisfying the SEC request.",
+      "correct": true,
+      "latency_sec": 1.069,
+      "usage": {
+        "prompt_tokens": 204,
+        "completion_tokens": 54,
+        "total_tokens": 258
+      },
+      "estimated_cost_usd": 6.299999999999999e-05
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::21",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company revised its disclosure to clarify that digital assets are classified as current assets because it reasonably expects to sell or exchange them within one year, directly addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.466,
+      "usage": {
+        "prompt_tokens": 244,
+        "completion_tokens": 49,
+        "total_tokens": 293
+      },
+      "estimated_cost_usd": 6.599999999999999e-05
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::22",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not reconcile the statement about providing proof-of-stake technology tools with the disclosure that MTP ceased providing non-custodial staking tools to third parties as of July 2023. It also does not address the SEC's request for clarification on the apparent contradiction in the timeline of services provided.",
+      "correct": true,
+      "latency_sec": 1.627,
+      "usage": {
+        "prompt_tokens": 301,
+        "completion_tokens": 78,
+        "total_tokens": 379
+      },
+      "estimated_cost_usd": 9.195e-05
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::3",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not address the request to revise the disclosure regarding its international corporate strategy, nor did it clarify the contradiction between its previous statement and the disclosure on page F-8 about exploring other crypto-related businesses.",
+      "correct": true,
+      "latency_sec": 1.087,
+      "usage": {
+        "prompt_tokens": 281,
+        "completion_tokens": 57,
+        "total_tokens": 338
+      },
+      "estimated_cost_usd": 7.635e-05
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::4",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not provide a summary of the material terms of the agreement or a detailed description of the security services, nor did it file the agreement as an exhibit or explain why it believes it is not required to do so.",
+      "correct": true,
+      "latency_sec": 1.281,
+      "usage": {
+        "prompt_tokens": 277,
+        "completion_tokens": 60,
+        "total_tokens": 337
+      },
+      "estimated_cost_usd": 7.755e-05
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::5",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not revise the risk factors section to address the specific risks associated with its investment in MarsLand as requested by the SEC. Instead, it provided a justification for why the investment is not material, which does not satisfy the SEC's request for a discussion of the risks.",
+      "correct": true,
+      "latency_sec": 3.267,
+      "usage": {
+        "prompt_tokens": 408,
+        "completion_tokens": 72,
+        "total_tokens": 480
+      },
+      "estimated_cost_usd": 0.00010439999999999999
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::6",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The response does not clarify the apparent contradiction between the company's statement about conducting almost all operations outside the United States and the assertion that it has not provided crypto-related services outside of Singapore. The response lacks a concrete reconciliation of these statements.",
+      "correct": true,
+      "latency_sec": 1.305,
+      "usage": {
+        "prompt_tokens": 282,
+        "completion_tokens": 62,
+        "total_tokens": 344
+      },
+      "estimated_cost_usd": 7.950000000000001e-05
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::7",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The response does not provide the specific method and costs for acquiring the 2,967.95 ETH as requested by the SEC, and instead mentions a different amount (3,102.40 ETH) without addressing the original inquiry.",
+      "correct": true,
+      "latency_sec": 1.367,
+      "usage": {
+        "prompt_tokens": 251,
+        "completion_tokens": 61,
+        "total_tokens": 312
+      },
+      "estimated_cost_usd": 7.424999999999999e-05
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::8",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has removed the conflicting references regarding the discontinuation of the Mano game and the alSpace platform, addressing the SEC's request for reconciliation.",
+      "correct": false,
+      "latency_sec": 1.24,
+      "usage": {
+        "prompt_tokens": 305,
+        "completion_tokens": 43,
+        "total_tokens": 348
+      },
+      "estimated_cost_usd": 7.154999999999999e-05
+    },
+    {
+      "example_id": "0000000000-24-001304::0001213900-24-030822::9",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not provide the requested clarification on whether it operates its own node or exclusively uses Marsland for Ethereum staking. Additionally, there is no breakeven analysis or disclosure regarding the costs of staking through Marsland relative to the price of Ethereum, as requested by the SEC.",
+      "correct": true,
+      "latency_sec": 1.34,
+      "usage": {
+        "prompt_tokens": 251,
+        "completion_tokens": 71,
+        "total_tokens": 322
+      },
+      "estimated_cost_usd": 8.025e-05
+    },
+    {
+      "example_id": "0000000000-24-001434::0001368365-24-000022::1",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has confirmed that they have expanded the risk factor to include a discussion of the impact of the potential delisting of their common stock, which satisfies the SEC request.",
+      "correct": true,
+      "latency_sec": 0.964,
+      "usage": {
+        "prompt_tokens": 186,
+        "completion_tokens": 48,
+        "total_tokens": 234
+      },
+      "estimated_cost_usd": 5.6699999999999996e-05
+    },
+    {
+      "example_id": "0000000000-24-001434::0001368365-24-000022::2",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has added the required documents to the exhibit index, satisfying the SEC's request.",
+      "correct": true,
+      "latency_sec": 0.967,
+      "usage": {
+        "prompt_tokens": 310,
+        "completion_tokens": 32,
+        "total_tokens": 342
+      },
+      "estimated_cost_usd": 6.57e-05
+    },
+    {
+      "example_id": "0000000000-24-002152::0001493152-24-010096::1",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the cover page and relevant pages to identify both GEM Global Yield LLC SCS and GEM Yield Bahamas Limited as the Registered Stockholders, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.096,
+      "usage": {
+        "prompt_tokens": 253,
+        "completion_tokens": 50,
+        "total_tokens": 303
+      },
+      "estimated_cost_usd": 6.795e-05
+    },
+    {
+      "example_id": "0000000000-24-002152::0001493152-24-010096::2",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has confirmed that it has re-filed the exhibits or restored links to ensure they are in proper text-searchable format, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 0.942,
+      "usage": {
+        "prompt_tokens": 233,
+        "completion_tokens": 46,
+        "total_tokens": 279
+      },
+      "estimated_cost_usd": 6.255e-05
+    },
+    {
+      "example_id": "0000000000-24-002152::0001493152-24-010096::3",
+      "gold": "resolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates that they have revised the document but does not provide specific details about the material terms, risks, market activities, or Regulation M provisions as requested by the SEC. Without concrete disclosures or revisions, the response does not fully satisfy the SEC's request.",
+      "correct": false,
+      "latency_sec": 1.732,
+      "usage": {
+        "prompt_tokens": 451,
+        "completion_tokens": 68,
+        "total_tokens": 519
+      },
+      "estimated_cost_usd": 0.00010845000000000001
+    },
+    {
+      "example_id": "0000000000-24-002152::0001493152-24-010096::4",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised its disclosure to explain why GEM did not purchase the entire 900,000 shares, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 0.85,
+      "usage": {
+        "prompt_tokens": 317,
+        "completion_tokens": 41,
+        "total_tokens": 358
+      },
+      "estimated_cost_usd": 7.214999999999999e-05
+    },
+    {
+      "example_id": "0000000000-24-002355::0001104659-24-032584::1",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has provided updates to the disclosures on pages 24, 25, and 27 that address the SEC's requests regarding the nature of the credits issued, the revenue recognition policy, the significant increase in payroll, and the changes in cost of revenue period over period.",
+      "correct": true,
+      "latency_sec": 1.321,
+      "usage": {
+        "prompt_tokens": 643,
+        "completion_tokens": 69,
+        "total_tokens": 712
+      },
+      "estimated_cost_usd": 0.00013785
+    },
+    {
+      "example_id": "0000000000-24-002355::0001104659-24-032584::2",
+      "gold": "resolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates that the beneficial ownership table has been updated to include all executive officers and directors, but it does not address the requirement to disclose the natural person or persons who exercise the voting and/or dispositive powers with respect to the securities owned by each of the entities identified.",
+      "correct": false,
+      "latency_sec": 1.598,
+      "usage": {
+        "prompt_tokens": 223,
+        "completion_tokens": 71,
+        "total_tokens": 294
+      },
+      "estimated_cost_usd": 7.605e-05
+    },
+    {
+      "example_id": "0000000000-24-002355::0001104659-24-032584::3",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has updated its revenue recognition policy and disaggregated revenue table to address the SEC's concerns regarding the change in revenue model and the consistency of revenue sources.",
+      "correct": true,
+      "latency_sec": 1.051,
+      "usage": {
+        "prompt_tokens": 255,
+        "completion_tokens": 47,
+        "total_tokens": 302
+      },
+      "estimated_cost_usd": 6.645e-05
+    },
+    {
+      "example_id": "0000000000-24-003105::0001104659-24-037772::1",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not clarify how James Jordan has voting power over the shares held by New Direction Trust Company and DealMaker, nor does it address the incorrect total number of shares held by Officers and Directors as a Group. Additionally, it does not specify the class of securities beneficially held by DealMaker.",
+      "correct": true,
+      "latency_sec": 1.802,
+      "usage": {
+        "prompt_tokens": 461,
+        "completion_tokens": 76,
+        "total_tokens": 537
+      },
+      "estimated_cost_usd": 0.00011475
+    },
+    {
+      "example_id": "0000000000-24-003211::0001493152-24-011361::1",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised the cover page to include the disclosure that GEM and GYBL are underwriters, satisfying the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.238,
+      "usage": {
+        "prompt_tokens": 219,
+        "completion_tokens": 41,
+        "total_tokens": 260
+      },
+      "estimated_cost_usd": 5.745e-05
+    },
+    {
+      "example_id": "0000000000-24-003211::0001493152-24-011361::2",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company clearly states that the Registered Stockholders could not have engaged in short selling or hedging activities prior to the GEM SPA due to the company not being publicly listed, and they have revised the relevant sections to disclose this information as requested.",
+      "correct": true,
+      "latency_sec": 0.988,
+      "usage": {
+        "prompt_tokens": 364,
+        "completion_tokens": 62,
+        "total_tokens": 426
+      },
+      "estimated_cost_usd": 9.180000000000001e-05
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::1",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not address the SEC's request to provide the address of its principal executive offices, which is a requirement of Form 10-K.",
+      "correct": true,
+      "latency_sec": 1.145,
+      "usage": {
+        "prompt_tokens": 906,
+        "completion_tokens": 44,
+        "total_tokens": 950
+      },
+      "estimated_cost_usd": 0.0001623
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::10",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not address the SEC's request regarding the concentration of revenue derived from outside the United States, nor did it discuss the known trend of revenue decreases from non-U.S. customers or expectations for future trends in its MD&A.",
+      "correct": true,
+      "latency_sec": 2.506,
+      "usage": {
+        "prompt_tokens": 927,
+        "completion_tokens": 62,
+        "total_tokens": 989
+      },
+      "estimated_cost_usd": 0.00017625
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::11",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company does not provide a concrete plan to disaggregate trading volume between fee levels as requested by the SEC, stating that it believes such disclosure would not be meaningful and could be confusing. This does not directly address the SEC's request for clarity on how existing disclosures capture changes in underlying trends.",
+      "correct": true,
+      "latency_sec": 1.349,
+      "usage": {
+        "prompt_tokens": 966,
+        "completion_tokens": 73,
+        "total_tokens": 1039
+      },
+      "estimated_cost_usd": 0.0001887
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::12",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company does not provide a specific disclosure of assets under custody as of each period presented, which was requested by the SEC. Instead, it references existing disclosures related to safeguarding customer crypto assets without addressing the specific request for periodic asset under custody figures.",
+      "correct": true,
+      "latency_sec": 1.213,
+      "usage": {
+        "prompt_tokens": 370,
+        "completion_tokens": 64,
+        "total_tokens": 434
+      },
+      "estimated_cost_usd": 9.389999999999999e-05
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::13",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company states it will enhance its disclosure in future filings but does not provide a current, concrete revision or analysis that addresses the SEC's request regarding the impact of de-pegging on market trends.",
+      "correct": true,
+      "latency_sec": 2.444,
+      "usage": {
+        "prompt_tokens": 306,
+        "completion_tokens": 55,
+        "total_tokens": 361
+      },
+      "estimated_cost_usd": 7.89e-05
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::14",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not adequately address the specific concerns raised by the SEC regarding the exclusion of impairment charges on crypto assets, the treatment of crypto asset revenue and payments, the nature of other adjustments, and the reconciliation of adjustments to GAAP measures. It lacks detailed explanations and schedules requested by the SEC, leaving gaps in the justification for the Adjusted EBITDA calculation.",
+      "correct": true,
+      "latency_sec": 1.772,
+      "usage": {
+        "prompt_tokens": 1103,
+        "completion_tokens": 87,
+        "total_tokens": 1190
+      },
+      "estimated_cost_usd": 0.00021765
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::15",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company commits to updating its future filings to address general derivative strategies and quantify the financial statement impact, which satisfies the SEC's request.",
+      "correct": false,
+      "latency_sec": 1.049,
+      "usage": {
+        "prompt_tokens": 473,
+        "completion_tokens": 41,
+        "total_tokens": 514
+      },
+      "estimated_cost_usd": 9.555e-05
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::16",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has committed to enhancing its revenue accounting policy in future filings by specifying for which revenue types it receives and recognizes non-cash consideration, addressing the SEC's request.",
+      "correct": false,
+      "latency_sec": 1.964,
+      "usage": {
+        "prompt_tokens": 348,
+        "completion_tokens": 48,
+        "total_tokens": 396
+      },
+      "estimated_cost_usd": 8.1e-05
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::17",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company provided a detailed explanation of the performance obligations under both the original distribution agreement and the collaboration agreement, including how income is calculated and the term of the collaboration agreement. They also addressed the need to define 'total market capitalization' and indicated plans to enhance future filings with this information, thus satisfying the SEC's requests.",
+      "correct": false,
+      "latency_sec": 1.431,
+      "usage": {
+        "prompt_tokens": 1154,
+        "completion_tokens": 78,
+        "total_tokens": 1232
+      },
+      "estimated_cost_usd": 0.0002199
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::18",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not fully address all aspects of the SEC comment, particularly regarding the accounting treatment of collateral received, derecognition of the crypto asset lent, and the classification of any gains or losses upon issuance of the loan. Additionally, the response lacks specific authoritative guidance references as requested.",
+      "correct": true,
+      "latency_sec": 1.675,
+      "usage": {
+        "prompt_tokens": 1226,
+        "completion_tokens": 73,
+        "total_tokens": 1299
+      },
+      "estimated_cost_usd": 0.0002277
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::19",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company provided a detailed analysis explaining how it concluded that loaned USDC should continue to be recognized on its balance sheet, referencing relevant accounting literature (ASC 860). Additionally, the company included information about the amount of collateral pledged by borrowers, the form of that collateral, and stated that none of the collateral met the recognition criteria for inclusion in the consolidated balance sheets. The company also committed to expanding its disclosure in future filings to include this information.",
+      "correct": false,
+      "latency_sec": 2.267,
+      "usage": {
+        "prompt_tokens": 963,
+        "completion_tokens": 104,
+        "total_tokens": 1067
+      },
+      "estimated_cost_usd": 0.00020684999999999999
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::2",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not address the SEC's request to summarize information regarding digital engagement practices, investment education tools, optimization functions, and data collection practices, nor did it add a risk factor discussing potential conflicts of interest from optimization functions.",
+      "correct": true,
+      "latency_sec": 1.321,
+      "usage": {
+        "prompt_tokens": 499,
+        "completion_tokens": 60,
+        "total_tokens": 559
+      },
+      "estimated_cost_usd": 0.00011084999999999998
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::20",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company provided a detailed response addressing the SEC's requests regarding collateral management, the application of ASC 326-20-35-6, and the recognition criteria under ASC 860. They confirmed that additional collateral is requested when necessary, explained their methodology for estimating expected credit losses, and provided a schedule of unrecognized collateral assets, which satisfies the SEC's requirements.",
+      "correct": false,
+      "latency_sec": 1.7,
+      "usage": {
+        "prompt_tokens": 950,
+        "completion_tokens": 87,
+        "total_tokens": 1037
+      },
+      "estimated_cost_usd": 0.0001947
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::21",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide the specific terms of the crypto asset borrowing transactions, including whether the loan can be prepaid or called, any restrictions on the use of borrowed cryptocurrency, or provisions for settling the loan in cash or a different cryptocurrency. Additionally, it lacks details on how the company accounts for the borrowings and collateral, as requested by the SEC.",
+      "correct": true,
+      "latency_sec": 1.357,
+      "usage": {
+        "prompt_tokens": 473,
+        "completion_tokens": 86,
+        "total_tokens": 559
+      },
+      "estimated_cost_usd": 0.00012255
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::22",
+      "gold": "resolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide a detailed description of the staking process, how rewards are transferred, or a step-by-step analysis of ASC Topic 606 as requested. Additionally, it does not clarify the recognition of revenue related to assets staked through third-party nodes or address any restrictions on the availability of staked assets.",
+      "correct": false,
+      "latency_sec": 1.317,
+      "usage": {
+        "prompt_tokens": 1346,
+        "completion_tokens": 79,
+        "total_tokens": 1425
+      },
+      "estimated_cost_usd": 0.0002493
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::23",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has committed to enhancing its disclosures in future filings to include the requested information about the capped calls, including the economic effect, payment structure, and early termination provisions.",
+      "correct": false,
+      "latency_sec": 1.234,
+      "usage": {
+        "prompt_tokens": 620,
+        "completion_tokens": 48,
+        "total_tokens": 668
+      },
+      "estimated_cost_usd": 0.00012179999999999999
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::24",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not provide an analysis of the Circle Agreement under Item 601(b)(10)(i) and (ii) of Regulation S-K, nor did it address the materiality of the agreement or its basis for concluding that the business is not substantially dependent on the agreement.",
+      "correct": true,
+      "latency_sec": 1.61,
+      "usage": {
+        "prompt_tokens": 1041,
+        "completion_tokens": 71,
+        "total_tokens": 1112
+      },
+      "estimated_cost_usd": 0.00019875
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::3",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company's response does not address the specific SEC request regarding the staking program, including details on how the staking process operates, revenue generation, custodial practices, description of the cbETH product, and customer arrangements. Instead, it focuses on digital engagement practices and conflicts of interest, leaving a gap in the required disclosure about the staking business.",
+      "correct": true,
+      "latency_sec": 1.526,
+      "usage": {
+        "prompt_tokens": 839,
+        "completion_tokens": 82,
+        "total_tokens": 921
+      },
+      "estimated_cost_usd": 0.00017505
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::4",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not address the SEC's request to identify third party custodians and describe the material terms of any agreements with them, nor did it clarify the statement regarding the use of sub-custodians in light of the use of third party custodians.",
+      "correct": true,
+      "latency_sec": 2.592,
+      "usage": {
+        "prompt_tokens": 726,
+        "completion_tokens": 67,
+        "total_tokens": 793
+      },
+      "estimated_cost_usd": 0.0001491
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::6",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has committed to updating its risk factor disclosure in future filings, providing detailed information about its limited insurance coverage, potential liabilities, and the term of its insurance policy, which addresses the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.198,
+      "usage": {
+        "prompt_tokens": 951,
+        "completion_tokens": 55,
+        "total_tokens": 1006
+      },
+      "estimated_cost_usd": 0.00017565000000000001
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::7",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not provide a detailed description of the current functionality of the NFT marketplace or any plans for future phases or development, as requested by the SEC.",
+      "correct": true,
+      "latency_sec": 3.746,
+      "usage": {
+        "prompt_tokens": 301,
+        "completion_tokens": 46,
+        "total_tokens": 347
+      },
+      "estimated_cost_usd": 7.275e-05
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::8",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has committed to providing summary-level disclosure regarding its lending and borrowing activities in future filings, specifically in the 2024 Form 10-K and the Q1 2024 Form 10-Q, which addresses the SEC's request.",
+      "correct": false,
+      "latency_sec": 1.491,
+      "usage": {
+        "prompt_tokens": 276,
+        "completion_tokens": 62,
+        "total_tokens": 338
+      },
+      "estimated_cost_usd": 7.86e-05
+    },
+    {
+      "example_id": "0000000000-24-004201::0001193125-24-127882::9",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has committed to updating its risk factor disclosure in future filings, specifically addressing the SEC's request regarding blockchain tokens, and has provided a concrete example of the revised disclosure.",
+      "correct": false,
+      "latency_sec": 1.034,
+      "usage": {
+        "prompt_tokens": 796,
+        "completion_tokens": 49,
+        "total_tokens": 845
+      },
+      "estimated_cost_usd": 0.00014879999999999998
+    },
+    {
+      "example_id": "0000000000-24-004407::0001683168-24-003766::1",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not clearly address whether the convertible loans are recorded at fair value under ASC 820 or if they resulted in derivative accounting treatment under ASC 815. Additionally, the explanation regarding the lack of change in fair value for the three months ended November 30, 2023, is not sufficiently detailed to clarify the SEC's concerns.",
+      "correct": true,
+      "latency_sec": 1.529,
+      "usage": {
+        "prompt_tokens": 1018,
+        "completion_tokens": 83,
+        "total_tokens": 1101
+      },
+      "estimated_cost_usd": 0.0002025
+    },
+    {
+      "example_id": "0000000000-24-004407::0001683168-24-003766::2",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company provided a clear quantitative and qualitative explanation for the significant increase in convertible loan valuation expense, detailing the circumstances of the note payoffs in FY 2022 compared to FY 2023. Additionally, the company committed to including such discussions in future filings, indicating a proactive approach to addressing the SEC's request.",
+      "correct": false,
+      "latency_sec": 2.371,
+      "usage": {
+        "prompt_tokens": 924,
+        "completion_tokens": 77,
+        "total_tokens": 1001
+      },
+      "estimated_cost_usd": 0.0001848
+    },
+    {
+      "example_id": "0000000000-24-004407::0001683168-24-003766::3",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not address why some of the revenue should not be recorded as leasing income under ASC 842, nor did it confirm the accounting policy for leases or discuss the impact on internal controls and materiality as requested by the SEC.",
+      "correct": true,
+      "latency_sec": 2.201,
+      "usage": {
+        "prompt_tokens": 978,
+        "completion_tokens": 62,
+        "total_tokens": 1040
+      },
+      "estimated_cost_usd": 0.0001839
+    },
+    {
+      "example_id": "0000000000-24-004739::0001213900-24-050384::1",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The response does not clarify the status of the Master Right of Use and Services Agreement between MarsLand and SDP, including whether it has been terminated and whether there are amounts payable under the agreement.",
+      "correct": true,
+      "latency_sec": 1.028,
+      "usage": {
+        "prompt_tokens": 310,
+        "completion_tokens": 53,
+        "total_tokens": 363
+      },
+      "estimated_cost_usd": 7.83e-05
+    },
+    {
+      "example_id": "0000000000-24-004739::0001213900-24-050384::11",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company provided a detailed analysis of the significance tests outlined in Rule 3-05 of Regulation S-X, demonstrating that the acquisition does not meet the thresholds requiring audited financial statements or pro forma financial information.",
+      "correct": false,
+      "latency_sec": 1.249,
+      "usage": {
+        "prompt_tokens": 513,
+        "completion_tokens": 55,
+        "total_tokens": 568
+      },
+      "estimated_cost_usd": 0.00010995
+    },
+    {
+      "example_id": "0000000000-24-004739::0001213900-24-050384::2",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response indicates an amendment but does not provide the actual description of the 'international corporate strategy' as requested by the SEC.",
+      "correct": true,
+      "latency_sec": 3.322,
+      "usage": {
+        "prompt_tokens": 259,
+        "completion_tokens": 41,
+        "total_tokens": 300
+      },
+      "estimated_cost_usd": 6.345e-05
+    },
+    {
+      "example_id": "0000000000-24-004739::0001213900-24-050384::3",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not clarify the circumstances under which it may accept stablecoins or continue purchasing USDC and/or USDT, nor does it address the cessation of solo-staking activities in relation to the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.268,
+      "usage": {
+        "prompt_tokens": 431,
+        "completion_tokens": 59,
+        "total_tokens": 490
+      },
+      "estimated_cost_usd": 0.00010004999999999999
+    },
+    {
+      "example_id": "0000000000-24-004739::0001213900-24-050384::4",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide specific details or revisions addressing the risks of storing digital assets with a hot custodian, the risks of loss in the event of Matrixport's insolvency, or the segregation of crypto assets. It only states that the disclosure has been amended without elaborating on how the SEC's concerns have been addressed.",
+      "correct": true,
+      "latency_sec": 1.781,
+      "usage": {
+        "prompt_tokens": 279,
+        "completion_tokens": 81,
+        "total_tokens": 360
+      },
+      "estimated_cost_usd": 9.045e-05
+    },
+    {
+      "example_id": "0000000000-24-004739::0001213900-24-050384::5",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the SEC comment regarding the removal of reference to CoinMarketCap as a pricing source for solo staking revenues. Instead, it discusses a different topic related to the adoption of MPU Cayman’s Memorandum and Articles of Association.",
+      "correct": true,
+      "latency_sec": 1.343,
+      "usage": {
+        "prompt_tokens": 285,
+        "completion_tokens": 64,
+        "total_tokens": 349
+      },
+      "estimated_cost_usd": 8.115e-05
+    },
+    {
+      "example_id": "0000000000-24-004739::0001213900-24-050384::7",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not address the reconciliation of the de-emphasis of solo staking activities with the cessation of those activities as of March 5, 2024. Additionally, the response does not clarify whether the company will sell its ETH or continue to hold it, nor does it provide the objectives for holding ETH or any policies regarding its use or sale.",
+      "correct": true,
+      "latency_sec": 1.756,
+      "usage": {
+        "prompt_tokens": 330,
+        "completion_tokens": 85,
+        "total_tokens": 415
+      },
+      "estimated_cost_usd": 0.0001005
+    },
+    {
+      "example_id": "0000000000-24-004739::0001213900-24-050384::8",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the SEC's request for a comprehensive analysis of whether each cessation of business qualifies as a discontinued operation under ASC 205-20, nor does it reference the authoritative literature related to that assessment.",
+      "correct": true,
+      "latency_sec": 1.154,
+      "usage": {
+        "prompt_tokens": 335,
+        "completion_tokens": 59,
+        "total_tokens": 394
+      },
+      "estimated_cost_usd": 8.565e-05
+    },
+    {
+      "example_id": "0000000000-24-006211::0001683168-24-004012::1",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company confirms that in all future filings, they will specifically state within Item 9A Controls and Procedures whether their internal controls over financial reporting are effective at the end of the respective period, which satisfies the SEC request.",
+      "correct": false,
+      "latency_sec": 1.127,
+      "usage": {
+        "prompt_tokens": 581,
+        "completion_tokens": 58,
+        "total_tokens": 639
+      },
+      "estimated_cost_usd": 0.00012195000000000001
+    },
+    {
+      "example_id": "0000000000-24-006211::0001683168-24-004012::2",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company confirms it has elected to use the fair value option consistent with ASC 825-10-25, will clarify its accounting treatment for convertible notes in future filings, and states that it evaluates the fair value of the notes at the end of each quarter, addressing the SEC's concerns.",
+      "correct": true,
+      "latency_sec": 1.22,
+      "usage": {
+        "prompt_tokens": 706,
+        "completion_tokens": 72,
+        "total_tokens": 778
+      },
+      "estimated_cost_usd": 0.0001491
+    },
+    {
+      "example_id": "0000000000-24-006211::0001683168-24-004012::3",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company confirms that the remaining revenue for the fiscal year ended August 31, 2023, and the six months ended February 28, 2023, relates solely to laboratory services and commits to providing more granular details in future filings, addressing the SEC's request.",
+      "correct": false,
+      "latency_sec": 1.543,
+      "usage": {
+        "prompt_tokens": 601,
+        "completion_tokens": 69,
+        "total_tokens": 670
+      },
+      "estimated_cost_usd": 0.00013155
+    },
+    {
+      "example_id": "0000000000-24-006413::0001777393-24-000082::1",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company acknowledges the SEC's comment and commits to revising its future filings to include reconciliations of non-GAAP measures to the most directly comparable GAAP measures, thereby addressing the SEC's request.",
+      "correct": false,
+      "latency_sec": 1.194,
+      "usage": {
+        "prompt_tokens": 532,
+        "completion_tokens": 55,
+        "total_tokens": 587
+      },
+      "estimated_cost_usd": 0.0001128
+    },
+    {
+      "example_id": "0000000000-24-006413::0001777393-24-000082::2",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company acknowledges the SEC's request and commits to revising its future presentations to include the most directly comparable GAAP measures with equal or greater prominence, along with illustrative examples provided in Appendix A.",
+      "correct": false,
+      "latency_sec": 1.085,
+      "usage": {
+        "prompt_tokens": 788,
+        "completion_tokens": 53,
+        "total_tokens": 841
+      },
+      "estimated_cost_usd": 0.00015
+    },
+    {
+      "example_id": "0000000000-24-006413::0001777393-24-000082::4",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company acknowledges the SEC's request for additional disclosures regarding revenue disaggregation but does not provide a concrete revision or additional disclosure that directly addresses the request. The response focuses on the company's current practices and rationale without committing to any specific changes that would satisfy the SEC's comment.",
+      "correct": true,
+      "latency_sec": 1.399,
+      "usage": {
+        "prompt_tokens": 815,
+        "completion_tokens": 69,
+        "total_tokens": 884
+      },
+      "estimated_cost_usd": 0.00016365
+    },
+    {
+      "example_id": "0000000000-24-006413::0001777393-24-000082::5",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has acknowledged the SEC's comment and provided a clear explanation of its revenue recognition process in accordance with ASC 606, including the nature of obligations and risks that have not transferred at the time of delivery. Additionally, the company has committed to revising its disclosures to clarify when revenue is recognized, which addresses the SEC's request.",
+      "correct": false,
+      "latency_sec": 1.654,
+      "usage": {
+        "prompt_tokens": 672,
+        "completion_tokens": 81,
+        "total_tokens": 753
+      },
+      "estimated_cost_usd": 0.0001494
+    },
+    {
+      "example_id": "0000000000-24-006413::0001777393-24-000082::6",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not provide the specific disclosures required by ASC 460-10-50-8, stating that it considers the warranty liability not material and concluded that additional information is not necessary. This does not satisfy the SEC's request for compliance with the disclosure requirements.",
+      "correct": true,
+      "latency_sec": 2.51,
+      "usage": {
+        "prompt_tokens": 670,
+        "completion_tokens": 68,
+        "total_tokens": 738
+      },
+      "estimated_cost_usd": 0.0001413
+    },
+    {
+      "example_id": "0000000000-24-006636::0000912562-24-000038::1",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company provided the requested gross amounts of favorable and unfavorable changes in estimates, as well as the amount of contract losses recognized during each period presented. Additionally, the company committed to future disclosures if material changes occur, addressing the SEC's request comprehensively.",
+      "correct": false,
+      "latency_sec": 1.269,
+      "usage": {
+        "prompt_tokens": 621,
+        "completion_tokens": 64,
+        "total_tokens": 685
+      },
+      "estimated_cost_usd": 0.00013155
+    },
+    {
+      "example_id": "0000000000-24-006636::0000912562-24-000038::2",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company clarified the nature of the performance obligations related to costs in excess of billings and explained that the right to consideration is conditioned on something other than the passage of time. Additionally, the company indicated that it will present the components of accounts receivable, including costs in excess of billings, in its future filings, which addresses the SEC's request for compliance with ASC 606-10-45-1 and 45-4.",
+      "correct": true,
+      "latency_sec": 1.772,
+      "usage": {
+        "prompt_tokens": 494,
+        "completion_tokens": 102,
+        "total_tokens": 596
+      },
+      "estimated_cost_usd": 0.00013529999999999998
+    },
+    {
+      "example_id": "0000000000-24-006636::0000912562-24-000038::3",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company clarified that the revenue recognized did not exceed the contract liability balance at the beginning of each respective period and committed to enhancing future disclosures to provide the requested explanation.",
+      "correct": false,
+      "latency_sec": 1.007,
+      "usage": {
+        "prompt_tokens": 462,
+        "completion_tokens": 47,
+        "total_tokens": 509
+      },
+      "estimated_cost_usd": 9.75e-05
+    },
+    {
+      "example_id": "0000000000-24-006636::0000912562-24-000038::4",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company commits to providing the fair values and carrying values of impaired assets in future filings, directly addressing the SEC's request.",
+      "correct": false,
+      "latency_sec": 0.99,
+      "usage": {
+        "prompt_tokens": 233,
+        "completion_tokens": 39,
+        "total_tokens": 272
+      },
+      "estimated_cost_usd": 5.8349999999999995e-05
+    },
+    {
+      "example_id": "0000000000-24-006636::0000912562-24-000038::5",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The response indicates a commitment to evaluate and disclose net sales and long-lived assets for the US and Canada in future filings, but it does not provide a specific plan or assurance that the disclosures will be made for the US and any other individual foreign country in North America as required by ASC 280-10-50-41. The response leaves a gap regarding the actual implementation of the required disclosures.",
+      "correct": true,
+      "latency_sec": 1.638,
+      "usage": {
+        "prompt_tokens": 389,
+        "completion_tokens": 95,
+        "total_tokens": 484
+      },
+      "estimated_cost_usd": 0.00011535000000000001
+    },
+    {
+      "example_id": "0000000000-24-006636::0000912562-24-000038::6",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has committed to clearly labeling and titling GAAP and non-GAAP measures appropriately and to discussing the most directly comparable GAAP measures with equal or greater prominence in future filings, addressing the SEC's concerns.",
+      "correct": false,
+      "latency_sec": 1.035,
+      "usage": {
+        "prompt_tokens": 684,
+        "completion_tokens": 57,
+        "total_tokens": 741
+      },
+      "estimated_cost_usd": 0.0001368
+    },
+    {
+      "example_id": "0000000000-24-006636::0000912562-24-000038::7",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company does not provide a concrete plan for revising the reconciliations in future filings, nor does it fully address how its current reconciliations comply with the guidance in Question 102.10, leaving a gap in the response.",
+      "correct": true,
+      "latency_sec": 2.381,
+      "usage": {
+        "prompt_tokens": 407,
+        "completion_tokens": 63,
+        "total_tokens": 470
+      },
+      "estimated_cost_usd": 9.885e-05
+    },
+    {
+      "example_id": "0000000000-24-006636::0000912562-24-000038::8",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company provides a detailed explanation of each non-GAAP adjustment, including how the restructuring adjustments relate to the financial statements and a clear description of the portfolio management adjustments, addressing the SEC's requests.",
+      "correct": false,
+      "latency_sec": 1.135,
+      "usage": {
+        "prompt_tokens": 596,
+        "completion_tokens": 53,
+        "total_tokens": 649
+      },
+      "estimated_cost_usd": 0.00012119999999999999
+    },
+    {
+      "example_id": "0000000000-24-007734::0001213900-24-062581::1",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company's response states that it does not own and does not anticipate owning any digital assets or cryptocurrencies, including USDC and USDT. This does not clarify the circumstances under which it would accept and use USDC and/or USDT, nor does it confirm that these are the only digital assets it will hold, leaving a gap relative to the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.775,
+      "usage": {
+        "prompt_tokens": 480,
+        "completion_tokens": 87,
+        "total_tokens": 567
+      },
+      "estimated_cost_usd": 0.0001242
+    },
+    {
+      "example_id": "0000000000-24-007734::0001213900-24-062581::2",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has clearly indicated that it has ceased its staking activities and decided to dispose of all its Ethereum holdings, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.103,
+      "usage": {
+        "prompt_tokens": 241,
+        "completion_tokens": 42,
+        "total_tokens": 283
+      },
+      "estimated_cost_usd": 6.135e-05
+    },
+    {
+      "example_id": "0000000000-24-007734::0001213900-24-062581::3",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has revised its financial statements to include the required geographic information disclosure in accordance with ASC 280-10-50-41, addressing the SEC's request.",
+      "correct": true,
+      "latency_sec": 1.09,
+      "usage": {
+        "prompt_tokens": 222,
+        "completion_tokens": 47,
+        "total_tokens": 269
+      },
+      "estimated_cost_usd": 6.149999999999999e-05
+    },
+    {
+      "example_id": "0000000000-24-008594::0001013762-24-003214::1",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company provided a revised disclosure detailing how and when the USDC and USDT were exchanged for U.S. dollars, clarified that it does not intend to acquire, accept, hold, or use crypto assets, and reconciled the statement regarding the use of Matrix Trust Company Limited, confirming it no longer holds any digital assets.",
+      "correct": true,
+      "latency_sec": 2.093,
+      "usage": {
+        "prompt_tokens": 565,
+        "completion_tokens": 79,
+        "total_tokens": 644
+      },
+      "estimated_cost_usd": 0.00013215
+    },
+    {
+      "example_id": "0000000000-24-008896::0000912562-24-000047::2",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has committed to revising its presentation to separate accounts receivable and costs in excess of billings on the consolidated balance sheet, which addresses the SEC's request for compliance with ASC 606-10-45-1.",
+      "correct": false,
+      "latency_sec": 1.203,
+      "usage": {
+        "prompt_tokens": 346,
+        "completion_tokens": 60,
+        "total_tokens": 406
+      },
+      "estimated_cost_usd": 8.79e-05
+    },
+    {
+      "example_id": "0000000000-24-008896::0000912562-24-000047::3",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company acknowledges the SEC's comments and states intentions to revise future filings, but does not provide a concrete plan to delete the 'Segments income' subtotal or clearly explain and describe each non-GAAP adjustment as required by the SEC. The response lacks specific actions regarding these points.",
+      "correct": true,
+      "latency_sec": 1.506,
+      "usage": {
+        "prompt_tokens": 1206,
+        "completion_tokens": 70,
+        "total_tokens": 1276
+      },
+      "estimated_cost_usd": 0.0002229
+    },
+    {
+      "example_id": "0000000000-24-008945::0001213900-24-066146::1",
+      "gold": "resolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company confirmed the completion of the conversion of all USDC, USDT, and ETH to U.S. dollars, provided the timing of each completion, and disclosed the gross proceeds received for the conversions, satisfying the SEC request.",
+      "correct": true,
+      "latency_sec": 1.096,
+      "usage": {
+        "prompt_tokens": 526,
+        "completion_tokens": 60,
+        "total_tokens": 586
+      },
+      "estimated_cost_usd": 0.0001149
+    },
+    {
+      "example_id": "0000000000-24-009758::0001193125-24-214663::1",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company acknowledges the comment and commits to future compliance, but does not provide a current, concrete disclosure or revision that satisfies the SEC request.",
+      "correct": true,
+      "latency_sec": 1.64,
+      "usage": {
+        "prompt_tokens": 252,
+        "completion_tokens": 44,
+        "total_tokens": 296
+      },
+      "estimated_cost_usd": 6.419999999999999e-05
+    },
+    {
+      "example_id": "0000000000-24-009758::0001193125-24-214663::2",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has committed to revising and expanding footnote (1) to clarify the difference between the non-GAAP adjustments to net income attributable to ordinary shareholders and the adjustments to reconcile net income to non-GAAP net income, addressing the SEC's request.",
+      "correct": false,
+      "latency_sec": 1.557,
+      "usage": {
+        "prompt_tokens": 601,
+        "completion_tokens": 65,
+        "total_tokens": 666
+      },
+      "estimated_cost_usd": 0.00012915
+    },
+    {
+      "example_id": "0000000000-24-009758::0001193125-24-214663::3",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has committed to removing the 'total segments adjusted EBITA' measure from its future filings, which directly addresses the SEC's request to eliminate the non-GAAP measure that includes inconsistent adjustments.",
+      "correct": false,
+      "latency_sec": 1.126,
+      "usage": {
+        "prompt_tokens": 402,
+        "completion_tokens": 53,
+        "total_tokens": 455
+      },
+      "estimated_cost_usd": 9.21e-05
+    },
+    {
+      "example_id": "0000000000-24-010541::0000912562-24-000052::1",
+      "gold": "unresolved",
+      "pred": "resolved",
+      "raw_label": "resolved",
+      "reason": "The company has committed to disclosing and discussing the impact of favorable and unfavorable changes in contract estimates and estimated contract losses in future filings, as well as revising the notes to the financial statements to indicate that there were no changes in estimates related to any individual contract that materially impacted the financial statements during the periods presented.",
+      "correct": false,
+      "latency_sec": 1.45,
+      "usage": {
+        "prompt_tokens": 712,
+        "completion_tokens": 77,
+        "total_tokens": 789
+      },
+      "estimated_cost_usd": 0.00015299999999999998
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::1",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not disclose the address of its principal executive offices in its response, nor did it commit to doing so in its next Exchange Act report as requested by the SEC.",
+      "correct": true,
+      "latency_sec": 1.167,
+      "usage": {
+        "prompt_tokens": 623,
+        "completion_tokens": 50,
+        "total_tokens": 673
+      },
+      "estimated_cost_usd": 0.00012345
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::10",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide the requested information or a detailed analysis regarding blockchain rewards, staking processes, or revenue recognition policies as outlined in the SEC comment. Instead, it only acknowledges the receipt of the SEC's comment and states that a response will be provided by a future date.",
+      "correct": true,
+      "latency_sec": 1.57,
+      "usage": {
+        "prompt_tokens": 1015,
+        "completion_tokens": 71,
+        "total_tokens": 1086
+      },
+      "estimated_cost_usd": 0.00019485000000000002
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::11",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide the requested narrative discussion of different transaction fee levels charged to consumer and institutional customers, nor does it address the basis for charging different fees or the consideration of key performance indicators related to transaction fee levels.",
+      "correct": true,
+      "latency_sec": 1.289,
+      "usage": {
+        "prompt_tokens": 649,
+        "completion_tokens": 60,
+        "total_tokens": 709
+      },
+      "estimated_cost_usd": 0.00013335
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::12",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide any current, concrete disclosure or action regarding the disaggregated disclosure for safeguarding obligations related to custodial services, which was specifically requested by the SEC.",
+      "correct": true,
+      "latency_sec": 1.724,
+      "usage": {
+        "prompt_tokens": 625,
+        "completion_tokens": 51,
+        "total_tokens": 676
+      },
+      "estimated_cost_usd": 0.00012435000000000001
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::13",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide any current, concrete disclosure or analysis regarding the need to provide KPIs specific to stablecoin revenue and blockchain rewards, as requested by the SEC. Instead, it only indicates that a response will be filed by a future date.",
+      "correct": true,
+      "latency_sec": 2.368,
+      "usage": {
+        "prompt_tokens": 606,
+        "completion_tokens": 66,
+        "total_tokens": 672
+      },
+      "estimated_cost_usd": 0.0001305
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::14",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide the requested expanded disclosure regarding how Adjusted EBITDA provides useful information to investors, nor does it indicate that such disclosure will be included in the upcoming Form 10-Q.",
+      "correct": true,
+      "latency_sec": 1.702,
+      "usage": {
+        "prompt_tokens": 589,
+        "completion_tokens": 54,
+        "total_tokens": 643
+      },
+      "estimated_cost_usd": 0.00012074999999999998
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::15",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide a current, concrete disclosure or action addressing the SEC's request to remove the non-GAAP adjustment for impairment on crypto assets still held in the reconciliation of Adjusted EBITDA. Instead, it only indicates that a response will be filed by November 15, 2024, without addressing the specific issue raised.",
+      "correct": true,
+      "latency_sec": 3.078,
+      "usage": {
+        "prompt_tokens": 681,
+        "completion_tokens": 82,
+        "total_tokens": 763
+      },
+      "estimated_cost_usd": 0.00015135
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::16",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide the requested detailed description of the nature of crypto assets held for investment, the investment strategy for these assets, their use in operations, or the circumstances that would change their plans to hold these assets long-term.",
+      "correct": true,
+      "latency_sec": 1.837,
+      "usage": {
+        "prompt_tokens": 628,
+        "completion_tokens": 62,
+        "total_tokens": 690
+      },
+      "estimated_cost_usd": 0.0001314
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::18",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide a current, concrete disclosure or analysis addressing the SEC's request to present and quantify each non-GAAP adjustment within the Other (income) expense, net line item separately, nor does it explain how the components relate to operations as requested.",
+      "correct": true,
+      "latency_sec": 1.224,
+      "usage": {
+        "prompt_tokens": 754,
+        "completion_tokens": 68,
+        "total_tokens": 822
+      },
+      "estimated_cost_usd": 0.0001539
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::19",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not confirm that it will revise the risk factor disclosure in future filings as requested by the SEC, nor does it address the need to clarify the reference to being deemed a security by a federal court.",
+      "correct": true,
+      "latency_sec": 1.155,
+      "usage": {
+        "prompt_tokens": 734,
+        "completion_tokens": 58,
+        "total_tokens": 792
+      },
+      "estimated_cost_usd": 0.0001449
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::2",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide a current, concrete disclosure or action addressing the SEC's request to expand the transaction expense accounting policy disclosure and to consider providing a table disaggregating the income statement line item.",
+      "correct": true,
+      "latency_sec": 1.051,
+      "usage": {
+        "prompt_tokens": 715,
+        "completion_tokens": 56,
+        "total_tokens": 771
+      },
+      "estimated_cost_usd": 0.00014085
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::20",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide a concrete disclosure or action addressing the SEC's request for detailed information about the insurance coverage and potential liability for losses. It only states that a response will be filed by November 15, 2024, without addressing the specific concerns raised in the SEC comment.",
+      "correct": true,
+      "latency_sec": 6.525,
+      "usage": {
+        "prompt_tokens": 768,
+        "completion_tokens": 73,
+        "total_tokens": 841
+      },
+      "estimated_cost_usd": 0.000159
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::21",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide the requested detailed description of the current functionality of the NFT marketplace, instead indicating that a response will be provided by a future date.",
+      "correct": true,
+      "latency_sec": 1.159,
+      "usage": {
+        "prompt_tokens": 565,
+        "completion_tokens": 47,
+        "total_tokens": 612
+      },
+      "estimated_cost_usd": 0.00011294999999999998
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::3",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company did not provide a specific timeframe for what it considers 'near immediate' for converting crypto assets to cash, nor did it address the reasons for the recorded gain and loss on crypto assets held for operations. Additionally, the company did not explain how it determined compliance with ASC 350-60-50-5 regarding the disclosures required.",
+      "correct": true,
+      "latency_sec": 1.474,
+      "usage": {
+        "prompt_tokens": 768,
+        "completion_tokens": 83,
+        "total_tokens": 851
+      },
+      "estimated_cost_usd": 0.000165
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::4",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address how the presentation of crypto assets is consistent with ASC Topic 350-60-45-1, nor does it provide any current, concrete disclosure or action regarding the presentation of these assets.",
+      "correct": true,
+      "latency_sec": 1.267,
+      "usage": {
+        "prompt_tokens": 588,
+        "completion_tokens": 59,
+        "total_tokens": 647
+      },
+      "estimated_cost_usd": 0.0001236
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::6",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide any current, concrete disclosure or analysis addressing how they account for Prime Lending interest income and fees, including the specifics of interest income accrual, differences in consideration value, and recognition in the statements of operations. The response only indicates that they will file a response by a future date without addressing the SEC's requests.",
+      "correct": true,
+      "latency_sec": 1.868,
+      "usage": {
+        "prompt_tokens": 704,
+        "completion_tokens": 83,
+        "total_tokens": 787
+      },
+      "estimated_cost_usd": 0.00015539999999999998
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::7",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide a current, concrete disclosure, action, analysis, revision, or deletion that addresses the SEC's request regarding the disclosure of collateralized assets and the accounting treatment of fiat held in Coinbase accounts designated as collateral.",
+      "correct": true,
+      "latency_sec": 1.413,
+      "usage": {
+        "prompt_tokens": 587,
+        "completion_tokens": 62,
+        "total_tokens": 649
+      },
+      "estimated_cost_usd": 0.00012524999999999998
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::8",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not address the SEC's request regarding the consideration of counterparty risk in accounting for loaned USDC, nor does it provide information about any USDC pledged as collateral, including the amounts. The response indicates a future filing date without providing the requested information at this time.",
+      "correct": true,
+      "latency_sec": 1.637,
+      "usage": {
+        "prompt_tokens": 652,
+        "completion_tokens": 73,
+        "total_tokens": 725
+      },
+      "estimated_cost_usd": 0.0001416
+    },
+    {
+      "example_id": "0000000000-24-011732::0001193125-24-252184::9",
+      "gold": "unresolved",
+      "pred": "unresolved",
+      "raw_label": "unresolved",
+      "reason": "The company response does not provide any current, concrete disclosure or analysis regarding how they account for fees on crypto asset borrowings, when borrowing fees are accrued, or how they account for differences between the value of consideration on the date of accrual and date of settlement. It also does not clarify where borrowing fees are recognized in the statements of operations.",
+      "correct": true,
+      "latency_sec": 1.654,
+      "usage": {
+        "prompt_tokens": 622,
+        "completion_tokens": 84,
+        "total_tokens": 706
+      },
+      "estimated_cost_usd": 0.0001437
+    }
+  ]
+}

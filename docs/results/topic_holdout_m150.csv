@@ -1,0 +1,5 @@
+method,accuracy,macro_f1,resolved_f1,unresolved_f1,unresolved_precision,unresolved_recall
+Baseline prompt,0.4400,0.4397,0.4531,0.4262,0.9630,0.2737
+MIPROv2,0.5760,0.5649,0.4952,0.6345,0.9200,0.4842
+GEPA-scalar,0.5280,0.5236,0.4779,0.5693,0.9286,0.4105
+GEPA-full,0.7840,0.7344,0.6197,0.8492,0.9048,0.8000

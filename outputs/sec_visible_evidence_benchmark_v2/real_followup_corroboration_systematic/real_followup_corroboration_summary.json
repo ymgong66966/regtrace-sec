@@ -1,0 +1,173 @@
+{
+  "joined_examples": 472,
+  "verified_followup_examples": 236,
+  "judged_examples": 236,
+  "judge_errors": 0,
+  "visible_label_counts": {
+    "resolved": 153,
+    "unresolved": 319
+  },
+  "followup_by_visible_label": {
+    "unresolved": {
+      "explicit_reissue": 45,
+      "requests_missing_detail": 98,
+      "narrows_unmet_requirement": 17
+    },
+    "resolved": {
+      "narrows_unmet_requirement": 6,
+      "requests_missing_detail": 51,
+      "explicit_reissue": 19
+    }
+  },
+  "corroboration_label_counts": {
+    "direct_corroboration": 105,
+    "contradiction_or_label_concern": 2,
+    "weak_or_no_corroboration": 104,
+    "partial_corroboration": 11,
+    "new_or_expanded_requirement": 12,
+    "procedural_or_document_request": 2
+  },
+  "corroboration_by_visible_label": {
+    "unresolved": {
+      "direct_corroboration": 99,
+      "weak_or_no_corroboration": 44,
+      "new_or_expanded_requirement": 6,
+      "partial_corroboration": 10,
+      "procedural_or_document_request": 1
+    },
+    "resolved": {
+      "contradiction_or_label_concern": 2,
+      "weak_or_no_corroboration": 60,
+      "partial_corroboration": 1,
+      "new_or_expanded_requirement": 6,
+      "direct_corroboration": 6,
+      "procedural_or_document_request": 1
+    }
+  },
+  "corroboration_by_gap_type": {
+    "missing_specific_disclosure": {
+      "direct_corroboration": 66,
+      "weak_or_no_corroboration": 31,
+      "new_or_expanded_requirement": 5,
+      "partial_corroboration": 9
+    },
+    "resolved_but_regulator_requested_more_detail": {
+      "direct_corroboration": 28,
+      "weak_or_no_corroboration": 8,
+      "new_or_expanded_requirement": 1,
+      "partial_corroboration": 1
+    },
+    "resolved_visible_evidence": {
+      "contradiction_or_label_concern": 2,
+      "weak_or_no_corroboration": 60,
+      "partial_corroboration": 1,
+      "new_or_expanded_requirement": 6,
+      "direct_corroboration": 6,
+      "procedural_or_document_request": 1
+    },
+    "incomplete_accounting_analysis": {
+      "procedural_or_document_request": 1,
+      "weak_or_no_corroboration": 5,
+      "direct_corroboration": 5
+    }
+  },
+  "corroboration_by_issue_category": {
+    "revenue_recognition": {
+      "direct_corroboration": 15,
+      "weak_or_no_corroboration": 20,
+      "new_or_expanded_requirement": 1,
+      "partial_corroboration": 1
+    },
+    "other": {
+      "contradiction_or_label_concern": 2,
+      "weak_or_no_corroboration": 37,
+      "direct_corroboration": 34,
+      "new_or_expanded_requirement": 6,
+      "partial_corroboration": 6
+    },
+    "spac_disclosure": {
+      "direct_corroboration": 19,
+      "weak_or_no_corroboration": 17,
+      "new_or_expanded_requirement": 1,
+      "partial_corroboration": 2
+    },
+    "risk_factor": {
+      "partial_corroboration": 1,
+      "direct_corroboration": 25,
+      "weak_or_no_corroboration": 21,
+      "new_or_expanded_requirement": 3
+    },
+    "crypto": {
+      "direct_corroboration": 4,
+      "weak_or_no_corroboration": 6,
+      "procedural_or_document_request": 2,
+      "partial_corroboration": 1
+    },
+    "cybersecurity": {
+      "direct_corroboration": 1
+    },
+    "non_gaap": {
+      "weak_or_no_corroboration": 3,
+      "new_or_expanded_requirement": 1,
+      "direct_corroboration": 7
+    }
+  },
+  "method_win_corroboration": {
+    "full_correct_baseline_wrong_unresolved": {
+      "n_with_followup": 24,
+      "n_judged": 24,
+      "direct_or_partial": 18,
+      "direct_or_partial_rate": 0.75,
+      "labels": {
+        "weak_or_no_corroboration": 6,
+        "direct_corroboration": 17,
+        "partial_corroboration": 1
+      }
+    },
+    "full_correct_mipro_wrong_unresolved": {
+      "n_with_followup": 9,
+      "n_judged": 9,
+      "direct_or_partial": 6,
+      "direct_or_partial_rate": 0.6666666666666666,
+      "labels": {
+        "weak_or_no_corroboration": 3,
+        "direct_corroboration": 6
+      }
+    },
+    "full_correct_scalar_wrong_unresolved": {
+      "n_with_followup": 3,
+      "n_judged": 3,
+      "direct_or_partial": 2,
+      "direct_or_partial_rate": 0.6666666666666666,
+      "labels": {
+        "weak_or_no_corroboration": 1,
+        "direct_corroboration": 2
+      }
+    },
+    "full_false_positive_resolved": {
+      "n_with_followup": 7,
+      "n_judged": 7,
+      "direct_or_partial": 0,
+      "direct_or_partial_rate": 0.0,
+      "labels": {
+        "weak_or_no_corroboration": 7
+      }
+    },
+    "full_false_negative_unresolved": {
+      "n_with_followup": 8,
+      "n_judged": 8,
+      "direct_or_partial": 4,
+      "direct_or_partial_rate": 0.5,
+      "labels": {
+        "weak_or_no_corroboration": 3,
+        "direct_corroboration": 4,
+        "new_or_expanded_requirement": 1
+      }
+    }
+  },
+  "token_usage": {
+    "prompt_tokens": 300337,
+    "completion_tokens": 169602,
+    "total_tokens": 469939
+  }
+}

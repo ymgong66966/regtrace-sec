@@ -1,0 +1,7 @@
+method,feedback_variant,training_feedback_signal,accuracy,macro_f1,resolved_f1,unresolved_f1,unresolved_precision,unresolved_recall
+Full feedback,full,Gold label + evidence relevance + supporting quote / resolution basis + visible unmet requirement,0.7842,0.7563,0.6739,0.8387,0.8667,0.8125
+No evidence rationale,no_evidence,Removes supporting quote / evidence rationale from training feedback,0.7122,0.6818,0.5833,0.7802,0.8256,0.7396
+No unmet requirement,no_unmet_requirement,Removes the explicit missing requirement or resolution basis from training feedback,0.741,0.7076,0.6087,0.8065,0.8333,0.7812
+Request + action only,request_action_only,"Keeps only SEC request and company action; removes gap type, evidence, and unmet-requirement details",0.7842,0.7238,0.5946,0.8529,0.8056,0.9062
+GEPA-scalar,scalar,Scalar correctness only,0.705,0.6754,0.5773,0.7735,0.8235,0.7292
+GEPA-category,category,Coarse category feedback,0.5971,0.5946,0.5625,0.6267,0.8704,0.4896

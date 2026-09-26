@@ -1,0 +1,5 @@
+real_feedback_relation,resolved,unresolved,total
+no_verified_same_topic_followup,77,159,236
+requests_missing_detail,51,98,149
+explicit_reissue,19,45,64
+narrows_unmet_requirement,6,17,23

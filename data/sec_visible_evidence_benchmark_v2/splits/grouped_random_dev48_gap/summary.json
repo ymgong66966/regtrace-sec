@@ -1,0 +1,89 @@
+{
+  "source_split_root": "data/sec_visible_evidence_benchmark_v2/splits/grouped_random",
+  "fold": 0,
+  "seed": 17,
+  "dev_size_target": 48,
+  "label_field": "visible_evidence_resolution_label",
+  "strata_field": "gap_type",
+  "train": {
+    "rows": 285,
+    "review_threads": 92,
+    "companies": 79,
+    "labels": {
+      "resolved": 94,
+      "unresolved": 191
+    },
+    "strata": {
+      "resolved_visible_evidence": 94,
+      "missing_quantification": 35,
+      "missing_specific_disclosure": 94,
+      "resolved_but_regulator_requested_more_detail": 25,
+      "missing_exhibit_or_document": 12,
+      "incomplete_legal_or_regulatory_analysis": 16,
+      "incomplete_accounting_analysis": 9
+    },
+    "issue_categories": {
+      "other": 107,
+      "revenue_recognition": 40,
+      "spac_disclosure": 42,
+      "risk_factor": 67,
+      "crypto": 20,
+      "non_gaap": 9
+    }
+  },
+  "dev": {
+    "rows": 48,
+    "review_threads": 24,
+    "companies": 22,
+    "labels": {
+      "unresolved": 32,
+      "resolved": 16
+    },
+    "strata": {
+      "incomplete_accounting_analysis": 4,
+      "resolved_visible_evidence": 16,
+      "missing_quantification": 5,
+      "resolved_but_regulator_requested_more_detail": 5,
+      "visible_evidence_gap": 3,
+      "missing_exhibit_or_document": 5,
+      "incomplete_legal_or_regulatory_analysis": 5,
+      "missing_specific_disclosure": 5
+    },
+    "issue_categories": {
+      "non_gaap": 3,
+      "revenue_recognition": 7,
+      "risk_factor": 10,
+      "other": 20,
+      "spac_disclosure": 7,
+      "crypto": 1
+    }
+  },
+  "test": {
+    "rows": 139,
+    "review_threads": 11,
+    "companies": 11,
+    "labels": {
+      "resolved": 43,
+      "unresolved": 96
+    },
+    "strata": {
+      "resolved_visible_evidence": 43,
+      "missing_specific_disclosure": 41,
+      "missing_quantification": 19,
+      "resolved_but_regulator_requested_more_detail": 8,
+      "incomplete_accounting_analysis": 12,
+      "missing_exhibit_or_document": 12,
+      "incomplete_legal_or_regulatory_analysis": 4
+    },
+    "issue_categories": {
+      "spac_disclosure": 29,
+      "other": 56,
+      "revenue_recognition": 28,
+      "risk_factor": 14,
+      "crypto": 7,
+      "cybersecurity": 1,
+      "non_gaap": 4
+    }
+  },
+  "test_example_ids_match_source": true
+}

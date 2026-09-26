@@ -1,0 +1,603 @@
+{
+  "name": "SEC Visible-Evidence Resolution Benchmark v2",
+  "created": "2026-06-24",
+  "source_input": "data/sec_amended_evidence_expanded_v1/reranked_full_v1/evidence_sample_reranked.jsonl",
+  "out_dir": "data/sec_visible_evidence_benchmark_v2",
+  "eligibility": {
+    "amended_evidence_available": true,
+    "label_field": "visible_evidence_resolution_label",
+    "allowed_labels": [
+      "resolved",
+      "unresolved"
+    ],
+    "allowed_evidence_relevance": [
+      "directly_addresses",
+      "partially_addresses"
+    ],
+    "revision_claim_cases": true
+  },
+  "counts": {
+    "rows": 472,
+    "review_threads": 109,
+    "companies": 95,
+    "labels": {
+      "resolved": 153,
+      "unresolved": 319
+    },
+    "issue_categories": {
+      "spac_disclosure": 78,
+      "other": 183,
+      "revenue_recognition": 75,
+      "risk_factor": 91,
+      "crypto": 28,
+      "cybersecurity": 1,
+      "non_gaap": 16
+    },
+    "gap_types": {
+      "resolved_visible_evidence": 153,
+      "missing_exhibit_or_document": 29,
+      "resolved_but_regulator_requested_more_detail": 38,
+      "missing_quantification": 59,
+      "incomplete_legal_or_regulatory_analysis": 25,
+      "missing_specific_disclosure": 140,
+      "incomplete_accounting_analysis": 25,
+      "visible_evidence_gap": 3
+    },
+    "amended_form_families": {
+      "registration_merger_spac": 184,
+      "registration_ipo": 118,
+      "proxy": 17,
+      "quarterly_report": 42,
+      "annual_report": 32,
+      "current_report": 8,
+      "other": 71
+    },
+    "reviewed_form_families": {
+      "registration_merger_spac": 194,
+      "registration_ipo": 130,
+      "other": 77,
+      "annual_report": 69,
+      "quarterly_report": 1,
+      "proxy": 1
+    },
+    "evidence_relevance": {
+      "directly_addresses": 303,
+      "partially_addresses": 169
+    },
+    "response_years": {
+      "2022": 1,
+      "2023": 327,
+      "2024": 140,
+      "2025": 4
+    },
+    "real_followup": {
+      "no": 236,
+      "yes": 236
+    }
+  },
+  "splits": {
+    "grouped_random": {
+      "train": {
+        "rows": 229,
+        "review_threads": 93,
+        "companies": 80,
+        "labels": {
+          "resolved": 89,
+          "unresolved": 140
+        },
+        "issue_categories": {
+          "other": 87,
+          "revenue_recognition": 30,
+          "spac_disclosure": 32,
+          "risk_factor": 61,
+          "crypto": 8,
+          "non_gaap": 11
+        },
+        "gap_types": {
+          "resolved_visible_evidence": 89,
+          "missing_quantification": 29,
+          "missing_specific_disclosure": 54,
+          "resolved_but_regulator_requested_more_detail": 23,
+          "missing_exhibit_or_document": 10,
+          "incomplete_legal_or_regulatory_analysis": 14,
+          "incomplete_accounting_analysis": 10
+        },
+        "amended_form_families": {
+          "registration_ipo": 101,
+          "registration_merger_spac": 29,
+          "proxy": 16,
+          "annual_report": 19,
+          "other": 40,
+          "quarterly_report": 20,
+          "current_report": 4
+        },
+        "reviewed_form_families": {
+          "registration_ipo": 111,
+          "registration_merger_spac": 30,
+          "other": 50,
+          "annual_report": 36,
+          "quarterly_report": 1,
+          "proxy": 1
+        },
+        "evidence_relevance": {
+          "directly_addresses": 151,
+          "partially_addresses": 78
+        },
+        "response_years": {
+          "2022": 1,
+          "2023": 140,
+          "2024": 84,
+          "2025": 4
+        },
+        "real_followup": {
+          "yes": 121,
+          "no": 108
+        }
+      },
+      "dev": {
+        "rows": 104,
+        "review_threads": 5,
+        "companies": 5,
+        "labels": {
+          "resolved": 21,
+          "unresolved": 83
+        },
+        "issue_categories": {
+          "spac_disclosure": 17,
+          "other": 40,
+          "revenue_recognition": 17,
+          "risk_factor": 16,
+          "crypto": 13,
+          "non_gaap": 1
+        },
+        "gap_types": {
+          "resolved_visible_evidence": 21,
+          "missing_exhibit_or_document": 7,
+          "resolved_but_regulator_requested_more_detail": 7,
+          "missing_quantification": 11,
+          "incomplete_legal_or_regulatory_analysis": 7,
+          "missing_specific_disclosure": 45,
+          "visible_evidence_gap": 3,
+          "incomplete_accounting_analysis": 3
+        },
+        "amended_form_families": {
+          "registration_merger_spac": 65,
+          "registration_ipo": 10,
+          "quarterly_report": 1,
+          "annual_report": 1,
+          "other": 27
+        },
+        "reviewed_form_families": {
+          "registration_merger_spac": 66,
+          "registration_ipo": 11,
+          "other": 27
+        },
+        "evidence_relevance": {
+          "directly_addresses": 59,
+          "partially_addresses": 45
+        },
+        "response_years": {
+          "2023": 65,
+          "2024": 39
+        },
+        "real_followup": {
+          "no": 49,
+          "yes": 55
+        }
+      },
+      "test": {
+        "rows": 139,
+        "review_threads": 11,
+        "companies": 11,
+        "labels": {
+          "resolved": 43,
+          "unresolved": 96
+        },
+        "issue_categories": {
+          "spac_disclosure": 29,
+          "other": 56,
+          "revenue_recognition": 28,
+          "risk_factor": 14,
+          "crypto": 7,
+          "cybersecurity": 1,
+          "non_gaap": 4
+        },
+        "gap_types": {
+          "resolved_visible_evidence": 43,
+          "missing_specific_disclosure": 41,
+          "missing_quantification": 19,
+          "resolved_but_regulator_requested_more_detail": 8,
+          "incomplete_accounting_analysis": 12,
+          "missing_exhibit_or_document": 12,
+          "incomplete_legal_or_regulatory_analysis": 4
+        },
+        "amended_form_families": {
+          "registration_merger_spac": 90,
+          "current_report": 4,
+          "annual_report": 12,
+          "quarterly_report": 21,
+          "proxy": 1,
+          "other": 4,
+          "registration_ipo": 7
+        },
+        "reviewed_form_families": {
+          "registration_merger_spac": 98,
+          "annual_report": 33,
+          "registration_ipo": 8
+        },
+        "evidence_relevance": {
+          "directly_addresses": 93,
+          "partially_addresses": 46
+        },
+        "response_years": {
+          "2023": 122,
+          "2024": 17
+        },
+        "real_followup": {
+          "yes": 60,
+          "no": 79
+        }
+      }
+    },
+    "time_train_before_2024": {
+      "train": {
+        "rows": 264,
+        "review_threads": 62,
+        "companies": 53,
+        "labels": {
+          "resolved": 89,
+          "unresolved": 175
+        },
+        "issue_categories": {
+          "other": 112,
+          "revenue_recognition": 37,
+          "spac_disclosure": 43,
+          "risk_factor": 48,
+          "crypto": 14,
+          "cybersecurity": 1,
+          "non_gaap": 9
+        },
+        "gap_types": {
+          "resolved_visible_evidence": 89,
+          "missing_quantification": 37,
+          "missing_specific_disclosure": 69,
+          "resolved_but_regulator_requested_more_detail": 21,
+          "incomplete_accounting_analysis": 12,
+          "missing_exhibit_or_document": 21,
+          "incomplete_legal_or_regulatory_analysis": 13,
+          "visible_evidence_gap": 2
+        },
+        "amended_form_families": {
+          "registration_ipo": 82,
+          "registration_merger_spac": 103,
+          "proxy": 14,
+          "quarterly_report": 23,
+          "annual_report": 12,
+          "current_report": 7,
+          "other": 23
+        },
+        "reviewed_form_families": {
+          "registration_ipo": 90,
+          "registration_merger_spac": 111,
+          "other": 31,
+          "annual_report": 31,
+          "quarterly_report": 1
+        },
+        "evidence_relevance": {
+          "directly_addresses": 167,
+          "partially_addresses": 97
+        },
+        "response_years": {
+          "2022": 1,
+          "2023": 263
+        },
+        "real_followup": {
+          "yes": 115,
+          "no": 149
+        }
+      },
+      "dev": {
+        "rows": 64,
+        "review_threads": 3,
+        "companies": 3,
+        "labels": {
+          "resolved": 17,
+          "unresolved": 47
+        },
+        "issue_categories": {
+          "spac_disclosure": 23,
+          "other": 23,
+          "revenue_recognition": 7,
+          "risk_factor": 7,
+          "crypto": 4
+        },
+        "gap_types": {
+          "resolved_visible_evidence": 17,
+          "missing_exhibit_or_document": 4,
+          "resolved_but_regulator_requested_more_detail": 6,
+          "missing_quantification": 8,
+          "incomplete_legal_or_regulatory_analysis": 4,
+          "missing_specific_disclosure": 22,
+          "incomplete_accounting_analysis": 2,
+          "visible_evidence_gap": 1
+        },
+        "amended_form_families": {
+          "registration_merger_spac": 62,
+          "annual_report": 1,
+          "proxy": 1
+        },
+        "reviewed_form_families": {
+          "registration_merger_spac": 64
+        },
+        "evidence_relevance": {
+          "directly_addresses": 38,
+          "partially_addresses": 26
+        },
+        "response_years": {
+          "2023": 64
+        },
+        "real_followup": {
+          "no": 26,
+          "yes": 38
+        }
+      },
+      "test": {
+        "rows": 144,
+        "review_threads": 53,
+        "companies": 51,
+        "labels": {
+          "unresolved": 97,
+          "resolved": 47
+        },
+        "issue_categories": {
+          "other": 48,
+          "revenue_recognition": 31,
+          "risk_factor": 36,
+          "spac_disclosure": 12,
+          "crypto": 10,
+          "non_gaap": 7
+        },
+        "gap_types": {
+          "missing_specific_disclosure": 49,
+          "missing_exhibit_or_document": 4,
+          "missing_quantification": 14,
+          "resolved_but_regulator_requested_more_detail": 11,
+          "resolved_visible_evidence": 47,
+          "incomplete_accounting_analysis": 11,
+          "incomplete_legal_or_regulatory_analysis": 8
+        },
+        "amended_form_families": {
+          "registration_merger_spac": 19,
+          "quarterly_report": 19,
+          "other": 48,
+          "registration_ipo": 36,
+          "annual_report": 19,
+          "proxy": 2,
+          "current_report": 1
+        },
+        "reviewed_form_families": {
+          "registration_merger_spac": 19,
+          "annual_report": 38,
+          "other": 46,
+          "registration_ipo": 40,
+          "proxy": 1
+        },
+        "evidence_relevance": {
+          "partially_addresses": 46,
+          "directly_addresses": 98
+        },
+        "response_years": {
+          "2024": 140,
+          "2025": 4
+        },
+        "real_followup": {
+          "yes": 83,
+          "no": 61
+        }
+      }
+    },
+    "topic_holdout": {
+      "train": {
+        "rows": 279,
+        "review_threads": 84,
+        "companies": 72,
+        "labels": {
+          "resolved": 103,
+          "unresolved": 176
+        },
+        "issue_categories": {
+          "other": 121,
+          "revenue_recognition": 38,
+          "spac_disclosure": 52,
+          "risk_factor": 67,
+          "cybersecurity": 1
+        },
+        "gap_types": {
+          "resolved_visible_evidence": 103,
+          "missing_quantification": 32,
+          "missing_specific_disclosure": 74,
+          "resolved_but_regulator_requested_more_detail": 26,
+          "incomplete_accounting_analysis": 10,
+          "missing_exhibit_or_document": 18,
+          "incomplete_legal_or_regulatory_analysis": 16
+        },
+        "amended_form_families": {
+          "registration_ipo": 109,
+          "registration_merger_spac": 89,
+          "proxy": 9,
+          "quarterly_report": 19,
+          "annual_report": 16,
+          "current_report": 3,
+          "other": 34
+        },
+        "reviewed_form_families": {
+          "registration_ipo": 120,
+          "registration_merger_spac": 94,
+          "other": 38,
+          "annual_report": 26,
+          "quarterly_report": 1
+        },
+        "evidence_relevance": {
+          "directly_addresses": 187,
+          "partially_addresses": 92
+        },
+        "response_years": {
+          "2022": 1,
+          "2023": 202,
+          "2024": 73,
+          "2025": 3
+        },
+        "real_followup": {
+          "yes": 141,
+          "no": 138
+        }
+      },
+      "dev": {
+        "rows": 68,
+        "review_threads": 3,
+        "companies": 3,
+        "labels": {
+          "resolved": 20,
+          "unresolved": 48
+        },
+        "issue_categories": {
+          "spac_disclosure": 23,
+          "other": 26,
+          "revenue_recognition": 15,
+          "risk_factor": 4
+        },
+        "gap_types": {
+          "resolved_visible_evidence": 20,
+          "missing_exhibit_or_document": 6,
+          "resolved_but_regulator_requested_more_detail": 6,
+          "missing_quantification": 10,
+          "incomplete_legal_or_regulatory_analysis": 2,
+          "missing_specific_disclosure": 21,
+          "incomplete_accounting_analysis": 3
+        },
+        "amended_form_families": {
+          "registration_merger_spac": 55,
+          "annual_report": 10,
+          "proxy": 1,
+          "quarterly_report": 2
+        },
+        "reviewed_form_families": {
+          "registration_merger_spac": 57,
+          "annual_report": 11
+        },
+        "evidence_relevance": {
+          "directly_addresses": 44,
+          "partially_addresses": 24
+        },
+        "response_years": {
+          "2023": 52,
+          "2024": 16
+        },
+        "real_followup": {
+          "no": 30,
+          "yes": 38
+        }
+      },
+      "test": {
+        "rows": 125,
+        "review_threads": 30,
+        "companies": 28,
+        "labels": {
+          "unresolved": 95,
+          "resolved": 30
+        },
+        "issue_categories": {
+          "revenue_recognition": 22,
+          "crypto": 28,
+          "other": 36,
+          "spac_disclosure": 3,
+          "non_gaap": 16,
+          "risk_factor": 20
+        },
+        "gap_types": {
+          "missing_quantification": 17,
+          "resolved_visible_evidence": 30,
+          "missing_specific_disclosure": 45,
+          "incomplete_legal_or_regulatory_analysis": 7,
+          "missing_exhibit_or_document": 5,
+          "visible_evidence_gap": 3,
+          "incomplete_accounting_analysis": 12,
+          "resolved_but_regulator_requested_more_detail": 6
+        },
+        "amended_form_families": {
+          "proxy": 7,
+          "current_report": 5,
+          "annual_report": 6,
+          "registration_merger_spac": 40,
+          "quarterly_report": 21,
+          "registration_ipo": 9,
+          "other": 37
+        },
+        "reviewed_form_families": {
+          "other": 39,
+          "annual_report": 32,
+          "registration_merger_spac": 43,
+          "registration_ipo": 10,
+          "proxy": 1
+        },
+        "evidence_relevance": {
+          "directly_addresses": 72,
+          "partially_addresses": 53
+        },
+        "response_years": {
+          "2023": 73,
+          "2024": 51,
+          "2025": 1
+        },
+        "real_followup": {
+          "no": 68,
+          "yes": 57
+        }
+      }
+    }
+  },
+  "fields": {
+    "model_inputs": [
+      "sec_comment",
+      "company_response",
+      "retrieved_snippets",
+      "amended_evidence_best_snippet"
+    ],
+    "labels": [
+      "visible_evidence_resolution_label",
+      "event_followup_label",
+      "regulator_followup_label"
+    ],
+    "metadata": [
+      "example_id",
+      "review_thread_id",
+      "cik",
+      "company_name",
+      "review_file_no",
+      "review_subject",
+      "reviewed_form_family",
+      "amended_form",
+      "issue_category",
+      "gap_type",
+      "upload_year",
+      "response_year",
+      "amended_filing_year",
+      "has_real_followup"
+    ],
+    "training_feedback_only": [
+      "scalar_feedback",
+      "category_feedback",
+      "full_feedback",
+      "feedback_sec_request",
+      "feedback_company_action",
+      "feedback_evidence_summary",
+      "feedback_unmet_requirement",
+      "real_followup_text"
+    ]
+  },
+  "notes": [
+    "This is a retrieval-conditioned benchmark. It evaluates reasoning over retrieved amended evidence, not end-to-end EDGAR retrieval recall.",
+    "Gold adjudication and feedback fields must not be included in test-time prompts.",
+    "Primary leakage control should use review_thread_id, not only response accession."
+  ]
+}

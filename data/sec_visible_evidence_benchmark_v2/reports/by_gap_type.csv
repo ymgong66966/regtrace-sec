@@ -1,0 +1,9 @@
+gap_type,resolved,unresolved,total
+resolved_visible_evidence,153,0,153
+missing_specific_disclosure,0,140,140
+missing_quantification,0,59,59
+resolved_but_regulator_requested_more_detail,0,38,38
+missing_exhibit_or_document,0,29,29
+incomplete_accounting_analysis,0,25,25
+incomplete_legal_or_regulatory_analysis,0,25,25
+visible_evidence_gap,0,3,3
