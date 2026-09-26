@@ -35,7 +35,7 @@ def main() -> int:
     )
     parser.add_argument(
         "--out-dir",
-        default="docs/sec_visible_evidence_paper_artifacts/review_response",
+        default="docs/review_response",
     )
     args = parser.parse_args()
 
