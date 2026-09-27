@@ -1,0 +1,55 @@
+{
+  "split_dir": "data/sec_visible_evidence_benchmark_v2/splits/grouped_random_dev48_gap/fold_0",
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "text_mode": "response_only",
+  "representation": "separate_match",
+  "seed": 17,
+  "train_size": 285,
+  "dev_size": 48,
+  "test_size": 139,
+  "train_label_counts": {
+    "resolved": 94,
+    "unresolved": 191
+  },
+  "dev_label_counts": {
+    "unresolved": 32,
+    "resolved": 16
+  },
+  "test_label_counts": {
+    "resolved": 43,
+    "unresolved": 96
+  },
+  "tuned_head": {
+    "C": 0.03,
+    "dev_macro_f1": 0.4227994227994228
+  },
+  "metrics": [
+    {
+      "method": "Frozen encoder + logistic head",
+      "text_mode": "response_only",
+      "accuracy": 0.6115107913669064,
+      "macro_f1": 0.5744897959183674,
+      "resolved_precision": 0.4,
+      "resolved_recall": 0.5116279069767442,
+      "resolved_f1": 0.4489795918367347,
+      "resolved_support": 43,
+      "unresolved_precision": 0.75,
+      "unresolved_recall": 0.65625,
+      "unresolved_f1": 0.7,
+      "unresolved_support": 96,
+      "extra": {
+        "encoder": "sentence-transformers/all-MiniLM-L6-v2",
+        "embedding_dim": 1920,
+        "representation": "separate_match",
+        "C": 0.03,
+        "dev_macro_f1": 0.4227994227994228,
+        "no_generation_at_inference": true
+      }
+    }
+  ],
+  "model_input_fields": [
+    "sec_comment",
+    "company_response"
+  ],
+  "notes": "Frozen sentence encoder with a trained logistic scoring head; no text generation at inference time."
+}

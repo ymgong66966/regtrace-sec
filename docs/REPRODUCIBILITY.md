@@ -138,3 +138,31 @@ Grouped split test macro-F1:
 - TF-IDF logistic regression, oracle evidence summary: 0.858
 
 The raw-snippet result shows that a simple lexical supervised classifier does not explain the GEPA-full gain. The oracle-summary result is diagnostic: once evidence interpretation is distilled, the task becomes much easier.
+
+## Non-Generative Triage Scorers
+
+Two typed/scoring components are included to make the system framing reproducible.
+
+Frozen encoder scorer:
+
+- Script: `scripts/sec_encoder_scorer_baseline.py`
+- Encoder: `sentence-transformers/all-MiniLM-L6-v2`
+- Loading mode: local/cache-only in the Makefile target
+- Representation: `separate_match`
+- Features: request embedding, response embedding, evidence embedding, absolute request-evidence difference, and request-evidence product
+- Decision head: logistic regression with balanced class weights
+- Test-time input: SEC comment, company response, and raw retrieved amended-filing snippets
+- Result: 0.667 macro-F1, 0.789 unresolved F1
+
+Jev typed decision gate:
+
+- Script: `scripts/sec_jev_decision_eval.py`
+- Endpoint used: `https://thejevai.com/v1/systemone`
+- Model alias: `jev-latest`
+- Question type: `choice`
+- Choices: `resolved`, `unresolved`
+- Test-time input: SEC comment, company response, and top 3 raw retrieved amended-filing snippets
+- Result: 0.722 macro-F1, 0.868 unresolved F1, 0.958 unresolved recall
+- Usage on the 139-row grouped test set: 139 requests, 284,402 input tokens, 5,074 output tokens
+
+These scorers do not replace GEPA-full. They support the operational framing: cheap non-generative gates can triage high-risk responses, while the full feedback-trained reviewer handles deeper obligation-evidence reasoning.

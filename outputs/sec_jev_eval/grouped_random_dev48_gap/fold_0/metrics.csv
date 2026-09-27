@@ -1,0 +1,2 @@
+accuracy,macro_f1,resolved_precision,resolved_recall,resolved_f1,resolved_support,unresolved_precision,unresolved_recall,unresolved_f1,unresolved_support
+0.7985611510791367,0.7218410520297314,0.8260869565217391,0.4418604651162791,0.5757575757575758,43,0.7931034482758621,0.9583333333333334,0.8679245283018868,96

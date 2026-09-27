@@ -2,6 +2,7 @@ __pycache__/
 *.pyc
 .venv/
 .DS_Store
+.env
 outputs/dspy_cache/
 *.bin
 *.aux

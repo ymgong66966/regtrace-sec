@@ -31,7 +31,7 @@
 \newcommand{\dataset}{RegTrace-SEC}
 \newcommand{\framework}{RegTrace-Agent}
 
-\title{\framework{}: A Closed-Loop Framework for\\
+\title{\framework{}: A Context-to-Feedback Framework for\\
 Evidence-Grounded Regulatory Response Review}
 
 \author{Anonymous ACL submission}
@@ -39,26 +39,26 @@ Evidence-Grounded Regulatory Response Review}
 \begin{document}
 \maketitle
 \begin{abstract}
-Financial LLM systems are increasingly asked to decide whether an institution's response actually resolves a prior review request, yet most financial benchmarks still evaluate static QA, extraction, or classification. We introduce \framework{}, a framework for \task{}. Given a reviewer request, an organizational response, and revised artifacts, \framework{} retrieves evidence, decomposes the request into obligations, verifies visible gaps, constructs scalar/category/natural-language feedback, and optimizes a guarded reviewer policy. We instantiate the framework on SEC comment-letter review and construct \dataset{}, 472 public EDGAR examples with amended-filing evidence, visible-evidence labels, feedback fields, and later same-topic SEC follow-up signals. Experiments show that amended evidence is necessary, full natural-language feedback yields the strongest reviewer among handwritten prompting, MIPROv2, and scalar/category GEPA variants, and a guarded verifier derived from the learned policy improves further. Later SEC follow-up comments provide external validation for the benchmark labels, suggesting that regulator-style feedback is a useful learning signal for evidence-grounded compliance reviewers.
+Financial LLM systems are increasingly asked to judge whether an institution's response actually resolves a prior review request, yet most financial benchmarks still evaluate static QA, extraction, or classification. We introduce \framework{}, a context-to-feedback framework for \task{}. Given a reviewer request, an organizational response, and revised artifacts, the framework retrieves evidence, decomposes obligations, verifies visible gaps, converts adjudicated failures into scalar/category/natural-language feedback, and trains a guarded reviewer policy. We instantiate the framework on SEC comment-letter review and construct \dataset{}, 472 public EDGAR examples with amended-filing evidence, visible-evidence labels, feedback fields, and later same-topic SEC follow-up signals. Experiments show that amended evidence is necessary, full natural-language feedback is the strongest reviewer-training signal among handwritten prompting, MIPROv2, and scalar/category GEPA variants, and a guarded verifier derived from the learned policy improves further. Later SEC follow-up comments provide external validation for the benchmark labels, suggesting that regulator-style feedback is a useful learning signal for evidence-grounded compliance reviewers.
 \end{abstract}
 
 \section{Introduction}
 
 Financial NLP has rapidly moved toward LLM systems for long documents, domain-specific reasoning, and decision support. Models and benchmarks such as BloombergGPT, FinGPT, FinBen, FinanceBench, FinQA, TAT-QA, and ConvFinQA show both the promise of financial LLMs and the continuing difficulty of grounding answers in financial evidence \citep{wu2023bloomberggpt,yang2023fingpt,xie2024finben,islam2023financebench,chen2021finqa,zhu2021tatqa,chen2022convfinqa}. Recent FinNLP work has similarly emphasized retrieval-augmented financial QA, SEC filing QA, financial intelligence benchmarks, factuality judging, and evasive-answer detection \citep{lithgow2025rag,lai2025secqa,klimaszewski2025avenibench,wu2025nli,nuaimi2025evasive}. Most such settings, however, still present a static input and ask for a static answer, label, or report.
 
-Many operational finance and compliance workflows have a different structure. A regulator, auditor, lender, or control function requests a correction, explanation, disclosure, or supporting artifact; the organization responds that it has revised an external document; the reviewer must decide whether visible evidence actually satisfies the request. We call this class of problems \task{}. It is related to fact verification and document-level legal NLI \citep{thorne2018fever,koreeda2021contractnli}, but adds a prior reviewer request, a response that may only claim a revision, revised evidence that must be checked, and textual feedback about what remains missing.
+Many operational finance and compliance workflows have a different structure. A regulator, auditor, lender, or control function requests a correction, explanation, disclosure, or supporting artifact; the organization responds that it has revised an external document; the reviewer must decide whether visible evidence actually satisfies the request. For example, a company may reply that it revised a filing to address a requested forecast disclosure, while the amended filing only shows combined revenue projections and still omits the requested entity-level assumptions. The task is therefore not to judge whether the response sounds cooperative, but whether the repaired artifact visibly closes the original gap. We call this class of problems \task{}. It is related to fact verification and document-level legal NLI \citep{thorne2018fever,koreeda2021contractnli}, but adds a prior reviewer request, a response that may only claim a revision, revised evidence that must be checked, and textual feedback about what remains missing.
 
 Existing work leaves three limitations for this setting. First, benchmarks rarely ask whether an organization has repaired a documented deficiency. Second, response evaluation often has weak obligation grounding: a response can sound persuasive while amended evidence omits a named disclosure, quantification, exhibit, legal basis, or accounting analysis. Third, prompt and pipeline optimization often discards feedback structure by receiving only scalar success, although review failures are naturally described in text: what was requested, what was claimed, what evidence showed, and what gap remained.
 
 We study these limitations through U.S. Securities and Exchange Commission (SEC) comment-letter review. SEC staff issue comments requesting expanded disclosure, clarification, revised accounting discussion, removal of unsupported statements, or additional exhibits; companies respond in writing, often with statements such as ``the disclosure has been revised accordingly.'' After review completion, the SEC releases staff comment letters and company responses through EDGAR. These traces often point to amended filings and sometimes include later same-topic SEC follow-up comments. Accounting research treats comment letters as economically meaningful regulatory signals \citep{cassell2013sec,bozanic2017sec,baugh2023auditor,ryans2021comment}; for NLP, they provide observable request-response-evidence-feedback traces.
 
-We introduce \framework{}, a framework for evidence-grounded reviewers. It reconstructs review threads, retrieves revised-document evidence, decomposes requests into obligations, adjudicates visible evidence gaps, compiles scalar/category/full feedback, and optimizes a guarded reviewer policy. The learned reviewer is not a single hand-tuned prompt; it is the policy inside a system that gathers evidence, checks obligations, emits a guarded verdict, and uses adjudicated failures to improve the next offline reviewer.
+We introduce \framework{}, a context-to-feedback framework for evidence-grounded reviewers. It reconstructs review threads, retrieves revised-document evidence, decomposes requests into obligations, adjudicates visible evidence gaps, compiles scalar/category/full feedback, and optimizes a guarded reviewer policy. The learned reviewer is not a single hand-tuned prompt; it is the policy inside a system that gathers evidence, checks obligations, emits a guarded verdict, and uses adjudicated failures to improve the next offline reviewer.
 
 This design makes response resolution a strong testbed for language-feedback optimization. Prompt-programming work treats LLM pipelines as declarative programs whose prompts and demonstrations can be optimized \citep{khattab2023dspy}; GEPA argues that natural-language feedback can expose reusable failure structure that scalar reward discards \citep{agrawal2026gepa}. In our setting, that structure is regulator-style: a mistake can be explained as a missing requested disclosure, unsupported revision claim, absent exhibit, or incomplete analysis.
 
-The above limitations motivate three research questions. RQ1 asks whether public review traces can be converted into a benchmark for evidence-grounded response resolution. RQ2 asks whether natural-language feedback improves reviewer optimization beyond scalar prompt search and coarse categories. RQ3 asks whether the resulting decisions generalize across threads, time, and issue categories, and whether unresolved decisions are corroborated by later regulator follow-up.
+The above limitations motivate three research questions. RQ1 asks whether public review traces can be converted into a benchmark for evidence-grounded response resolution. RQ2 asks whether full natural-language feedback is a stronger reviewer-training signal than scalar prompt search and coarse categories. RQ3 asks whether the resulting decisions generalize across threads, time, and issue categories, and whether unresolved decisions are corroborated by later regulator follow-up.
 
-We make four contributions. First, we define \task{} and introduce \framework{}, a feedback-learning framework for evidence retrieval, obligation checking, feedback construction, and reviewer optimization. Second, we instantiate it as \dataset{}, a public EDGAR benchmark with SEC comments, company responses, amended-filing evidence, labels, and feedback fields. Third, we show that GEPA with full natural-language feedback outperforms handwritten prompting, MIPROv2, scalar/category GEPA variants, and a supervised lexical baseline; a guarded verifier distilled from the learned policy improves further. Fourth, we provide evidence ablations, independent-feedback and feedback-component ablations, prompt-evolution analysis, and systematic corroboration from real next-round SEC follow-up comments.
+We make four contributions. First, we define \task{} and introduce \framework{}, a context-to-feedback framework for evidence retrieval, obligation checking, feedback construction, and reviewer optimization. Second, we instantiate it as \dataset{}, a public EDGAR benchmark with SEC comments, company responses, amended-filing evidence, labels, and feedback fields. Third, we show that full natural-language feedback is the strongest reviewer-training signal, outperforming handwritten prompting, MIPROv2, scalar/category GEPA variants, and a supervised lexical baseline; a guarded verifier distilled from the learned policy improves further. Fourth, we provide evidence ablations, independent-feedback and feedback-component ablations, prompt-evolution analysis, and systematic corroboration from real next-round SEC follow-up comments.
 
 \section{Related Work}
 
@@ -140,13 +140,13 @@ The prediction model receives the SEC comment, company response, and raw retriev
 
 \subsection{Optimization Ladder}
 
-We compare five prompt methods. Baseline prompt is a handwritten instruction. MIPROv2 is scalar prompt optimization. GEPA-scalar uses reflective prompt optimization with correctness-only feedback. GEPA-category adds coarse category feedback. GEPA-full uses full natural-language adjudication feedback. We also include a TF-IDF logistic-regression baseline and an independent-feedback GEPA ablation for reviewer-facing robustness.
+We compare reviewer-training signals rather than evidence access. Baseline prompt is a handwritten reviewer instruction. MIPROv2 is scalar prompt optimization. GEPA-scalar uses reflective prompt optimization with correctness-only feedback. GEPA-category adds coarse category feedback. GEPA-full uses full natural-language adjudication feedback. We also include TF-IDF, a frozen sentence-encoder scoring head, a Jev typed decision gate, and an independent-feedback GEPA ablation for reviewer-facing robustness.
 
 All methods receive the same evidence at test time, isolating the optimization signal rather than evidence access. The key comparison is whether natural-language feedback adds value beyond prompt search itself.
 
 \subsection{Implementation Details}
 
-All main prompt-optimization runs use \texttt{openai/gpt-4o-mini} as the frozen prediction model with temperature 0 and 500 output tokens. GEPA uses the same model as the reflection model with temperature 0.7 and 1500 reflection tokens, seed 17, \texttt{max\_metric\_calls}=150, reflection minibatch size 4, Pareto candidate selection, and 4 evaluation threads. MIPROv2 uses the same prediction and prompt models, 8 trials, 4 prompt candidates, and at most 4 labeled and 4 bootstrapped demonstrations. The evidence reranker/adjudicator also uses \texttt{gpt-4o-mini} at temperature 0. Model aliases rather than dated provider snapshots are recorded in the released artifacts.
+All main prompt-optimization runs use \texttt{openai/gpt-4o-mini} as the frozen prediction model with temperature 0 and 500 output tokens. GEPA uses the same model as the reflection model with temperature 0.7 and 1500 reflection tokens, seed 17, \texttt{max\_metric\_calls}=150, reflection minibatch size 4, Pareto candidate selection, and 4 evaluation threads. MIPROv2 uses the same prediction and prompt models, 8 trials, 4 prompt candidates, and at most 4 labeled and 4 bootstrapped demonstrations. The frozen encoder scorer uses \texttt{all-MiniLM-L6-v2} with a logistic head over request, response, evidence, and request-evidence matching features. The Jev gate uses a \texttt{choice} question over \texttt{resolved}/\texttt{unresolved}. The evidence reranker/adjudicator also uses \texttt{gpt-4o-mini} at temperature 0. Model aliases rather than dated provider snapshots are recorded in the released artifacts.
 
 \subsection{Optimization as Feedback-Conditioned Search}
 
@@ -190,9 +190,9 @@ Response only & 0.712 & 0.575 & 0.333 & 0.817 \\
 
 Response-only prompting cannot verify whether a revision claim is supported. Raw snippets nearly double resolved F1, while the oracle summary shows that much of the remaining difficulty is interpreting snippets against a specific request.
 
-\subsection{Main Prompt-Optimization Results}
+\subsection{Main Context-to-Feedback Results}
 
-Table~\ref{tab:leaderboard} reports the final prompt-optimization ladder on the frozen grouped split. All methods receive the same test-time context.
+Table~\ref{tab:leaderboard} reports the main reviewer-training ladder on the frozen grouped split. All methods receive the same test-time context.
 
 \begin{table*}[t]
 \centering
@@ -213,9 +213,40 @@ GEPA-full & \textbf{0.784} & \textbf{0.756} & \textbf{0.674} & \textbf{0.839} & 
 \label{tab:leaderboard}
 \end{table*}
 
-The majority baseline has high accuracy because unresolved examples dominate, but zero resolved F1. The handwritten prompt is conservative: it has perfect unresolved precision but misses most gaps. MIPROv2 improves substantially, GEPA-scalar improves recall, and GEPA-category is too coarse in this run. GEPA-full is strongest overall, improving macro-F1 by 10.4 points over MIPROv2 and 8.1 points over GEPA-scalar. A TF-IDF logistic-regression classifier trained on the same raw evidence reaches only 0.523 macro-F1, while an oracle-summary variant reaches 0.858, indicating that lexical supervision does not explain the GEPA-full gain and that evidence interpretation is the bottleneck.
+The majority baseline has high accuracy because unresolved examples dominate, but zero resolved F1. The handwritten prompt is conservative: it has perfect unresolved precision but misses most gaps. MIPROv2 improves substantially, GEPA-scalar improves recall, and GEPA-category is too coarse in this run. GEPA-full is strongest overall, improving macro-F1 by 10.4 points over MIPROv2 and 8.1 points over GEPA-scalar. This shows that full feedback is not merely adding more text; it trains the reviewer to compare requested obligations against visible evidence.
 
-We also compute five-fold out-of-fold results over review-thread groups. Mean macro-F1 is 0.698 for GEPA-full, 0.647 for MIPROv2, 0.609 for GEPA-scalar, 0.545 for GEPA-category, and 0.446 for the handwritten baseline. The fold standard deviations are nontrivial (0.151 for GEPA-full and 0.121 for MIPROv2), so we treat the single grouped split as a headline comparison and the out-of-fold analysis as stability evidence rather than as a deterministic margin claim. To test possible feedback leakage, we regenerate full textual feedback with an independent \texttt{gpt-5.4-mini} writer that sees only test-time fields plus the gold label, not the original adjudication rationales; GEPA with this feedback reaches 0.750 macro-F1, nearly matching the original 0.756.
+Table~\ref{tab:robustness} addresses two alternate explanations and one deployment question. A TF-IDF logistic-regression classifier trained on the same raw evidence reaches only 0.523 macro-F1, so lexical supervision does not explain the GEPA-full gain. A frozen sentence encoder with a trained logistic scoring head reaches 0.667 macro-F1 without generation, and a Jev typed decision gate reaches 0.722, showing that \framework{} can support cheap triage scorers, but still trails the full feedback-trained reviewer. To test possible feedback leakage, we regenerate full textual feedback with an independent \texttt{gpt-5.4-mini} writer that sees only test-time fields plus the gold label, not the original adjudication rationales; GEPA with this feedback reaches 0.750 macro-F1, nearly matching the original 0.756.
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llr}
+\toprule
+\textbf{Check} & \textbf{Condition} & \textbf{Macro-F1} \\
+\midrule
+Lexical baseline & TF-IDF, response only & 0.523 \\
+Lexical baseline & TF-IDF, raw snippets & 0.523 \\
+Diagnostic upper bound & TF-IDF, oracle evidence summary & 0.858 \\
+Scoring head & Frozen encoder, raw snippets & 0.667 \\
+Decision gate & Jev typed choice, raw snippets & 0.722 \\
+Feedback source & GEPA-full, original feedback & 0.756 \\
+Feedback source & GEPA-full, independent feedback & 0.750 \\
+\bottomrule
+\end{tabular}
+\caption{Robustness checks. The raw-snippet TF-IDF baseline shows that lexical supervision does not explain the main result. Frozen encoder and Jev decision scorers are cheap non-generative triage components. The independent-feedback ablation shows that GEPA-full does not depend on reusing the original adjudication rationales.}
+\label{tab:robustness}
+\end{table}
+
+We also compute five-fold out-of-fold results over review-thread groups. Mean macro-F1 is 0.698 for GEPA-full, 0.647 for MIPROv2, 0.609 for GEPA-scalar, 0.545 for GEPA-category, and 0.446 for the handwritten baseline. The fold standard deviations are nontrivial (0.151 for GEPA-full and 0.121 for MIPROv2), so we treat the single grouped split as a headline comparison and the out-of-fold analysis as stability evidence rather than as a deterministic margin claim.
+
+\subsection{Why Full Feedback Helps}
+
+The advantage of GEPA-full is not simply risk aversion. Jev reaches very high unresolved recall (0.958) but lower resolved F1 (0.576), making it useful as a triage gate that flags likely unresolved responses. GEPA-full has lower unresolved recall but higher macro-F1, because it better balances skepticism with evidence sufficiency. It learns when a company revision claim is unsupported, but also when visible amended evidence already satisfies the SEC request.
+
+The mechanism is visible in the feedback channel. Scalar feedback says only that a decision was wrong; category feedback names a coarse gap. Full feedback states what the SEC requested, what the company claimed, what the amended evidence showed, and what requirement remained unmet. This gives the optimizer a reusable review trace rather than a bare reward. The resulting prompt evolution shifts from generic caution to obligation-level comparison: identify material SEC request elements, inspect amended evidence for named disclosures, quantification, exhibits, and legal or accounting analysis, and distinguish partial disclosure from resolution.
+
+The trade-off is cost and calibration. GEPA-full requires adjudicated natural-language feedback and offline optimization, so it is not the cheapest runtime gate. It can also become over-skeptical when evidence substantially satisfies a request but does not present the answer in the exact form the prompt expects. We therefore view Jev and frozen encoders as high-throughput first-pass gates, and GEPA-full as the deeper reviewer for difficult or high-impact cases.
 
 \subsection{Reviewer-Structure Ablation}
 
@@ -351,27 +382,27 @@ Scalar and category feedback learn general caution: do not trust a revision clai
 
 \subsection{Method-Disagreement Cases}
 
-The strongest GEPA-full wins involve concrete request-evidence mismatches. In a financial-projections case, the SEC requested individual-company forecast information and material assumptions; the amended evidence showed only combined revenue projections. The baseline treated this as sufficient, while GEPA-full marked it unresolved because the requested assumption set was still absent.
+The strongest GEPA-full wins involve concrete request-evidence mismatches. In a financial-projections case, the SEC requested individual-company forecast information and material assumptions; the amended evidence showed only combined revenue projections. GEPA-full marked it unresolved because the requested assumption set was still absent.
 
 In a crypto terminology case, the amended evidence defined stablecoins but did not explain the SEC's requested contrast with unstable cryptocurrency. Baseline, MIPROv2, GEPA-scalar, and GEPA-category predicted \texttt{resolved}; GEPA-full predicted \texttt{unresolved}. In a PIPE financing case, MIPROv2 treated the presence of price terms as sufficient; GEPA-full required equivalent price-per-share disclosure for each agreement, a gap later echoed in SEC follow-up.
 
-GEPA-full also has informative errors. In one ownership-percentage case, retrieved evidence contained calculations under redemption scenarios and the benchmark label was \texttt{resolved}. GEPA-full predicted \texttt{unresolved} because it wanted a more explicit cover-page presentation. This reveals the main calibration risk: full-feedback prompts learn to be skeptical of unsupported revision claims, but can over-require exact presentation when visible evidence substantially satisfies the request. Appendix~\ref{app:cases} lists additional analyzed cases.
+GEPA-full also has informative errors. In one ownership-percentage case, retrieved evidence contained redemption-scenario calculations and the benchmark label was \texttt{resolved}. GEPA-full predicted \texttt{unresolved} because it wanted a more explicit cover-page presentation. This reveals the main calibration risk: full-feedback prompts learn useful skepticism but can over-require exact presentation. Appendix~\ref{app:cases} lists additional cases.
 
 \section{Discussion}
 
-The main result is not simply that one optimizer beats another. \framework{} turns a recurring compliance pattern into an offline feedback-learning system: collect the trace, retrieve the revised artifact, check obligations against visible evidence, issue a guarded verdict, and recycle adjudicated failures as feedback. The output is not only a binary label, but a traceable unresolved-gap rationale.
+The main result is not simply that one optimizer beats another. \framework{} turns a recurring compliance pattern into an offline feedback-learning system: collect the trace, retrieve the revised artifact, check obligations against visible evidence, issue a guarded verdict, and recycle adjudicated failures as feedback. The learned reviewer can be used directly, distilled into a guarded verifier, or converted into lightweight scoring heads for high-throughput triage. The output is a traceable unresolved-gap rationale, not only a binary label.
 
-Language feedback helps because it preserves decision structure. A scalar signal says only that a verdict failed; full feedback says which named request, company action, amended snippet, and remaining obligation were mismatched. The optimized prompt is consequently an interpretable policy artifact: extract material requests, distrust unsupported revision claims, inspect evidence for named items, avoid over-requiring beyond the regulator's request, and distinguish partial disclosure from resolution.
+Language feedback helps because it preserves decision structure. A scalar signal says only that a verdict failed; full feedback says which named request, company action, amended snippet, and remaining obligation were mismatched. The optimized prompt therefore becomes an interpretable policy: extract material requests, distrust unsupported revision claims, inspect evidence for named items, avoid over-requiring, and distinguish partial disclosure from resolution.
 
-SEC correspondence is the public setting where we can observe request, response, revised filing, and later reviewer behavior, but the trace structure is broader. Audit remediation, regulatory reporting, lending-document stipulations, data-quality exception handling, and internal compliance monitoring also contain request-response-evidence loops. The transferable claim is that such traces can support retrieval, obligation checking, adjudication feedback, optimized reviewing, and hard-case mining; the limitation is that high-recall language-feedback policies can become over-skeptical.
+SEC correspondence is the public setting where we can observe request, response, revised filing, and later reviewer behavior, but the trace structure is broader. Audit remediation, regulatory reporting, lending-document stipulations, data-quality exceptions, and internal compliance monitoring also contain request-response-evidence loops. The transferable claim is that such traces can support retrieval, obligation checking, adjudication feedback, optimized reviewing, and hard-case mining; the limitation is that high-recall language-feedback policies can become over-skeptical.
 
 \section{Conclusion}
 
-We introduced \framework{}, a framework for evidence-grounded regulatory response review, and instantiated it as \dataset{} using public SEC comment-letter traces. Across grouped, temporal, and topic-holdout evaluations, full natural-language feedback yields the strongest optimized reviewer. Evidence ablations, prompt evolution, and real SEC follow-up corroboration suggest that financial NLP benchmarks can move from static labels toward feedback-rich review systems that preserve the reasons behind expert decisions.
+We introduced \framework{}, a context-to-feedback framework for evidence-grounded response review, and instantiated it as \dataset{} using public SEC traces. Across grouped, temporal, and topic-holdout evaluations, full natural-language feedback yields the strongest reviewer. Evidence ablations, prompt evolution, and SEC follow-up corroboration suggest that financial NLP benchmarks can move from static labels toward feedback-rich review systems that preserve the reasons behind expert decisions.
 
 \section*{Limitations and Data Statement}
 
-This study is conditioned on visible retrieved evidence, so missed snippets can affect labels. The benchmark is LLM-adjudicated, with independent audit and external follow-up corroboration but without a full expert legal/accounting audit. Same-topic SEC follow-up is a noisy behavioral signal, not ground truth. We frame labels as visible-evidence judgments rather than legal determinations. The release includes benchmark JSONL, splits, accession identifiers, retrieval metadata, snippets, labels, feedback fields, prompt versions, outputs, and analysis scripts.
+This study is conditioned on visible retrieved evidence, so missed snippets can affect labels. The benchmark is LLM-adjudicated, with independent audit and external follow-up corroboration but without a full expert legal/accounting audit. Same-topic SEC follow-up is a noisy behavioral signal, not ground truth. We frame labels as visible-evidence judgments rather than legal determinations. An anonymized release will be provided at \url{https://anonymous.4open.science/r/regtrace-sec-XXXX/}; it includes benchmark JSONL, splits, accession identifiers, retrieval metadata, snippets, labels, feedback fields, prompts, outputs, and analysis scripts.
 
 \clearpage
 \bibliography{references}

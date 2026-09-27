@@ -1,0 +1,56 @@
+{
+  "split_dir": "data/sec_visible_evidence_benchmark_v2/splits/grouped_random_dev48_gap/fold_0",
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "text_mode": "oracle_summary",
+  "seed": 17,
+  "train_size": 285,
+  "dev_size": 48,
+  "test_size": 139,
+  "train_label_counts": {
+    "resolved": 94,
+    "unresolved": 191
+  },
+  "dev_label_counts": {
+    "unresolved": 32,
+    "resolved": 16
+  },
+  "test_label_counts": {
+    "resolved": 43,
+    "unresolved": 96
+  },
+  "tuned_head": {
+    "C": 0.03,
+    "dev_macro_f1": 0.578125
+  },
+  "metrics": [
+    {
+      "method": "Frozen encoder + logistic head",
+      "text_mode": "oracle_summary",
+      "accuracy": 0.60431654676259,
+      "macro_f1": 0.5602530917457578,
+      "resolved_precision": 0.38461538461538464,
+      "resolved_recall": 0.46511627906976744,
+      "resolved_f1": 0.42105263157894735,
+      "resolved_support": 43,
+      "unresolved_precision": 0.735632183908046,
+      "unresolved_recall": 0.6666666666666666,
+      "unresolved_f1": 0.6994535519125683,
+      "unresolved_support": 96,
+      "extra": {
+        "encoder": "sentence-transformers/all-MiniLM-L6-v2",
+        "embedding_dim": 384,
+        "C": 0.03,
+        "dev_macro_f1": 0.578125,
+        "no_generation_at_inference": true
+      }
+    }
+  ],
+  "model_input_fields": [
+    "sec_comment",
+    "company_response",
+    "amended_evidence_supporting_quote",
+    "amended_evidence_evidence_summary",
+    "amended_evidence_missing_evidence"
+  ],
+  "notes": "Frozen sentence encoder with a trained logistic scoring head; no text generation at inference time."
+}

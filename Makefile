@@ -1,4 +1,4 @@
-.PHONY: followup-paired leaderboard supervised-baselines independent-feedback-estimate materialize-independent-feedback independent-gepa-ablation paper
+.PHONY: followup-paired leaderboard supervised-baselines encoder-scorers jev-smoke independent-feedback-estimate materialize-independent-feedback independent-gepa-ablation paper
 
 followup-paired:
 	PYTHONPATH=. python scripts/sec_followup_paired_analysis.py
@@ -10,6 +10,14 @@ supervised-baselines:
 	PYTHONPATH=. python scripts/sec_supervised_baselines.py --text-mode response_only
 	PYTHONPATH=. python scripts/sec_supervised_baselines.py --text-mode evidence_snippets
 	PYTHONPATH=. python scripts/sec_supervised_baselines.py --text-mode oracle_summary
+
+encoder-scorers:
+	PYTHONPATH=. HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python scripts/sec_encoder_scorer_baseline.py --representation separate_match --text-mode response_only
+	PYTHONPATH=. HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python scripts/sec_encoder_scorer_baseline.py --representation separate_match --text-mode evidence_snippets
+	PYTHONPATH=. HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python scripts/sec_encoder_scorer_baseline.py --representation separate_match --text-mode oracle_summary
+
+jev-smoke:
+	PYTHONPATH=. python scripts/sec_jev_decision_eval.py --limit 3 --sleep 0.2 --endpoint https://thejevai.com/v1/systemone
 
 independent-feedback-estimate:
 	PYTHONPATH=. python scripts/sec_generate_independent_feedback.py --estimate-only --model gpt-5.4-mini

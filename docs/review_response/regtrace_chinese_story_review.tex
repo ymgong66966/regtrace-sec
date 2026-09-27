@@ -1,0 +1,172 @@
+\documentclass[11pt,fontset=none]{ctexart}
+
+\usepackage[margin=0.85in]{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{fontspec}
+
+\setCJKmainfont{Arial Unicode MS}
+\setmainfont{Times New Roman}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.2em,topsep=0.25em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+
+\newcommand{\good}[1]{\textcolor{blue!70!black}{#1}}
+\newcommand{\risk}[1]{\textcolor{red!65!black}{#1}}
+
+\title{\textbf{RegTrace-Agent 论文中文梳理与快速自检}}
+\author{内部阅读版}
+\date{2026-09-26}
+
+\begin{document}
+\maketitle
+
+\section*{先解释一下: 为什么刚才的 diff 只有三处}
+
+你看到的直觉是对的。刚才那份 paragraph diff 比的是最近两个 git commit:
+\texttt{af33cc8} 到 \texttt{f410c72}。这两个版本之间本来就是一次很小的 reviewer-response 修改，主要加入了 supervised lexical baseline 和 independent-feedback ablation，所以只出现三处正文段落级变化。
+
+这不代表 V2 相对更早稿子只改了三处。当前 repo 里能看到的历史是:
+\begin{itemize}
+    \item \texttt{539654a}: 初始 RegTrace-SEC release package;
+    \item \texttt{af33cc8}: 修 follow-up paired analysis 输出;
+    \item \texttt{f410c72}: 加 reviewer-response baselines 和 independent feedback ablation。
+\end{itemize}
+所以如果你想看``V2 相对初始 release''，应该比 \texttt{539654a} 和当前 \texttt{f410c72}。如果你心里说的``之前的 text file''是更早的草稿，最好给我那个具体文件路径，我就能做真正的 old-vs-new 段落对照。
+
+\section*{一句话版本}
+
+这篇论文要讲的不是``调了一个 prompt''，而是: \good{我们把 SEC 审查往返信件转成一个 evidence-grounded compliance review benchmark，并证明带自然语言反馈的 reflective prompt optimization 能学到更像监管审查员的证据核查规则。}
+
+\section*{像门外汉一样理解这个任务}
+
+SEC 给公司发 comment letter，意思大概是: ``你这个披露不够，请补充 X、解释 Y、量化 Z。'' 公司回复: ``我们已经修改了申报文件。'' 真实审查问题不是看公司回复写得好不好，而是要去 amended filing 里检查: 它真的把 X、Y、Z 补上了吗？
+
+这就是本文的核心任务: 给定 \textbf{SEC comment + company response + amended-filing evidence snippets}，判断这轮回复是否 \texttt{resolved}。如果公司只是说``已修改''，但可见证据里没有 SEC 要的具体数字、表格、法律/会计分析、展品或披露，那么它仍然是 \texttt{unresolved}。
+
+\section*{现在的故事线}
+
+\begin{enumerate}[leftmargin=1.6em,itemsep=0.25em]
+    \item 现有金融 NLP benchmark 大多是静态 QA、抽取、分类。它们问的是``文件里答案是什么''，不是``一个机构的修复动作是否真的解决了前一个审查请求''。
+    \item SEC comment letter 刚好提供了天然的 request-response-evidence-feedback trace: 监管方提出要求，公司回复并修改文件，有时监管方下一轮还会继续追问。
+    \item RegTrace-Agent 把这类 trace 变成一个 workflow: 重建审查线程，检索 amended filing evidence，拆解 SEC obligation，判断 visible evidence 是否满足请求，再把失败原因写成 scalar/category/full feedback。
+    \item GEPA-full 的意义在这里: 它不是只知道``对/错''，而是看到自然语言反馈，比如``SEC 要求披露 entity-level cost，但 evidence 只有 combined revenue projection''。这种反馈能变成可复用的审查规则。
+    \item 最终学到的 reviewer policy 更接近监管式阅读: 不相信空泛的 revision claim，逐条匹配 SEC 请求，看 amended evidence 是否覆盖 named items、quantification、exhibit、legal/accounting analysis，并避免超出 SEC 原始要求。
+\end{enumerate}
+
+\section*{数据和设置}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lr}
+\toprule
+\textbf{项目} & \textbf{数量} \\
+\midrule
+Examples & 472 \\
+SEC review threads & 109 \\
+Companies & 95 \\
+Resolved / unresolved & 153 / 319 \\
+Verified next-round follow-up examples & 236 \\
+Issue categories & 7 \\
+Visible-evidence gap types & 8 \\
+\bottomrule
+\end{tabular}
+\caption{RegTrace-SEC Benchmark v2 的规模。}
+\end{table}
+
+这个数据集不是普通 SEC 文本分类。它刻意聚焦在困难的 revision-claim cases: 公司说自己改了、补了、删了或提交了某个材料，而系统必须去 amended filing snippets 里核查这个说法。
+
+\section*{最重要的结果}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabularx}{\linewidth}{lXr}
+\toprule
+\textbf{结果块} & \textbf{比较} & \textbf{Macro-F1} \\
+\midrule
+Evidence ablation & response only & 0.575 \\
+Evidence ablation & + raw amended-filing snippets & 0.748 \\
+Evidence ablation & + oracle evidence summary & 0.956 \\
+\midrule
+Main leaderboard & MIPROv2 & 0.652 \\
+Main leaderboard & GEPA-scalar & 0.675 \\
+Main leaderboard & GEPA-category & 0.595 \\
+Main leaderboard & GEPA-full & \textbf{0.756} \\
+\midrule
+Robustness & TF-IDF logistic regression with raw evidence & 0.523 \\
+Robustness & GEPA-independent-full & 0.750 \\
+Generalization & GEPA-full time holdout & 0.791 \\
+Generalization & GEPA-full topic holdout & 0.734 \\
+Policy prototype & RegTrace guarded verifier & 0.801 \\
+\bottomrule
+\end{tabularx}
+\caption{当前最值得放进故事里的核心数字。}
+\end{table}
+
+这些结果支持四个主张:
+\begin{itemize}
+    \item \good{证据是必要的。} 只看公司回复不够，加入 amended-filing snippets 后 macro-F1 从 0.575 到 0.748。
+    \item \good{自然语言反馈有价值。} GEPA-full 明显高于 MIPROv2 和 GEPA-scalar，说明不是``prompt optimization 都行''，而是 full feedback 更会教模型学监管式 gap reasoning。
+    \item \good{这个任务不是简单词面分类。} TF-IDF 加 raw evidence 只有 0.523，但 oracle evidence summary 可以到 0.858/0.956 级别，说明瓶颈是 evidence interpretation，而不是标签先验。
+    \item \good{泛化结果是亮点。} time holdout 和 topic holdout 上 GEPA-full 仍然强，说明学到的不是某个 topic 的关键词，而是一套 obligation-evidence checking policy。
+\end{itemize}
+
+\section*{真实 SEC follow-up 的作用}
+
+这里要讲得非常稳。Later same-topic SEC follow-up \textbf{不是主标签}，因为没有 follow-up 不等于一定 resolved，有 follow-up 也可能带来新问题。它的最佳用法是 external corroboration。
+
+当前结果很有用:
+\begin{itemize}
+    \item 在有 verified follow-up 的 236 条里，unresolved visible-evidence labels 被后续 SEC 直接或部分佐证的比例是 68.1\%；
+    \item resolved labels 的对应比例只有 9.2\%；
+    \item follow-up availability 在 resolved 和 unresolved 中几乎一样，所以这不是因为 unresolved 更容易有 follow-up。
+\end{itemize}
+
+最好的写法是: 这说明我们的 visible-evidence label 确实跟监管方后续行为有关系。不要说``GEPA-full 的每个 win 都被 SEC 证明了''，因为 reviewer 已经指出那会混淆 base rate。
+
+\section*{我从全新眼光看: 贡献够不够}
+
+我的判断是: \good{贡献是够的，而且比``prompt tuning paper''强。} 现在真正的贡献有三层:
+
+\begin{enumerate}[leftmargin=1.6em,itemsep=0.25em]
+    \item \textbf{新任务:} evidence-grounded response resolution。它比金融 QA 更贴近真实合规工作流。
+    \item \textbf{新 benchmark:} RegTrace-SEC。它包含 request、response、retrieved amended evidence、visible-evidence label、structured feedback、later follow-up signal。
+    \item \textbf{方法发现:} full natural-language feedback 能把优化从 generic caution 推到 regulatory checklist，表现为更好的 unresolved recall、macro-F1、time/topic transfer 和 prompt evolution。
+\end{enumerate}
+
+目前最需要避免的写法是把它讲成``我们用 GEPA 优化了一个 prompt''。应该讲成: \good{我们构造了一个 context-to-feedback review framework，在这个 framework 中 full feedback 是最有效的 reviewer-training signal。}
+
+\section*{现在写得是否清楚}
+
+主线已经基本清楚，但还有三个地方可以更清楚:
+\begin{itemize}
+    \item \textbf{开头需要更快给一个具体例子。} 读者一开始不一定懂为什么 company response 不够，最好第一页就出现一句类似: ``The company says it revised page 37, but the visible amended filing still lacks the exact customer concentration table requested by the SEC.''
+    \item \textbf{reviewer-response 新结果最好进一张小表。} 现在 TF-IDF 和 independent-feedback ablation 在正文里是文字句子，容易被忽略。可以加一个 compact robustness table，或者至少在 appendix 放表，正文引用。
+    \item \textbf{guarded verifier 要写得更透明。} 它分数最高，但容易被认为 post-hoc。要明确它是 policy-distillation prototype，不是和 GEPA ladder 完全同类的 optimizer baseline。
+\end{itemize}
+
+\section*{我建议下一版 paper 的改法}
+
+最小但有效的改法:
+\begin{enumerate}[leftmargin=1.6em,itemsep=0.25em]
+    \item 在 introduction 的第二段加一个 2-3 句 SEC mini-example，让任务立刻具体。
+    \item 把 supervised baseline 和 independent-feedback ablation 合成一个 \textbf{Robustness Checks} 小表。
+    \item 在 method 里更明确地区分 test-time inputs 和 optimization-time feedback，堵住 feedback leak 的质疑。
+    \item 在 follow-up section 里保留 external corroboration，但不要把它写成 method-win 证据。
+    \item 在 discussion 里把 transferable claim 说成``request-response-evidence-feedback workflows''，不要过度说 production autonomous agent。
+\end{enumerate}
+
+\section*{最后的评价}
+
+这篇 paper 的强项不是某一个单独数字，而是一个完整闭环: \textbf{真实监管工作流} $\rightarrow$ \textbf{可复现 benchmark} $\rightarrow$ \textbf{证据核查任务} $\rightarrow$ \textbf{自然语言反馈优化} $\rightarrow$ \textbf{prompt evolution 和 follow-up corroboration 解释为什么它有效}。
+
+如果压成 short paper，故事会更干净但要舍掉很多 supporting evidence。如果保留 long paper，必须把 reproducibility、label audit、retrieval details、robustness checks 讲清楚。以现在的结果基础看，我更倾向保留 long-paper 风格，但把 narrative 压实，让读者第一遍就明白: 这不是一个 prompt trick，而是一个金融合规场景里的 feedback-rich review benchmark 和 reviewer-learning framework。
+
+\end{document}

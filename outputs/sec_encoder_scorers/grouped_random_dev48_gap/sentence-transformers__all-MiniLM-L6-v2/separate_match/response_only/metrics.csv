@@ -1,0 +1,2 @@
+method,text_mode,accuracy,macro_f1,resolved_precision,resolved_recall,resolved_f1,resolved_support,unresolved_precision,unresolved_recall,unresolved_f1,unresolved_support,extra_json
+Frozen encoder + logistic head,response_only,0.6115107913669064,0.5744897959183674,0.4,0.5116279069767442,0.4489795918367347,43,0.75,0.65625,0.7,96,"{""encoder"": ""sentence-transformers/all-MiniLM-L6-v2"", ""embedding_dim"": 1920, ""representation"": ""separate_match"", ""C"": 0.03, ""dev_macro_f1"": 0.4227994227994228, ""no_generation_at_inference"": true}"

@@ -1,0 +1,28 @@
+{
+  "split_path": "data/sec_visible_evidence_benchmark_v2/splits/grouped_random_dev48_gap/fold_0/test.jsonl",
+  "offset": 0,
+  "limit": 0,
+  "model": "jev-latest",
+  "endpoint": "https://thejevai.com/v1/systemone",
+  "max_snippets": 3,
+  "num_predictions": 139,
+  "num_errors": 0,
+  "metrics": {
+    "accuracy": 0.7985611510791367,
+    "macro_f1": 0.7218410520297314,
+    "resolved_precision": 0.8260869565217391,
+    "resolved_recall": 0.4418604651162791,
+    "resolved_f1": 0.5757575757575758,
+    "resolved_support": 43,
+    "unresolved_precision": 0.7931034482758621,
+    "unresolved_recall": 0.9583333333333334,
+    "unresolved_f1": 0.8679245283018868,
+    "unresolved_support": 96
+  },
+  "usage": {
+    "input_tokens": 284402,
+    "output_tokens": 5074,
+    "requests": 139
+  },
+  "notes": "Jev/System One typed decision gate. No key is written to artifacts."
+}
