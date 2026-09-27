@@ -215,7 +215,7 @@ GEPA-full & \textbf{0.784} & \textbf{0.756} & \textbf{0.674} & \textbf{0.839} & 
 
 The majority baseline has high accuracy because unresolved examples dominate, but zero resolved F1. The handwritten prompt is conservative: it has perfect unresolved precision but misses most gaps. MIPROv2 improves substantially, GEPA-scalar improves recall, and GEPA-category is too coarse in this run. GEPA-full is strongest overall, improving macro-F1 by 10.4 points over MIPROv2 and 8.1 points over GEPA-scalar. This shows that full feedback is not merely adding more text; it trains the reviewer to compare requested obligations against visible evidence.
 
-Table~\ref{tab:robustness} addresses two alternate explanations and one deployment question. A TF-IDF logistic-regression classifier trained on the same raw evidence reaches only 0.523 macro-F1, so lexical supervision does not explain the GEPA-full gain. A frozen sentence encoder with a trained logistic scoring head reaches 0.667 macro-F1 without generation, and a Jev typed decision gate reaches 0.722, showing that \framework{} can support cheap triage scorers, but still trails the full feedback-trained reviewer. The guarded reviewer also improves over a monolithic prompt under both \texttt{gpt-4o-mini} and \texttt{gpt-5.4-mini}, suggesting that obligation-evidence structure matters across backbones. To test possible feedback leakage, we regenerate full textual feedback with an independent \texttt{gpt-5.4-mini} writer that sees only test-time fields plus the gold label, not the original adjudication rationales; GEPA with this feedback reaches 0.750 macro-F1, nearly matching the original 0.756.
+Table~\ref{tab:robustness} addresses two alternate explanations and one deployment question. A TF-IDF logistic-regression classifier trained on the same raw evidence reaches only 0.523 macro-F1, so lexical supervision does not explain the GEPA-full gain. A frozen sentence encoder with a trained logistic scoring head reaches 0.667 macro-F1 without generation, and a Jev typed decision gate reaches 0.722, showing that \framework{} can support cheap triage scorers, but still trails the full feedback-trained reviewer. On the same grouped held-out test set ($N=139$), the guarded reviewer improves over a monolithic prompt under both \texttt{gpt-4o-mini} and \texttt{gpt-5.4-mini}, suggesting that obligation-evidence structure matters across backbones. To test possible feedback leakage, we regenerate full textual feedback with an independent \texttt{gpt-5.4-mini} writer that sees only test-time fields plus the gold label, not the original adjudication rationales; GEPA with this feedback reaches 0.750 macro-F1, nearly matching the original 0.756.
 
 \begin{table}[t]
 \centering
@@ -236,7 +236,7 @@ Feedback source & GEPA-full, independent feedback & 0.750 \\
 Diagnostic upper bound & TF-IDF, oracle evidence summary & 0.858 \\
 \bottomrule
 \end{tabular}
-\caption{Robustness checks. The raw-snippet TF-IDF baseline shows that lexical supervision does not explain the main result. Frozen encoder and Jev decision scorers are cheap non-generative triage components. Multi-LLM reviewer runs show that guarded obligation-evidence structure improves over monolithic prompting under two backbones. The independent-feedback ablation shows that GEPA-full does not depend on reusing the original adjudication rationales.}
+\caption{Robustness checks on the grouped held-out test set unless noted. The raw-snippet TF-IDF baseline shows that lexical supervision does not explain the main result. Frozen encoder and Jev scorers are cheap triage components. Multi-LLM reviewer runs show that guarded obligation-evidence structure improves over monolithic prompting under two backbones. The independent-feedback ablation shows that GEPA-full does not depend on reusing the original adjudication rationales.}
 \label{tab:robustness}
 \end{table}
 
@@ -331,7 +331,7 @@ The topic-holdout result argues against a curated-topic explanation. Per-topic b
 
 Visible-evidence labels come from an adjudication pipeline, so we test whether they align with later regulator behavior. Verified same-topic next-round SEC follow-up is not the primary label, but it is a useful corroboration signal because it can restate or narrow an unresolved gap.
 
-We additionally audit 60 examples with an independent LLM auditor that receives the SEC comment, company response, and visible amended evidence but not the original label rationale. The audit agrees with the benchmark label in 49 of 60 cases, with mean confidence 0.897. We report this as an audit of visible-evidence label consistency, not as expert legal/accounting validation.
+We additionally audit all 472 examples with an independent \texttt{gpt-5.4-mini} auditor that receives only the SEC comment, company response, and raw retrieved evidence snippets, not the benchmark label, feedback fields, evidence summaries, missing-requirement notes, or later SEC follow-up. The audit agrees with the benchmark label in 345 of 472 cases, reaching 0.731 agreement accuracy and 0.715 macro-F1. We report this as an audit of visible-evidence label consistency, not as expert legal/accounting validation.
 
 \begin{table}[t]
 \centering
