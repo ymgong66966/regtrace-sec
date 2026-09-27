@@ -1,0 +1,14 @@
+{
+  "input": "data/sec_visible_evidence_benchmark_v2/sec_visible_evidence_benchmark_v2.jsonl",
+  "output": "data/sec_visible_evidence_benchmark_v2/sec_visible_evidence_benchmark_v2_independent_feedback.jsonl",
+  "model": "gpt-5.4-mini",
+  "rows": 472,
+  "estimate": {
+    "rows": 472,
+    "model": "gpt-5.4-mini",
+    "input_tokens_est": 887038,
+    "output_tokens_est": 198240,
+    "cost_usd_est": 1.5573584999999999
+  },
+  "field_policy": "Feedback writer saw only sec_comment, company_response, retrieved_snippets, issue metadata, and gold label."
+}

@@ -1,0 +1,5 @@
+{
+    "reasoning": "The company has addressed the SEC comment by revising the statement to clarify that baskets are only issued or redeemed in exchange for an amount of cash, which is disclosed to Authorized Participants prior to the trading day. This revision aligns with the SEC's request for reconciliation between the two statements and provides clarity on how the cash amount is determined. The amended evidence supports this by showing the revised language in the filing, indicating that the company has made the necessary changes to resolve the comment.",
+    "label": "resolved",
+    "reason": "The company successfully reconciled the conflicting statements and provided the required disclosure regarding the calculation of cash for creation orders, thus addressing the SEC's concerns."
+}

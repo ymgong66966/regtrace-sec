@@ -66,6 +66,7 @@ def main() -> int:
             "no_unmet_requirement",
             "request_action_gap",
             "request_action_only",
+            "independent_full",
             "real_followup",
             "hybrid_real_followup",
         ],
@@ -404,6 +405,9 @@ def effective_label(row: dict[str, Any], label_field: str) -> str:
 
 
 def build_feedback_text(row: dict[str, Any], variant: str = "full", task: str = "response_gap") -> str:
+    if variant == "independent_full":
+        return str(row.get("independent_full_feedback") or row.get("full_feedback") or "")
+
     if task == "visible_evidence_resolution":
         label = effective_label(row, "visible_evidence_resolution_label")
         relevance = row.get("amended_evidence_evidence_relevance") or "[not recorded]"

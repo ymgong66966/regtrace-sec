@@ -1,0 +1,127 @@
+{
+  "augmented_source": "data/sec_visible_evidence_benchmark_v2/sec_visible_evidence_benchmark_v2_independent_feedback.jsonl",
+  "source_splits_root": "data/sec_visible_evidence_benchmark_v2/splits",
+  "out_root": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits",
+  "files": [
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random/dev.jsonl",
+      "rows": 104
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random/fold_0/dev.jsonl",
+      "rows": 104
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random/fold_0/test.jsonl",
+      "rows": 139
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random/fold_0/train.jsonl",
+      "rows": 229
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random/test.jsonl",
+      "rows": 139
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random/train.jsonl",
+      "rows": 229
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random_dev48/dev.jsonl",
+      "rows": 48
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random_dev48/fold_0/dev.jsonl",
+      "rows": 48
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random_dev48/fold_0/test.jsonl",
+      "rows": 139
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random_dev48/fold_0/train.jsonl",
+      "rows": 285
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random_dev48/test.jsonl",
+      "rows": 139
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random_dev48/train.jsonl",
+      "rows": 285
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random_dev48_gap/dev.jsonl",
+      "rows": 48
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random_dev48_gap/fold_0/dev.jsonl",
+      "rows": 48
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random_dev48_gap/fold_0/test.jsonl",
+      "rows": 139
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random_dev48_gap/fold_0/train.jsonl",
+      "rows": 285
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random_dev48_gap/test.jsonl",
+      "rows": 139
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/grouped_random_dev48_gap/train.jsonl",
+      "rows": 285
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/time_train_before_2024/dev.jsonl",
+      "rows": 64
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/time_train_before_2024/fold_0/dev.jsonl",
+      "rows": 64
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/time_train_before_2024/fold_0/test.jsonl",
+      "rows": 144
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/time_train_before_2024/fold_0/train.jsonl",
+      "rows": 264
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/time_train_before_2024/test.jsonl",
+      "rows": 144
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/time_train_before_2024/train.jsonl",
+      "rows": 264
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/topic_holdout/dev.jsonl",
+      "rows": 68
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/topic_holdout/fold_0/dev.jsonl",
+      "rows": 68
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/topic_holdout/fold_0/test.jsonl",
+      "rows": 125
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/topic_holdout/fold_0/train.jsonl",
+      "rows": 279
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/topic_holdout/test.jsonl",
+      "rows": 125
+    },
+    {
+      "path": "data/sec_visible_evidence_benchmark_v2_independent_feedback/splits/topic_holdout/train.jsonl",
+      "rows": 279
+    }
+  ]
+}

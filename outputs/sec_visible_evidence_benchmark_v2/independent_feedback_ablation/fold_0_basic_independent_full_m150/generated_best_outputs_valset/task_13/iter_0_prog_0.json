@@ -1,0 +1,5 @@
+{
+    "reasoning": "The company has amended its disclosure to clarify the uncertainty surrounding the classification of Ethereum and other digital assets as securities. The amended evidence indicates that the company acknowledges the complexity and regulatory scrutiny associated with the status of digital assets, including Ethereum. However, the specific statement regarding the SEC's position on Ethereum was not directly addressed or removed as requested in the SEC comment. Therefore, while there is an acknowledgment of the risks and uncertainties, the original issue raised by the SEC regarding the incorrect statement about Ethereum remains unresolved.",
+    "label": "unresolved",
+    "reason": "The company did not fully address the SEC's request to revise or remove the statement regarding Ethereum's status as a security, leaving the original concern unresolved."
+}

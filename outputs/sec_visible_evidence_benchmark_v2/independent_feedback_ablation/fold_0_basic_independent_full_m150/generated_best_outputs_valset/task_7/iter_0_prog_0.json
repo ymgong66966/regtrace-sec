@@ -1,0 +1,5 @@
+{
+    "reasoning": "The company has adequately addressed the SEC comment by revising the cover page of their filing to clarify that they are not conducting an at-the-market resale offering under Rule 415. They have specified that the Selling Shareholders will sell their common stock at a fixed price of $0.15 until the shares are listed or quoted on an existing public trading market, which aligns with the SEC's requirements. The amended evidence supports this response, confirming the fixed price and the conditions under which the shares will be sold.",
+    "label": "resolved",
+    "reason": "The company has made the necessary revisions to comply with the SEC's request, providing clarity on the selling price and conditions for the Selling Shareholders, thus resolving the comment."
+}

@@ -1,0 +1,90 @@
+{
+  "split_dir": "data/sec_visible_evidence_benchmark_v2/splits/grouped_random_dev48_gap/fold_0",
+  "text_mode": "response_only",
+  "seed": 17,
+  "train_size": 285,
+  "dev_size": 48,
+  "test_size": 139,
+  "train_label_counts": {
+    "resolved": 94,
+    "unresolved": 191
+  },
+  "dev_label_counts": {
+    "unresolved": 32,
+    "resolved": 16
+  },
+  "test_label_counts": {
+    "resolved": 43,
+    "unresolved": 96
+  },
+  "tuned_logreg": {
+    "C": 0.1,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "dev_macro_f1": 0.6135265700483092
+  },
+  "metrics": [
+    {
+      "method": "Majority class",
+      "text_mode": "response_only",
+      "accuracy": 0.6906474820143885,
+      "macro_f1": 0.4085106382978723,
+      "resolved_precision": 0.0,
+      "resolved_recall": 0.0,
+      "resolved_f1": 0.0,
+      "resolved_support": 43,
+      "unresolved_precision": 0.6906474820143885,
+      "unresolved_recall": 1.0,
+      "unresolved_f1": 0.8170212765957446,
+      "unresolved_support": 96,
+      "extra": {
+        "majority_label": "unresolved"
+      }
+    },
+    {
+      "method": "Random train-prior",
+      "text_mode": "response_only",
+      "accuracy": 0.5323741007194245,
+      "macro_f1": 0.4690603514132926,
+      "resolved_precision": 0.2708333333333333,
+      "resolved_recall": 0.3023255813953488,
+      "resolved_f1": 0.2857142857142857,
+      "resolved_support": 43,
+      "unresolved_precision": 0.6703296703296703,
+      "unresolved_recall": 0.6354166666666666,
+      "unresolved_f1": 0.6524064171122995,
+      "unresolved_support": 96,
+      "extra": {
+        "seed": 17
+      }
+    },
+    {
+      "method": "TF-IDF logistic regression",
+      "text_mode": "response_only",
+      "accuracy": 0.6546762589928058,
+      "macro_f1": 0.5231560891938251,
+      "resolved_precision": 0.391304347826087,
+      "resolved_recall": 0.20930232558139536,
+      "resolved_f1": 0.2727272727272727,
+      "resolved_support": 43,
+      "unresolved_precision": 0.7068965517241379,
+      "unresolved_recall": 0.8541666666666666,
+      "unresolved_f1": 0.7735849056603774,
+      "unresolved_support": 96,
+      "extra": {
+        "C": 0.1,
+        "ngram_range": [
+          1,
+          2
+        ],
+        "dev_macro_f1": 0.6135265700483092
+      }
+    }
+  ],
+  "model_input_fields": [
+    "sec_comment",
+    "company_response"
+  ]
+}

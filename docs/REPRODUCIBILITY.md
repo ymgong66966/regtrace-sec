@@ -45,6 +45,14 @@ Feedback modes:
 - `GEPA-scalar`: correctness-only feedback.
 - `GEPA-category`: coarse issue/gap category feedback.
 - `GEPA-full`: gold label plus evidence relevance, supporting quote or resolution basis, and visible unmet requirement.
+- `GEPA-independent-full`: gold label plus independently written natural-language feedback from `gpt-5.4-mini`. The feedback writer saw only the SEC comment, company response, raw retrieved snippets, issue metadata, and gold visible-evidence label; it did not see the original adjudication rationale fields.
+
+Independent-feedback ablation result on the grouped split:
+
+- GEPA-full with original adjudication feedback: 0.756 macro-F1
+- GEPA-independent-full: 0.750 macro-F1
+
+This ablation directly tests whether the full-feedback result depends on reusing the same rationale fields that produced the benchmark labels.
 
 ## MIPROv2 Run
 
@@ -117,3 +125,16 @@ Mean macro-F1 across folds:
 
 The standard deviations are nontrivial, so the paper should report this as stability evidence rather than as a claim of deterministic margins.
 
+## Non-Prompt Supervised Baselines
+
+A lightweight TF-IDF logistic-regression baseline is included to address the non-prompt-optimization baseline concern.
+
+Grouped split test macro-F1:
+
+- Majority unresolved: 0.409
+- Random train-prior: 0.469
+- TF-IDF logistic regression, response-only: 0.523
+- TF-IDF logistic regression, raw amended-filing snippets: 0.523
+- TF-IDF logistic regression, oracle evidence summary: 0.858
+
+The raw-snippet result shows that a simple lexical supervised classifier does not explain the GEPA-full gain. The oracle-summary result is diagnostic: once evidence interpretation is distilled, the task becomes much easier.

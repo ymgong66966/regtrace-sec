@@ -1,0 +1,4 @@
+method,text_mode,accuracy,macro_f1,resolved_precision,resolved_recall,resolved_f1,resolved_support,unresolved_precision,unresolved_recall,unresolved_f1,unresolved_support,extra_json
+Majority class,oracle_summary,0.6906474820143885,0.4085106382978723,0.0,0.0,0.0,43,0.6906474820143885,1.0,0.8170212765957446,96,"{""majority_label"": ""unresolved""}"
+Random train-prior,oracle_summary,0.5323741007194245,0.4690603514132926,0.2708333333333333,0.3023255813953488,0.2857142857142857,43,0.6703296703296703,0.6354166666666666,0.6524064171122995,96,"{""seed"": 17}"
+TF-IDF logistic regression,oracle_summary,0.8920863309352518,0.8581343131251276,1.0,0.6511627906976745,0.7887323943661971,43,0.8648648648648649,1.0,0.927536231884058,96,"{""C"": 0.3, ""ngram_range"": [1, 2], ""dev_macro_f1"": 0.8764796706124549}"

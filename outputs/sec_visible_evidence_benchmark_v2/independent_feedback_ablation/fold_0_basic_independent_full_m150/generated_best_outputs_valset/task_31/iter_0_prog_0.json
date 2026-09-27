@@ -1,0 +1,5 @@
+{
+    "reasoning": "The company has addressed the SEC comment by removing the reference to \"similarly secure technology\" and providing additional details regarding the custody and transfer of bitcoin. The amended filing clarifies how the Bitcoin Custodian will manage the Trust's bitcoin, specifying the cold and hot storage arrangements and the conditions under which bitcoin will be transferred. Furthermore, the company has quantified the storage of private keys, indicating that a substantial portion will be held in cold storage. This response effectively resolves the SEC's concerns.",
+    "label": "resolved",
+    "reason": "The company has made the necessary revisions to its disclosure, addressing all aspects of the SEC comment regarding the custody and transfer of bitcoin, thereby resolving the issue."
+}

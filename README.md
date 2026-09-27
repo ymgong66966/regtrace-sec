@@ -8,7 +8,7 @@ This repository is organized as a release-ready bundle for the RegTrace-Agent pa
 
 - `data/sec_visible_evidence_benchmark_v2/`: frozen 472-example benchmark, split files, manifest, and dataset reports.
 - `docs/results/`: paper-ready result tables, prompt-evolution artifacts, qualitative cases, evidence ablations, temporal/topic holdouts, and feedback ablations.
-- `docs/review_response/`: additional analyses motivated by reviews, including the paired follow-up corroboration test and five-fold OOF summary.
+- `docs/review_response/`: additional analyses motivated by reviews, including the paired follow-up corroboration test, five-fold OOF summary, supervised baselines, and independent-feedback ablation.
 - `outputs/`: compact raw result JSON/CSV files needed to rebuild reported tables.
 - `scripts/`: dataset, retrieval, optimization, evaluation, and analysis scripts.
 - `pressback/`: local helper package for SEC/OpenAI/DSPy utilities.
@@ -42,6 +42,11 @@ The release includes a paired follow-up corroboration analysis. Later same-topic
 
 See `docs/review_response/followup_paired_analysis.md`.
 
+The release also includes two reviewer-response additions:
+
+- Non-prompt supervised baselines: TF-IDF logistic regression reaches 0.523 macro-F1 with raw amended-filing snippets, far below GEPA-full, while an oracle-summary variant reaches 0.858 macro-F1. See `docs/review_response/supervised_baselines_summary.md`.
+- Independent-feedback ablation: GEPA trained with GPT-5.4-mini feedback that did not see the original adjudication rationales reaches 0.750 macro-F1, close to the original GEPA-full result of 0.756. See `docs/review_response/independent_feedback_ablation.md`.
+
 ## Reproduction
 
 Install dependencies:
@@ -64,9 +69,14 @@ Rebuild the final leaderboard table from included outputs:
 PYTHONPATH=. python scripts/sec_build_final_leaderboard_artifact.py
 ```
 
-OpenAI-backed optimization and adjudication scripts require `OPENAI_API_KEY`. Existing result artifacts are included so table-level reproduction does not require rerunning every model call.
+Run the non-prompt supervised baselines:
+
+```bash
+make supervised-baselines
+```
+
+OpenAI-backed optimization and adjudication scripts require `OPENAI_API_KEY`. Existing result artifacts are included so table-level reproduction does not require rerunning every model call. Expensive targets such as `make independent-gepa-ablation` are intentionally explicit and should be run only when regenerating model-call artifacts.
 
 ## Release Status
 
 This is a GitHub-ready local bundle. Before public upload, confirm the final code/data license choice and remove any author-identifying metadata if the repository is used for anonymous review.
-

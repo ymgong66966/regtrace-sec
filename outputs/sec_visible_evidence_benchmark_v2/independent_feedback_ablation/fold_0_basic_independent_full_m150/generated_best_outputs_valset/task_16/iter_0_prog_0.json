@@ -1,0 +1,5 @@
+{
+    "reasoning": "The company has revised the Use of Proceeds section of the Registration Statement to reflect the correct amounts of proceeds after offering expenses, as requested in the SEC comment. The amended evidence shows that the proceeds after offering expenses are now accurately stated as $252,250,000 and $290,000,000, depending on whether the over-allotment option is exercised. This aligns with the SEC's request to revise the table to reflect the correct amounts.",
+    "label": "resolved",
+    "reason": "The company addressed the SEC comment by revising the Use of Proceeds table to accurately reflect the proceeds after offering expenses, thus fulfilling the requirement set forth in the comment."
+}

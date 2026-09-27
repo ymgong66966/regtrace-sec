@@ -1,0 +1,5 @@
+{
+    "reasoning": "The company has provided a response that includes the significant terms of the agreement regarding the feature film \"Buffaloed,\" including the payment of a $130,000 debt obligation. The amended evidence indicates that this debt was paid off as per the agreement with Bold Crayon, and it is reflected in the financial statements. The company also mentions the accounts receivable related to the film, which provides additional context to the financial obligations. However, the response does not explicitly address whether the debt obligation was reflected in the balance sheet at December 31, 2022, nor does it clarify where the repayment is reflected in the cash-flow statement. Therefore, while some aspects of the comment have been addressed, not all parts of the SEC comment have been fully resolved.",
+    "label": "unresolved",
+    "reason": "The company did not fully disclose whether the debt obligation was reflected in the balance sheet at December 31, 2022, nor did it specify where the repayment is shown in the cash-flow statement, leaving parts of the SEC comment unaddressed."
+}
