@@ -12,3 +12,6 @@ outputs/dspy_cache/
 *.fls
 *.log
 *.out
+data/fda_warning_letters/*.jsonl.gz
+data/fda_warning_letters/*.manifest.json
+data/fda_warning_letters/*_trace_candidates.jsonl

@@ -75,6 +75,17 @@ The release also includes two reviewer-response additions:
 - Full independent label audit: an independent `gpt-5.4-mini` auditor sees only test-time fields for all 472 examples and reaches 0.731 agreement accuracy and 0.715 macro-F1 against the released benchmark labels. This is not expert validation, but it strengthens label-validity evidence. See `docs/review_response/independent_label_audit_full.md`.
 - Independent-feedback ablation: GEPA trained with GPT-5.4-mini feedback that did not see the original adjudication rationales reaches 0.750 macro-F1, close to the original GEPA-full result of 0.756. See `docs/review_response/independent_feedback_ablation.md`.
 
+## Cross-Regulatory Probe
+
+The repository includes a small FDA warning-letter probe to test whether the
+RegTrace framing can extend beyond SEC correspondence. In the public FDA
+warning-letter corpus snapshot we checked, 413 warning letters link to a later
+closeout letter whose text is also present in the corpus. Public company
+response letters are almost absent, so this is not a second benchmark yet; it is
+a data-structure probe for warning-to-closeout regulatory traces.
+
+See `docs/review_response/fda_trace_probe.md`.
+
 ## Reproduction
 
 Install dependencies:
@@ -126,6 +137,13 @@ Run the Jev typed decision gate smoke test. This requires a local `.env` file wi
 
 ```bash
 make jev-smoke
+```
+
+Run the FDA warning-letter trace probe after downloading the public JSONL
+snapshot into `data/fda_warning_letters/`:
+
+```bash
+make fda-trace-probe
 ```
 
 OpenAI-backed optimization and adjudication scripts require `OPENAI_API_KEY`. Existing result artifacts are included so table-level reproduction does not require rerunning every model call. Expensive targets such as `make independent-gepa-ablation` are intentionally explicit and should be run only when regenerating model-call artifacts.

@@ -75,9 +75,17 @@ The current paper should remain centered on RegTrace-SEC. Other public regulator
 Promising candidates:
 
 - FDA Warning Letters: public FDA site has warning letters with response/closeout filters and thousands of entries.
-- Hugging Face `tim-a-wood/fda-warning-letters`: a public scrape of FDA warning letters with response-letter fields.
+- Hugging Face `tim-a-wood/fda-warning-letters`: a public scrape of FDA warning letters with full text and response/closeout URL fields.
 - openFDA Complete Response Letters: public endpoint for FDA complete response letters.
 - Commercial SEC comment-letter products such as Audit Analytics, sec-api.io, or Obscura can help scale thread reconstruction, but licensing may limit anonymous release.
 
-Recommendation: do not expand the main benchmark before ARR October unless the current SEC package is fully cleaned. Use these as discussion/future work, not core results.
+FDA probe status: the downloaded 2026-08-10 snapshot contains 6,428 records,
+5,220 warning-letter rows, 1,200 closeout-letter rows, and 413 linked
+warning-closeout pairs with closeout text present in the same corpus. Public
+company response letters are almost absent in this snapshot, so the strongest
+FDA extension is warning-to-closeout outcome tracing or deficiency-resolution
+verification, not a direct SEC-style response-and-amended-evidence task.
 
+Recommendation: do not expand the main benchmark before ARR October unless the
+current SEC package is fully cleaned. Use the FDA result as a cross-regulatory
+probe and future extension point, not as core evidence for the main result.
