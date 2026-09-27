@@ -1,0 +1,218 @@
+{
+  "input": "data/sec_visible_evidence_benchmark_v2/sec_visible_evidence_benchmark_v2.jsonl",
+  "model": "gpt-5.4-mini",
+  "num_rows": 472,
+  "estimate": {
+    "rows": 472,
+    "model": "gpt-5.4-mini",
+    "input_tokens_est": 1138455,
+    "output_tokens_est": 245440,
+    "cost_usd_est": 1.95832125
+  },
+  "summary": {
+    "accuracy_agreement": 0.7309,
+    "classification_report": {
+      "resolved": {
+        "precision": 0.5631,
+        "recall": 0.7582,
+        "f1": 0.6462,
+        "support": 153
+      },
+      "unresolved": {
+        "precision": 0.8609,
+        "recall": 0.7179,
+        "f1": 0.7829,
+        "support": 319
+      },
+      "macro_avg": {
+        "f1": 0.7146
+      },
+      "accuracy": 0.7309
+    },
+    "gold_counts": {
+      "resolved": 153,
+      "unresolved": 319
+    },
+    "audit_label_counts": {
+      "resolved": 206,
+      "unresolved": 266
+    },
+    "agreements": 345,
+    "disagreements": 127,
+    "high_confidence_rows": 465,
+    "high_confidence_agreement": 0.7398,
+    "mean_confidence": 0.9245,
+    "cost_usd": 0.926507,
+    "by_issue_category": {
+      "crypto": {
+        "n": 28,
+        "agreement": 0.7143,
+        "gold_counts": {
+          "resolved": 9,
+          "unresolved": 19
+        },
+        "audit_label_counts": {
+          "resolved": 11,
+          "unresolved": 17
+        }
+      },
+      "non_gaap": {
+        "n": 16,
+        "agreement": 0.8125,
+        "gold_counts": {
+          "resolved": 1,
+          "unresolved": 15
+        },
+        "audit_label_counts": {
+          "resolved": 4,
+          "unresolved": 12
+        }
+      },
+      "other": {
+        "n": 183,
+        "agreement": 0.7377,
+        "gold_counts": {
+          "unresolved": 119,
+          "resolved": 64
+        },
+        "audit_label_counts": {
+          "unresolved": 97,
+          "resolved": 86
+        }
+      },
+      "revenue_recognition": {
+        "n": 75,
+        "agreement": 0.72,
+        "gold_counts": {
+          "unresolved": 55,
+          "resolved": 20
+        },
+        "audit_label_counts": {
+          "unresolved": 44,
+          "resolved": 31
+        }
+      },
+      "risk_factor": {
+        "n": 91,
+        "agreement": 0.6374,
+        "gold_counts": {
+          "resolved": 35,
+          "unresolved": 56
+        },
+        "audit_label_counts": {
+          "resolved": 46,
+          "unresolved": 45
+        }
+      },
+      "spac_disclosure": {
+        "n": 78,
+        "agreement": 0.8205,
+        "gold_counts": {
+          "resolved": 24,
+          "unresolved": 54
+        },
+        "audit_label_counts": {
+          "resolved": 28,
+          "unresolved": 50
+        }
+      }
+    },
+    "by_gap_type": {
+      "incomplete_accounting_analysis": {
+        "n": 25,
+        "agreement": 0.84,
+        "gold_counts": {
+          "unresolved": 25
+        },
+        "audit_label_counts": {
+          "unresolved": 21,
+          "resolved": 4
+        }
+      },
+      "incomplete_legal_or_regulatory_analysis": {
+        "n": 25,
+        "agreement": 0.76,
+        "gold_counts": {
+          "unresolved": 25
+        },
+        "audit_label_counts": {
+          "resolved": 6,
+          "unresolved": 19
+        }
+      },
+      "missing_exhibit_or_document": {
+        "n": 29,
+        "agreement": 0.6552,
+        "gold_counts": {
+          "unresolved": 29
+        },
+        "audit_label_counts": {
+          "unresolved": 19,
+          "resolved": 10
+        }
+      },
+      "missing_quantification": {
+        "n": 59,
+        "agreement": 0.8136,
+        "gold_counts": {
+          "unresolved": 59
+        },
+        "audit_label_counts": {
+          "unresolved": 48,
+          "resolved": 11
+        }
+      },
+      "missing_specific_disclosure": {
+        "n": 140,
+        "agreement": 0.65,
+        "gold_counts": {
+          "unresolved": 140
+        },
+        "audit_label_counts": {
+          "resolved": 49,
+          "unresolved": 91
+        }
+      },
+      "resolved_but_regulator_requested_more_detail": {
+        "n": 38,
+        "agreement": 0.7895,
+        "gold_counts": {
+          "unresolved": 38
+        },
+        "audit_label_counts": {
+          "unresolved": 30,
+          "resolved": 8
+        }
+      },
+      "resolved_visible_evidence": {
+        "n": 153,
+        "agreement": 0.7582,
+        "gold_counts": {
+          "resolved": 153
+        },
+        "audit_label_counts": {
+          "resolved": 116,
+          "unresolved": 37
+        }
+      }
+    }
+  },
+  "model_input_fields": [
+    "sec_comment",
+    "company_response",
+    "retrieved_snippets[:3].snippet"
+  ],
+  "held_out_fields": [
+    "visible_evidence_resolution_label",
+    "scalar_feedback",
+    "category_feedback",
+    "full_feedback",
+    "feedback_sec_request",
+    "feedback_company_action",
+    "feedback_evidence_summary",
+    "feedback_unmet_requirement",
+    "amended_evidence_evidence_summary",
+    "amended_evidence_missing_evidence",
+    "real_followup_text"
+  ]
+}

@@ -215,7 +215,7 @@ GEPA-full & \textbf{0.784} & \textbf{0.756} & \textbf{0.674} & \textbf{0.839} & 
 
 The majority baseline has high accuracy because unresolved examples dominate, but zero resolved F1. The handwritten prompt is conservative: it has perfect unresolved precision but misses most gaps. MIPROv2 improves substantially, GEPA-scalar improves recall, and GEPA-category is too coarse in this run. GEPA-full is strongest overall, improving macro-F1 by 10.4 points over MIPROv2 and 8.1 points over GEPA-scalar. This shows that full feedback is not merely adding more text; it trains the reviewer to compare requested obligations against visible evidence.
 
-Table~\ref{tab:robustness} addresses two alternate explanations and one deployment question. A TF-IDF logistic-regression classifier trained on the same raw evidence reaches only 0.523 macro-F1, so lexical supervision does not explain the GEPA-full gain. A frozen sentence encoder with a trained logistic scoring head reaches 0.667 macro-F1 without generation, and a Jev typed decision gate reaches 0.722, showing that \framework{} can support cheap triage scorers, but still trails the full feedback-trained reviewer. To test possible feedback leakage, we regenerate full textual feedback with an independent \texttt{gpt-5.4-mini} writer that sees only test-time fields plus the gold label, not the original adjudication rationales; GEPA with this feedback reaches 0.750 macro-F1, nearly matching the original 0.756.
+Table~\ref{tab:robustness} addresses two alternate explanations and one deployment question. A TF-IDF logistic-regression classifier trained on the same raw evidence reaches only 0.523 macro-F1, so lexical supervision does not explain the GEPA-full gain. A frozen sentence encoder with a trained logistic scoring head reaches 0.667 macro-F1 without generation, and a Jev typed decision gate reaches 0.722, showing that \framework{} can support cheap triage scorers, but still trails the full feedback-trained reviewer. The guarded reviewer also improves over a monolithic prompt under both \texttt{gpt-4o-mini} and \texttt{gpt-5.4-mini}, suggesting that obligation-evidence structure matters across backbones. To test possible feedback leakage, we regenerate full textual feedback with an independent \texttt{gpt-5.4-mini} writer that sees only test-time fields plus the gold label, not the original adjudication rationales; GEPA with this feedback reaches 0.750 macro-F1, nearly matching the original 0.756.
 
 \begin{table}[t]
 \centering
@@ -227,14 +227,16 @@ Table~\ref{tab:robustness} addresses two alternate explanations and one deployme
 \midrule
 Lexical baseline & TF-IDF, response only & 0.523 \\
 Lexical baseline & TF-IDF, raw snippets & 0.523 \\
-Diagnostic upper bound & TF-IDF, oracle evidence summary & 0.858 \\
 Scoring head & Frozen encoder, raw snippets & 0.667 \\
 Decision gate & Jev typed choice, raw snippets & 0.722 \\
+Reviewer structure & 4o-mini monolithic / guarded & 0.638 / 0.808 \\
+Reviewer structure & 5.4-mini monolithic / guarded & 0.612 / 0.732 \\
 Feedback source & GEPA-full, original feedback & 0.756 \\
 Feedback source & GEPA-full, independent feedback & 0.750 \\
+Diagnostic upper bound & TF-IDF, oracle evidence summary & 0.858 \\
 \bottomrule
 \end{tabular}
-\caption{Robustness checks. The raw-snippet TF-IDF baseline shows that lexical supervision does not explain the main result. Frozen encoder and Jev decision scorers are cheap non-generative triage components. The independent-feedback ablation shows that GEPA-full does not depend on reusing the original adjudication rationales.}
+\caption{Robustness checks. The raw-snippet TF-IDF baseline shows that lexical supervision does not explain the main result. Frozen encoder and Jev decision scorers are cheap non-generative triage components. Multi-LLM reviewer runs show that guarded obligation-evidence structure improves over monolithic prompting under two backbones. The independent-feedback ablation shows that GEPA-full does not depend on reusing the original adjudication rationales.}
 \label{tab:robustness}
 \end{table}
 
@@ -402,7 +404,7 @@ We introduced \framework{}, a context-to-feedback framework for evidence-grounde
 
 \section*{Limitations and Data Statement}
 
-This study is conditioned on visible retrieved evidence, so missed snippets can affect labels. The benchmark is LLM-adjudicated, with independent audit and external follow-up corroboration but without a full expert legal/accounting audit. Same-topic SEC follow-up is a noisy behavioral signal, not ground truth. We frame labels as visible-evidence judgments rather than legal determinations. An anonymized release will be provided at \url{https://anonymous.4open.science/r/regtrace-sec-XXXX/}; it includes benchmark JSONL, splits, accession identifiers, retrieval metadata, snippets, labels, feedback fields, prompts, outputs, and analysis scripts.
+This study is conditioned on visible retrieved evidence, so missed snippets can affect labels. The benchmark is LLM-adjudicated, with independent audit and external follow-up corroboration but without a full expert legal/accounting audit. A full independent \texttt{gpt-5.4-mini} audit over all 472 examples, using only test-time fields, reaches 0.731 agreement accuracy and 0.715 macro-F1 against the released labels. Same-topic SEC follow-up is a noisy behavioral signal, not ground truth. We frame labels as visible-evidence judgments rather than legal determinations. An anonymized release will be provided at \url{https://anonymous.4open.science/r/regtrace-sec-XXXX/}; it includes benchmark JSONL, splits, accession identifiers, retrieval metadata, snippets, labels, feedback fields, prompts, outputs, and analysis scripts.
 
 \clearpage
 \bibliography{references}

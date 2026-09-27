@@ -8,7 +8,7 @@ This repository is organized as a release-ready bundle for the RegTrace-Agent pa
 
 - `data/sec_visible_evidence_benchmark_v2/`: frozen 472-example benchmark, split files, manifest, and dataset reports.
 - `docs/results/`: paper-ready result tables, prompt-evolution artifacts, qualitative cases, evidence ablations, temporal/topic holdouts, and feedback ablations.
-- `docs/review_response/`: additional analyses motivated by reviews, including the paired follow-up corroboration test, five-fold OOF summary, supervised baselines, encoder/Jev triage scorers, and independent-feedback ablation.
+- `docs/review_response/`: additional analyses motivated by reviews, including the paired follow-up corroboration test, five-fold OOF summary, supervised baselines, encoder/Jev triage scorers, multi-LLM reviewer evaluation, independent label audit, and independent-feedback ablation.
 - `outputs/`: compact raw result JSON/CSV files needed to rebuild reported tables.
 - `scripts/`: dataset, retrieval, optimization, evaluation, and analysis scripts.
 - `pressback/`: local helper package for SEC/OpenAI/DSPy utilities.
@@ -49,6 +49,19 @@ RegTrace-Agent is organized as a context-to-feedback review system, not a single
 
 See `docs/review_response/encoder_scorer_summary.md` and `docs/review_response/jev_decision_gate_summary.md`.
 
+## Multi-LLM Reviewer Check
+
+To test whether the reviewer structure is tied to one frozen LLM, the release includes monolithic-vs-guarded evaluations with two backbones.
+
+| Model | Reviewer structure | Macro-F1 |
+|---|---|---:|
+| `gpt-4o-mini` | monolithic | 0.638 |
+| `gpt-4o-mini` | guarded verifier | 0.808 |
+| `gpt-5.4-mini` | monolithic | 0.612 |
+| `gpt-5.4-mini` | guarded verifier | 0.732 |
+
+See `docs/review_response/multi_llm_reviewer_eval.md`.
+
 ## Reviewer-Response Analyses
 
 The release includes a paired follow-up corroboration analysis. Later same-topic SEC follow-up is treated as a noisy external reference, not as the benchmark label. On the clean 220-example subset, the visible benchmark label reaches 0.756 macro-F1 against this external signal, while GEPA-full OOF reaches 0.590 and the handwritten baseline reaches 0.460. This should be used as label-validity evidence rather than as a method-win claim.
@@ -59,6 +72,7 @@ The release also includes two reviewer-response additions:
 
 - Non-prompt supervised baselines: TF-IDF logistic regression reaches 0.523 macro-F1 with raw amended-filing snippets, far below GEPA-full, while an oracle-summary variant reaches 0.858 macro-F1. See `docs/review_response/supervised_baselines_summary.md`.
 - Non-generative triage scorers: a frozen encoder scorer reaches 0.667 macro-F1 and Jev reaches 0.722 macro-F1 on the grouped held-out test set. These are fast decision gates rather than full reviewer replacements. See `docs/review_response/encoder_scorer_summary.md` and `docs/review_response/jev_decision_gate_summary.md`.
+- Full independent label audit: an independent `gpt-5.4-mini` auditor sees only test-time fields for all 472 examples and reaches 0.731 agreement accuracy and 0.715 macro-F1 against the released benchmark labels. This is not expert validation, but it strengthens label-validity evidence. See `docs/review_response/independent_label_audit_full.md`.
 - Independent-feedback ablation: GEPA trained with GPT-5.4-mini feedback that did not see the original adjudication rationales reaches 0.750 macro-F1, close to the original GEPA-full result of 0.756. See `docs/review_response/independent_feedback_ablation.md`.
 
 ## Reproduction
@@ -93,6 +107,19 @@ Run local non-generative encoder scorers:
 
 ```bash
 make encoder-scorers
+```
+
+Run the multi-LLM monolithic/guarded reviewer evaluation. This requires `OPENAI_API_KEY`:
+
+```bash
+make multi-llm-reviewer-eval
+```
+
+Estimate and run the full independent label audit. This requires `OPENAI_API_KEY`:
+
+```bash
+make label-audit-estimate
+make label-audit-full
 ```
 
 Run the Jev typed decision gate smoke test. This requires a local `.env` file with `JEV_API_KEY` and calls `https://thejevai.com/v1/systemone`:

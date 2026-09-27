@@ -27,7 +27,10 @@ MODES = ("monolithic", "obligation_guided", "guarded_verifier")
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", default="data/sec_visible_evidence_benchmark_v2/splits/grouped_random/test.jsonl")
+    parser.add_argument(
+        "--input",
+        default="data/sec_visible_evidence_benchmark_v2/splits/grouped_random_dev48_gap/fold_0/test.jsonl",
+    )
     parser.add_argument("--mode", choices=MODES, required=True)
     parser.add_argument("--model", default="gpt-4o-mini")
     parser.add_argument("--max-rows", type=int, default=0)
@@ -60,6 +63,7 @@ def main() -> int:
     summary = summarize(predictions)
     result = {
         "input": args.input,
+        "split_name": split_name(Path(args.input)),
         "mode": args.mode,
         "model": args.model,
         "num_rows": len(rows),
@@ -68,7 +72,7 @@ def main() -> int:
         "predictions": predictions,
         "model_input_fields": ["sec_comment", "company_response", "retrieved_snippets"],
     }
-    out_dir = Path(args.out_dir) / args.mode
+    out_dir = Path(args.out_dir) / split_name(Path(args.input)) / model_slug(args.model) / args.mode
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "result.json").write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
     write_jsonl(out_dir / "predictions.jsonl", predictions)
@@ -94,13 +98,17 @@ class Runner:
 
     def predict(self, row: dict[str, Any]) -> dict[str, Any]:
         started = time.time()
-        response = self.client.chat.completions.create(
-            model=self.model,
-            messages=build_messages(row, self.mode),
-            temperature=0,
-            max_tokens=self.max_tokens,
-            response_format={"type": "json_object"},
-        )
+        request_kwargs: dict[str, Any] = {
+            "model": self.model,
+            "messages": build_messages(row, self.mode),
+            "temperature": 0,
+            "response_format": {"type": "json_object"},
+        }
+        if self.model.startswith("gpt-5"):
+            request_kwargs["max_completion_tokens"] = self.max_tokens
+        else:
+            request_kwargs["max_tokens"] = self.max_tokens
+        response = self.client.chat.completions.create(**request_kwargs)
         elapsed = time.time() - started
         usage = usage_to_dict(response.usage)
         cost = cost_for_tokens(self.model, usage["prompt_tokens"], usage["completion_tokens"])
@@ -148,6 +156,19 @@ def build_messages(row: dict[str, Any], mode: str) -> list[dict[str, str]]:
             ),
         },
     ]
+
+
+def model_slug(model: str) -> str:
+    return re.sub(r"[^A-Za-z0-9_.-]+", "_", model).replace("/", "__")
+
+
+def split_name(path: Path) -> str:
+    parts = path.parts
+    if "splits" in parts:
+        index = parts.index("splits")
+        remainder = parts[index + 1 : -1]
+        return "__".join(remainder)
+    return path.parent.name
 
 
 def system_instruction(mode: str) -> str:
@@ -356,4 +377,3 @@ def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

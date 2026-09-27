@@ -1,4 +1,4 @@
-.PHONY: followup-paired leaderboard supervised-baselines encoder-scorers jev-smoke independent-feedback-estimate materialize-independent-feedback independent-gepa-ablation paper
+.PHONY: followup-paired leaderboard supervised-baselines encoder-scorers multi-llm-reviewer-eval label-audit-estimate label-audit-full jev-smoke independent-feedback-estimate materialize-independent-feedback independent-gepa-ablation paper
 
 followup-paired:
 	PYTHONPATH=. python scripts/sec_followup_paired_analysis.py
@@ -15,6 +15,18 @@ encoder-scorers:
 	PYTHONPATH=. HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python scripts/sec_encoder_scorer_baseline.py --representation separate_match --text-mode response_only
 	PYTHONPATH=. HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python scripts/sec_encoder_scorer_baseline.py --representation separate_match --text-mode evidence_snippets
 	PYTHONPATH=. HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python scripts/sec_encoder_scorer_baseline.py --representation separate_match --text-mode oracle_summary
+
+multi-llm-reviewer-eval:
+	PYTHONPATH=. python scripts/sec_obligation_verifier_eval.py --mode monolithic --model gpt-4o-mini
+	PYTHONPATH=. python scripts/sec_obligation_verifier_eval.py --mode guarded_verifier --model gpt-4o-mini
+	PYTHONPATH=. python scripts/sec_obligation_verifier_eval.py --mode monolithic --model gpt-5.4-mini
+	PYTHONPATH=. python scripts/sec_obligation_verifier_eval.py --mode guarded_verifier --model gpt-5.4-mini
+
+label-audit-estimate:
+	PYTHONPATH=. python scripts/sec_label_independent_audit.py --model gpt-5.4-mini --estimate-only
+
+label-audit-full:
+	PYTHONPATH=. python scripts/sec_label_independent_audit.py --model gpt-5.4-mini --resume
 
 jev-smoke:
 	PYTHONPATH=. python scripts/sec_jev_decision_eval.py --limit 3 --sleep 0.2 --endpoint https://thejevai.com/v1/systemone

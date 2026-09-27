@@ -166,3 +166,78 @@ Jev typed decision gate:
 - Usage on the 139-row grouped test set: 139 requests, 284,402 input tokens, 5,074 output tokens
 
 These scorers do not replace GEPA-full. They support the operational framing: cheap non-generative gates can triage high-risk responses, while the full feedback-trained reviewer handles deeper obligation-evidence reasoning.
+
+## Multi-LLM Reviewer Evaluation
+
+Script: `scripts/sec_obligation_verifier_eval.py`
+
+Default split:
+
+- `data/sec_visible_evidence_benchmark_v2/splits/grouped_random_dev48_gap/fold_0/test.jsonl`
+
+Test-time fields:
+
+- `sec_comment`
+- `company_response`
+- top 3 raw `retrieved_snippets`
+
+Output directories include split, model, and reviewer mode:
+
+- `outputs/sec_obligation_verifier_eval/grouped_random_dev48_gap__fold_0/gpt-4o-mini/monolithic/result.json`
+- `outputs/sec_obligation_verifier_eval/grouped_random_dev48_gap__fold_0/gpt-4o-mini/guarded_verifier/result.json`
+- `outputs/sec_obligation_verifier_eval/grouped_random_dev48_gap__fold_0/gpt-5.4-mini/monolithic/result.json`
+- `outputs/sec_obligation_verifier_eval/grouped_random_dev48_gap__fold_0/gpt-5.4-mini/guarded_verifier/result.json`
+
+Results:
+
+| Model | Mode | Accuracy | Macro-F1 | Resolved F1 | Unresolved F1 |
+|---|---|---:|---:|---:|---:|
+| `gpt-4o-mini` | monolithic | 0.6403 | 0.6380 | 0.6094 | 0.6667 |
+| `gpt-4o-mini` | guarded verifier | 0.8345 | 0.8076 | 0.7356 | 0.8796 |
+| `gpt-5.4-mini` | monolithic | 0.6187 | 0.6122 | 0.5620 | 0.6624 |
+| `gpt-5.4-mini` | guarded verifier | 0.7554 | 0.7321 | 0.6531 | 0.8111 |
+
+The guarded reviewer improves over monolithic prompting under both backbones. This supports the claim that the obligation-evidence review structure contributes beyond a single tuned prompt.
+
+## Full Independent Label Audit
+
+Script: `scripts/sec_label_independent_audit.py`
+
+Command:
+
+```bash
+PYTHONPATH=. python scripts/sec_label_independent_audit.py --model gpt-5.4-mini --resume
+```
+
+The auditor sees only:
+
+- `sec_comment`
+- `company_response`
+- top 3 raw `retrieved_snippets`
+
+The auditor does not see:
+
+- benchmark labels,
+- feedback fields,
+- oracle evidence summaries,
+- missing-requirement fields,
+- later SEC follow-up text.
+
+Artifacts:
+
+- `outputs/sec_label_independent_audit/gpt-5.4-mini/result.json`
+- `outputs/sec_label_independent_audit/gpt-5.4-mini/metrics.md`
+- `outputs/sec_label_independent_audit/gpt-5.4-mini/audit_predictions.jsonl`
+
+Results:
+
+| Metric | Value |
+|---|---:|
+| Rows | 472 |
+| Agreement accuracy | 0.7309 |
+| Macro-F1 vs benchmark label | 0.7146 |
+| Resolved F1 | 0.6462 |
+| Unresolved F1 | 0.7829 |
+| Mean confidence | 0.9245 |
+
+This is independent LLM audit evidence, not expert legal/accounting validation. It should be reported alongside same-topic SEC follow-up corroboration and the limitations around LLM-adjudicated labels.

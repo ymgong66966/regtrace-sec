@@ -80,3 +80,63 @@ triage_scorers:
     grouped_test_input_tokens: 284402
     grouped_test_output_tokens: 5074
     main_result_macro_f1: 0.722
+
+multi_llm_reviewer_eval:
+  split: data/sec_visible_evidence_benchmark_v2/splits/grouped_random_dev48_gap/fold_0
+  script: scripts/sec_obligation_verifier_eval.py
+  model_input_fields:
+    - sec_comment
+    - company_response
+    - retrieved_snippets[:3]
+  results:
+    - model: gpt-4o-mini
+      mode: monolithic
+      accuracy: 0.6403
+      macro_f1: 0.6380
+      resolved_f1: 0.6094
+      unresolved_f1: 0.6667
+      artifact: outputs/sec_obligation_verifier_eval/grouped_random_dev48_gap__fold_0/gpt-4o-mini/monolithic/result.json
+    - model: gpt-4o-mini
+      mode: guarded_verifier
+      accuracy: 0.8345
+      macro_f1: 0.8076
+      resolved_f1: 0.7356
+      unresolved_f1: 0.8796
+      artifact: outputs/sec_obligation_verifier_eval/grouped_random_dev48_gap__fold_0/gpt-4o-mini/guarded_verifier/result.json
+    - model: gpt-5.4-mini
+      mode: monolithic
+      accuracy: 0.6187
+      macro_f1: 0.6122
+      resolved_f1: 0.5620
+      unresolved_f1: 0.6624
+      artifact: outputs/sec_obligation_verifier_eval/grouped_random_dev48_gap__fold_0/gpt-5.4-mini/monolithic/result.json
+    - model: gpt-5.4-mini
+      mode: guarded_verifier
+      accuracy: 0.7554
+      macro_f1: 0.7321
+      resolved_f1: 0.6531
+      unresolved_f1: 0.8111
+      artifact: outputs/sec_obligation_verifier_eval/grouped_random_dev48_gap__fold_0/gpt-5.4-mini/guarded_verifier/result.json
+
+independent_label_audit:
+  script: scripts/sec_label_independent_audit.py
+  model: gpt-5.4-mini
+  benchmark: data/sec_visible_evidence_benchmark_v2/sec_visible_evidence_benchmark_v2.jsonl
+  model_input_fields:
+    - sec_comment
+    - company_response
+    - retrieved_snippets[:3]
+  held_out_fields:
+    - visible_evidence_resolution_label
+    - scalar_feedback
+    - category_feedback
+    - full_feedback
+    - amended_evidence_evidence_summary
+    - amended_evidence_missing_evidence
+    - real_followup_text
+  rows: 472
+  agreement_accuracy: 0.7309
+  macro_f1_vs_benchmark_label: 0.7146
+  resolved_f1: 0.6462
+  unresolved_f1: 0.7829
+  artifact: outputs/sec_label_independent_audit/gpt-5.4-mini/result.json

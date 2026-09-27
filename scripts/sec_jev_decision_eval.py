@@ -157,7 +157,7 @@ def post_json(endpoint: str, api_key: str, payload: dict[str, Any]) -> dict[str,
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "User-Agent": "RegTraceJevEval/0.1 (+https://github.com/ymgong66966/regtrace-sec)",
+            "User-Agent": "RegTraceJevEval/0.1",
         },
         method="POST",
     )
