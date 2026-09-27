@@ -15,3 +15,8 @@ outputs/dspy_cache/
 data/fda_warning_letters/*.jsonl.gz
 data/fda_warning_letters/*.manifest.json
 data/fda_warning_letters/*_trace_candidates.jsonl
+data/cms2567/*.zip
+data/cms2567/nursing_home_2567/
+data/cms2567/cms_theme/
+data/cms2567/*_candidates.jsonl
+data/cms2567/*.json

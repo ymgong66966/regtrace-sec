@@ -86,6 +86,17 @@ company response letters are almost absent in this snapshot, so the strongest
 FDA extension is warning-to-closeout outcome tracing or deficiency-resolution
 verification, not a direct SEC-style response-and-amended-evidence task.
 
+CMS-2567 probe status: the Zenodo CMS-2567 nursing-home release contains
+regulator-authored deficiency narratives and provider-authored plans of
+correction. A local probe forms 4,226 grouped deficiency-plus-plan pairs; 2,615
+match official CMS HealthCitations correction metadata, and 2,588 survive a
+min-trust >= 0.8 filter. This is the strongest cross-regulatory extension found
+so far. Its caveat is label design: correction status is highly skewed toward
+`Deficient, Provider has date of correction`, so a naive resolved/unresolved
+label would be weak. It is better suited for plan adequacy review, correction
+delay analysis, or cross-domain reviewer transfer.
+
 Recommendation: do not expand the main benchmark before ARR October unless the
-current SEC package is fully cleaned. Use the FDA result as a cross-regulatory
-probe and future extension point, not as core evidence for the main result.
+current SEC package is fully cleaned. Use FDA and CMS-2567 as cross-regulatory
+probes and future extension points, not as core evidence for the main result
+unless CMS-specific labels are constructed.

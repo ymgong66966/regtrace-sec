@@ -1,4 +1,4 @@
-.PHONY: followup-paired leaderboard supervised-baselines encoder-scorers multi-llm-reviewer-eval label-audit-estimate label-audit-full jev-smoke independent-feedback-estimate materialize-independent-feedback independent-gepa-ablation fda-trace-probe paper
+.PHONY: followup-paired leaderboard supervised-baselines encoder-scorers multi-llm-reviewer-eval label-audit-estimate label-audit-full jev-smoke independent-feedback-estimate materialize-independent-feedback independent-gepa-ablation fda-trace-probe cms2567-trace-probe paper
 
 followup-paired:
 	PYTHONPATH=. python scripts/sec_followup_paired_analysis.py
@@ -42,6 +42,9 @@ independent-gepa-ablation:
 
 fda-trace-probe:
 	PYTHONPATH=. python scripts/fda_warning_letter_probe.py
+
+cms2567-trace-probe:
+	PYTHONPATH=. python scripts/cms2567_trace_probe.py
 
 paper:
 	cd paper && pdflatex main_8page_v2.tex && bibtex main_8page_v2 && pdflatex main_8page_v2.tex && pdflatex main_8page_v2.tex

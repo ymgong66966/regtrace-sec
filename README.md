@@ -77,14 +77,20 @@ The release also includes two reviewer-response additions:
 
 ## Cross-Regulatory Probe
 
-The repository includes a small FDA warning-letter probe to test whether the
-RegTrace framing can extend beyond SEC correspondence. In the public FDA
-warning-letter corpus snapshot we checked, 413 warning letters link to a later
-closeout letter whose text is also present in the corpus. Public company
-response letters are almost absent, so this is not a second benchmark yet; it is
-a data-structure probe for warning-to-closeout regulatory traces.
+The repository includes two small probes to test whether the RegTrace framing
+can extend beyond SEC correspondence.
 
-See `docs/review_response/fda_trace_probe.md`.
+- FDA warning letters: 413 warning letters link to a later closeout letter whose
+  text is also present in the corpus. Public company response letters are almost
+  absent, so this is a data-structure probe rather than a second benchmark.
+- CMS-2567 nursing-home inspections: 4,226 grouped deficiency-plus-plan pairs,
+  of which 2,615 match official CMS correction metadata and 2,588 pass a
+  high-trust filter. This is structurally closer to RegTrace because it contains
+  regulator-authored deficiency narratives and provider-authored plans of
+  correction, but correction status is highly skewed toward corrected outcomes.
+
+See `docs/review_response/fda_trace_probe.md` and
+`docs/review_response/cms2567_trace_probe.md`.
 
 ## Reproduction
 
@@ -144,6 +150,13 @@ snapshot into `data/fda_warning_letters/`:
 
 ```bash
 make fda-trace-probe
+```
+
+Run the CMS-2567 trace probe after downloading the Zenodo CMS-2567 zip and the
+CMS nursing-home theme HealthCitations CSV into `data/cms2567/`:
+
+```bash
+make cms2567-trace-probe
 ```
 
 OpenAI-backed optimization and adjudication scripts require `OPENAI_API_KEY`. Existing result artifacts are included so table-level reproduction does not require rerunning every model call. Expensive targets such as `make independent-gepa-ablation` are intentionally explicit and should be run only when regenerating model-call artifacts.
