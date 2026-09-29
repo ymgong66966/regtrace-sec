@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to provide all physician-prescribed medications to a resident on therapeutic leave, which is a critical aspect of ensuring continuity of care. The plan of correction includes education for staff on the therapeutic leave policy and audits to ensure compliance, which addresses the identified issue. However, the plan lacks specific measures to ensure that the oversight does not recur beyond education and audits, which may not be sufficient to guarantee that all medications are consistently sent with residents.",
+    "material_obligations": "1. Ensure all active medications are verified and sent with residents on therapeutic leave.\n2. Provide continuity of care by sending all prescribed medications.",
+    "covered_elements": "1. Education of LPN on therapeutic leave policy.\n2. In-service training for all licensed nursing staff on the importance of sending all medications.\n3. Monthly audits of residents going on therapeutic leave to ensure compliance.",
+    "missing_or_weak_elements": "1. Specific actions to prevent future oversights beyond education (e.g., checklists or verification processes).\n2. No mention of how the facility will address potential adverse outcomes if medications are not sent.",
+    "label": "not_adequate",
+    "reason": "The plan does not sufficiently address the risk of future oversights in sending medications with residents on therapeutic leave, leaving a material gap in ensuring compliance with the standard of care."
+}

@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency indicates that the facility failed to limit psychotropic medications to a maximum of 14 days for a specific resident, which is a critical aspect of medication management. The plan of correction acknowledges the issue but lacks specific actions to address the failure to limit medication duration as required.",
+    "material_obligations": "1. Ensure psychotropic medications are limited to 14 days as needed.\n2. Implement safe medication practices.",
+    "covered_elements": "The plan mentions a commitment to safe medication practices but does not specify how the limitation of psychotropic medications will be enforced or monitored.",
+    "missing_or_weak_elements": "1. Specific actions to limit psychotropic medications to 14 days.\n2. Monitoring or auditing processes to ensure compliance with medication duration.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the specific obligation to limit psychotropic medications to 14 days, leaving a material gap in compliance with the deficiency."
+}

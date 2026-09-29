@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to ensure that Resident #1 received the required two-person assistance during care and bed mobility, which directly led to a fall resulting in significant injuries. The plan of correction outlines steps to re-educate staff on the two-person assistance requirement and includes ongoing audits. However, it lacks specific measures to ensure compliance with the care plan and does not address the systemic issues that led to the failure in care.",
+    "material_obligations": "1. Ensure two-person assistance is provided for bed mobility as per care plan.\n2. Educate staff on the importance of following care plans and bed mobility assessments.",
+    "covered_elements": "1. Re-education of nursing staff on two-person bed mobility.\n2. Ongoing audits by Nurse Managers.",
+    "missing_or_weak_elements": "1. Specific measures to ensure compliance with the care plan.\n2. Addressing systemic issues that led to the failure in care.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the systemic failures that led to the incident, nor does it ensure that the two-person assistance requirement will be consistently followed in the future."
+}

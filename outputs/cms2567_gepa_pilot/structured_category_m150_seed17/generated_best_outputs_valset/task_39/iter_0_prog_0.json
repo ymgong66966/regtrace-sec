@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to post daily nurse staffing in a location that was readily accessible and visible to residents. The plan of correction addresses this by moving the posting to a more accessible location and implementing training and monitoring to ensure compliance. However, while the plan includes systemic changes and quality assurance measures, it does not specify how the facility will ensure that the information is posted in a clear and readable format at the beginning of each shift, which is a critical obligation.",
+    "material_obligations": "1. Post daily nurse staffing information in a prominent place readily accessible to residents and visitors.\n2. Ensure the posting includes facility name, current date, total number and actual hours worked by nursing staff, and resident census.\n3. Post data at the beginning of each shift.",
+    "covered_elements": "1. Moved daily staff posting to a counter in the hallway accessible to all residents and visitors.\n2. In-serviced staff on requirements of Nursing Information Posting.\n3. Integrated information into standard orientation and in-service refresher courses.\n4. Implemented a Quality Assurance monitoring process.",
+    "missing_or_weak_elements": "1. Specific assurance that the posting will be in a clear and readable format.\n2. Confirmation that the data will be posted at the beginning of each shift.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the requirement to ensure that the nurse staffing information is posted in a clear and readable format at the beginning of each shift, which is a material obligation tied to the cited deficiency."
+}

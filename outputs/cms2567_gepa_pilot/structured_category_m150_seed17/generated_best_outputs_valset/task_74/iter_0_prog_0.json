@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to provide proper transfer assistance for a resident, leading to a fall. The material obligations include ensuring proper transfer assistance and adherence to fall prevention protocols. The plan of correction outlines steps taken to address these obligations, including staff reeducation and audits of transfer procedures. However, the plan does not specifically address the individual needs of residents who may require transfer assistance, as it states that the resident involved is no longer in the facility. This raises concerns about whether the measures will be effectively implemented for current residents.",
+    "material_obligations": "1. Provide proper transfer assistance to residents.\n2. Adhere to fall prevention protocols.",
+    "covered_elements": "1. Reeducation of nursing staff on fall policies and procedures.\n2. Audit of Hoyer lift transfers to ensure compliance with staffing requirements.",
+    "missing_or_weak_elements": "1. Specific measures to assess and address the individual transfer needs of current residents.\n2. Evidence of ongoing monitoring for residents who may require transfer assistance.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the individual transfer needs of current residents, which is a critical aspect of preventing falls, thus leaving a material gap in compliance with the deficiency."
+}

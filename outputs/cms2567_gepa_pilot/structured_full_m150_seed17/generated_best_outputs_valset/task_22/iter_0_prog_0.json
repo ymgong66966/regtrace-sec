@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative outlines several material obligations related to the development and implementation of person-centered care plans for residents, specifically addressing communication needs, activity participation, and toileting programs. The plan of correction addresses some of these obligations, particularly for R23 and R43, but fails to adequately address the obligations for R89 due to the resident's discharge. The plan includes in-service training and audits to ensure compliance, but the lack of measurable objectives and timeframes for R89's care plan remains a significant gap.",
+    "material_obligations": "1. Develop and implement person-centered care plans for each resident.\n2. Include measurable objectives and timeframes in care plans.\n3. Address communication needs for non-English speaking residents.\n4. Create person-centered activity care plans.\n5. Implement a personalized toileting program to prevent falls.",
+    "covered_elements": "1. R23's care plan updated to include translation services.\n2. R43's care plan updated with a personalized toileting program.\n3. In-service training for staff on developing care plans and addressing language needs.",
+    "missing_or_weak_elements": "1. R89's care plan remains unaddressed due to discharge, lacking measurable objectives and timeframes.\n2. Overall, the plan does not provide a clear strategy for ensuring all residents' needs are met consistently.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the material obligations for R89, leaving a significant gap in compliance with the requirement for measurable objectives and timeframes in care plans."
+}

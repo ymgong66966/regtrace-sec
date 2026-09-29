@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to provide adequate RN coverage for at least eight consecutive hours per day, which is a critical staffing requirement. The plan of correction outlines education for staff and audits to ensure compliance with this requirement. However, it does not address immediate corrective actions for the specific incident on 5/25/25 or provide a contingency plan for future staffing shortages, which are essential to prevent recurrence.",
+    "material_obligations": "1. Schedule a Registered Nurse (RN) for at least eight consecutive hours per day, seven days a week.\n2. Ensure that there is a plan in place to cover RN shifts, especially during high-demand periods (e.g., holidays).",
+    "covered_elements": "1. Education of staff/staffing coordinator on providing 8 hours of consecutive RN coverage.\n2. Audits conducted weekly for 4 weeks and then monthly for 2 months to ensure compliance.",
+    "missing_or_weak_elements": "1. Immediate corrective actions for the specific incident on 5/25/25.\n2. A contingency plan for staffing shortages during holidays or other high-demand periods.",
+    "label": "not_adequate",
+    "reason": "The plan does not sufficiently address the immediate failure to provide RN coverage on the specific date cited, nor does it include a robust strategy to prevent similar occurrences in the future, indicating a material gap in the response to the deficiency."
+}

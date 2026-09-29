@@ -1,0 +1,90 @@
+{
+  "category_distribution": {
+    "abuse_neglect": 70,
+    "care_planning_records": 52,
+    "food_safety": 49,
+    "infection_control": 50,
+    "other": 103,
+    "resident_care_safety": 111,
+    "resident_rights": 65
+  },
+  "decision": "go-cross-regulatory-adaptation",
+  "domain": "CMS-2567 plan-of-correction review",
+  "feedback_policy": {
+    "category": "ftag_group, severity band, and adequacy subtype",
+    "external_text": "CMS correction metadata, treated as weak outcome metadata rather than gold adequacy",
+    "forbidden_test_time_fields": [
+      "cms_poc_* label/rationale/feedback fields",
+      "deficiency_corrected",
+      "correction_date",
+      "days_to_correction"
+    ],
+    "full_text": "covered elements, missing elements, and adjudicated adequacy rationale",
+    "scalar": "binary correctness against cms_poc_binary_label"
+  },
+  "instance_count": 500,
+  "label_definition": "adequate iff the plan of correction materially covers resident-specific harm, affected population, systemic prevention, monitoring, responsible party, and credible completion; not_adequate iff material remediation elements are missing or only generic.",
+  "label_distribution": {
+    "adequate": 133,
+    "not_adequate": 367
+  },
+  "next_action": "Use as the main cross-regulatory adaptation study with CMS-specific rubric induction.",
+  "risks": [
+    "Correction-date metadata is too skewed to serve as the main adequacy label.",
+    "The plan itself is both response and corrective artifact, so evidence is less separable than SEC amended filings."
+  ],
+  "role_mapping": {
+    "evidence": [
+      "plan_of_correction_text",
+      "covered_elements",
+      "missing_elements"
+    ],
+    "external_corroboration": [
+      "deficiency_corrected",
+      "correction_date",
+      "days_to_correction"
+    ],
+    "feedback": [
+      "cms_poc_optimizer_feedback",
+      "cms_poc_missing_elements",
+      "cms_poc_covered_elements",
+      "cms_poc_reason"
+    ],
+    "label": [
+      "cms_poc_binary_label",
+      "cms_poc_adequacy_label"
+    ],
+    "metadata": [
+      "source_document_id",
+      "ccn",
+      "ftag",
+      "ftag_group",
+      "scope_severity",
+      "severity_band",
+      "state",
+      "report_year"
+    ],
+    "request": [
+      "deficiency_text"
+    ],
+    "response": [
+      "plan_of_correction_text"
+    ]
+  },
+  "strengths": [
+    "Regulator deficiency and provider corrective plan are directly observable.",
+    "The domain forces the framework to adapt the rubric rather than reuse the SEC checklist verbatim.",
+    "Full-feedback optimization already improves over generic and scalar/category CMS controls."
+  ],
+  "task_name": "deficiency-to-plan adequacy review",
+  "utility": {
+    "evidence_availability": 3.5,
+    "external_corroboration": 2.5,
+    "feedback_richness": 4.5,
+    "label_viability": 4.0,
+    "mean": 3.857,
+    "optimization_suitability": 4.0,
+    "release_viability": 4.0,
+    "role_observability": 4.5
+  }
+}

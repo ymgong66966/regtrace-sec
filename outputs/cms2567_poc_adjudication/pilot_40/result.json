@@ -1,0 +1,114 @@
+{
+  "input": "outputs/cms2567_poc_adjudication/cms2567_poc_pilot_40.jsonl",
+  "model": "gpt-5.4-mini",
+  "audit_model": "gpt-4o-mini",
+  "num_rows": 40,
+  "estimate": {
+    "rows": 40,
+    "calls": 80,
+    "by_model": [
+      {
+        "model": "gpt-5.4-mini",
+        "role": "primary",
+        "input_tokens_est": 71304,
+        "output_tokens_est": 30400,
+        "cost_usd_est": 0.190278
+      },
+      {
+        "model": "gpt-4o-mini",
+        "role": "audit",
+        "input_tokens_est": 71144,
+        "output_tokens_est": 30400,
+        "cost_usd_est": 0.0289116
+      }
+    ],
+    "total_cost_usd_est": 0.21919
+  },
+  "summary": {
+    "primary_label_counts": {
+      "partial": 35,
+      "inadequate": 4,
+      "adequate": 1
+    },
+    "audit_label_counts": {
+      "adequate": 6,
+      "partial": 31,
+      "inadequate": 3
+    },
+    "primary_binary_counts": {
+      "not_adequate": 39,
+      "adequate": 1
+    },
+    "binary_agreement": 0.875,
+    "three_way_agreement": 0.8,
+    "mean_primary_confidence": 0.917,
+    "median_days_to_correction_by_primary_binary": {
+      "adequate": 44,
+      "not_adequate": 38
+    },
+    "by_severity_band": {
+      "actual_harm": {
+        "inadequate": 1,
+        "partial": 6
+      },
+      "immediate_jeopardy": {
+        "partial": 10,
+        "inadequate": 1
+      },
+      "low_severity": {
+        "partial": 2,
+        "inadequate": 1
+      },
+      "potential_harm": {
+        "partial": 17,
+        "inadequate": 1,
+        "adequate": 1
+      }
+    },
+    "by_ftag_group": {
+      "abuse_neglect": {
+        "inadequate": 1,
+        "partial": 6
+      },
+      "care_planning_records": {
+        "partial": 4
+      },
+      "food_safety": {
+        "partial": 2
+      },
+      "infection_control": {
+        "partial": 1
+      },
+      "other": {
+        "partial": 11,
+        "inadequate": 3
+      },
+      "resident_care_safety": {
+        "partial": 8
+      },
+      "resident_rights": {
+        "partial": 3,
+        "adequate": 1
+      }
+    }
+  },
+  "label_policy": {
+    "test_time_fields": [
+      "deficiency_text",
+      "plan_of_correction_text",
+      "ftag",
+      "scope_severity"
+    ],
+    "hidden_from_adjudicator": [
+      "deficiency_corrected",
+      "correction_date",
+      "source_url"
+    ],
+    "primary_label": "cms_poc_adequacy_label",
+    "binary_mapping": {
+      "adequate": "adequate",
+      "partial": "not_adequate",
+      "inadequate": "not_adequate"
+    }
+  }
+}

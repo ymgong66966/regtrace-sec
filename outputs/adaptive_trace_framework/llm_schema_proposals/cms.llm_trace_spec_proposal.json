@@ -1,0 +1,104 @@
+{
+  "domain": "cms",
+  "task_name": "deficiency-to-plan adequacy review",
+  "decision": "go-cross-regulatory-adaptation",
+  "role_mapping": {
+    "request": [
+      "deficiency_text"
+    ],
+    "response": [
+      "plan_of_correction_text"
+    ],
+    "evidence": [
+      "plan_of_correction_text",
+      "cms_poc_covered_elements",
+      "cms_poc_missing_elements"
+    ],
+    "label": [
+      "cms_poc_binary_label",
+      "cms_poc_adequacy_label"
+    ],
+    "feedback": [
+      "cms_poc_optimizer_feedback",
+      "cms_poc_missing_elements",
+      "cms_poc_covered_elements",
+      "cms_poc_reason"
+    ],
+    "external_corroboration": [
+      "deficiency_corrected",
+      "correction_date",
+      "days_to_correction"
+    ],
+    "metadata": [
+      "source_document_id",
+      "ccn",
+      "ftag",
+      "ftag_group",
+      "scope_severity",
+      "severity_band",
+      "state",
+      "report_year"
+    ]
+  },
+  "label_policy": {
+    "definition": "adequate iff the plan of correction materially covers resident-specific harm, affected population, systemic prevention, monitoring, responsible party, and credible completion; not_adequate iff material remediation elements are missing or only generic."
+  },
+  "feedback_policy": {
+    "scalar": "binary correctness against cms_poc_binary_label",
+    "category": "ftag_group, severity band, and adequacy subtype",
+    "full_text": "covered elements, missing elements, and adjudicated adequacy rationale",
+    "external_text": "CMS correction metadata, treated as weak outcome metadata rather than gold adequacy",
+    "forbidden_test_time_fields": [
+      "cms_poc_* label/rationale/feedback fields",
+      "deficiency_corrected",
+      "correction_date",
+      "days_to_correction"
+    ]
+  },
+  "forbidden_test_time_fields": [
+    "cms_poc_* label/rationale/feedback fields",
+    "deficiency_corrected",
+    "correction_date",
+    "days_to_correction"
+  ],
+  "utility_scores": {
+    "role_observability": 4.5,
+    "evidence_availability": 3.5,
+    "label_viability": 4.0,
+    "feedback_richness": 4.5,
+    "external_corroboration": 2.5,
+    "release_viability": 4.0,
+    "optimization_suitability": 4.0,
+    "mean": 3.857
+  },
+  "risks": [
+    "Correction-date metadata is too skewed to serve as the main adequacy label.",
+    "The plan itself is both response and corrective artifact, so evidence is less separable than SEC amended filings."
+  ],
+  "minimal_experiment": {
+    "instance_count": 500,
+    "label_distribution": {
+      "not_adequate": 367,
+      "adequate": 133
+    },
+    "category_distribution": {
+      "resident_care_safety": 111,
+      "other": 103,
+      "abuse_neglect": 70,
+      "resident_rights": 65,
+      "care_planning_records": 52,
+      "infection_control": 50,
+      "food_safety": 49
+    }
+  },
+  "paper_claim": "The proposed framework effectively adapts the CMS deficiency-to-plan adequacy review process, ensuring that the evaluation of corrective actions is both rigorous and contextually relevant.",
+  "_latency_sec": 8.217,
+  "_usage": {
+    "prompt_tokens": 5030,
+    "completion_tokens": 771,
+    "total_tokens": 5801
+  },
+  "_domain": "cms",
+  "_model": "gpt-4o-mini",
+  "_sample_size": 4
+}

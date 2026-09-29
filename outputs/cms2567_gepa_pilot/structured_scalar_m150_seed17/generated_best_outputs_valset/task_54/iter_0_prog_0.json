@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility did not designate a qualified individual as the infection preventionist, and the current staff member covering this role lacks specialized training. The plan of correction addresses this by ensuring that both the Director of Nursing (DON) and the Assistant Director of Nursing (ADON) will receive specialized training in Infection Prevention and Control (IPC) and will have the necessary time to manage the infection control program. However, it does not explicitly confirm the designation of a qualified infection preventionist, which is a critical obligation.",
+    "material_obligations": "1. Designate a qualified individual as the infection preventionist.\n2. Ensure the designated individual has specialized training in infection prevention.",
+    "covered_elements": "1. DON and ADON will receive specialized training in IPC.\n2. The plan includes monitoring of training progress and certification.",
+    "missing_or_weak_elements": "1. Explicit designation of a qualified infection preventionist is not confirmed.\n2. Assurance that the IPC will be managed effectively by a trained individual is not fully addressed.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the critical obligation of designating a qualified infection preventionist, which is essential to meet the deficiency requirements."
+}

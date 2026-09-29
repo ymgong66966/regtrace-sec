@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to maintain respiratory equipment, specifically oxygen concentrators, in a clean manner, which posed a risk to residents' health. The plan of correction addresses the cleaning of the filters, staff education, and ongoing monitoring, which are essential to rectify the identified issues. However, while the plan includes cleaning and education, it does not specify a systematic approach to ensure that the cleaning is performed regularly and consistently beyond the initial audit.",
+    "material_obligations": "1. Maintain respiratory equipment, including oxygen concentrators, in a clean manner.\n2. Ensure that oxygen concentrator filters are cleaned or changed as per order.\n3. Document the cleaning and maintenance of respiratory equipment appropriately.",
+    "covered_elements": "1. All oxygen concentrator filters have been cleaned.\n2. An audit was completed to ensure compliance with cleaning/changes.\n3. Education was provided to nursing staff about the importance of filter maintenance and documentation.\n4. Ongoing monitoring and auditing of oxygen concentrator filters will occur weekly and monthly.",
+    "missing_or_weak_elements": "1. There is no detailed plan for regular cleaning beyond the initial audit.\n2. The plan lacks specific documentation procedures to ensure compliance is maintained over time.",
+    "label": "not_adequate",
+    "reason": "The plan does not sufficiently address the need for a systematic and ongoing cleaning schedule for the oxygen concentrators, which is critical to prevent recurrence of the deficiency."
+}

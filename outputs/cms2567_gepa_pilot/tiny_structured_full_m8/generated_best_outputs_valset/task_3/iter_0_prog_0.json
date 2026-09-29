@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to provide proper transfer assistance for a resident, which directly led to a fall. The material obligation is to ensure that residents receive appropriate transfer assistance to prevent falls. The plan of correction outlines steps to provide proper transfer assistance and includes staff reeducation and audits to ensure compliance. However, the plan does not address the specific incident involving R106, as the resident is no longer in the facility, and it lacks a direct corrective action for the failure that occurred.",
+    "material_obligations": "1. Provide proper transfer assistance to residents.\n2. Prevent falls through appropriate care and assistance.",
+    "covered_elements": "1. Reeducation of nursing staff on fall policies and procedures.\n2. Implementation of audits for Hoyer lift transfers to ensure compliance with staffing requirements.",
+    "missing_or_weak_elements": "1. Specific corrective actions related to the incident involving R106.\n2. Direct measures to address the failure that led to the fall.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the specific failure that resulted in the fall of R106, as it lacks targeted corrective actions for the incident and focuses on general policies and procedures instead."
+}

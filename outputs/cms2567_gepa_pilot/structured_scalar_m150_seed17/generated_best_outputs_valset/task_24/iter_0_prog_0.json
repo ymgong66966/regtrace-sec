@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates a failure to ensure the safety of Resident #7 during transport, specifically regarding the proper operation of the lift platform. The plan of correction outlines measures taken by the transport company to ensure that drivers confirm the lift is level before unloading residents. However, it lacks specific details on how the facility will monitor compliance with these measures or how they will address the needs of residents who may have been affected by this incident.",
+    "material_obligations": "1. Ensure the lift platform is level with the van before unloading residents.\n2. Provide training to drivers on safe unloading procedures.\n3. Identify other residents who may be affected by the same deficient practice.",
+    "covered_elements": "1. Drivers are required to confirm the lift is floor level before unloading.\n2. Education provided to all drivers by the transport company.",
+    "missing_or_weak_elements": "1. Lack of a monitoring system to ensure compliance with the new procedures.\n2. No specific corrective actions for residents affected by the incident.\n3. No details on how the facility will identify and address potential risks for other residents.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the material obligations, particularly in terms of monitoring compliance and providing corrective actions for affected residents, leaving a significant gap in ensuring resident safety during transport."
+}

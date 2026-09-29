@@ -1,0 +1,61 @@
+{
+  "num_examples": 800,
+  "num_warning_groups": 400,
+  "label_counts": {
+    "mismatched": 400,
+    "matched": 400
+  },
+  "negative_type_counts": {
+    "same_product_same_subject_wrong_closeout": 357,
+    "different_product_wrong_closeout": 4,
+    "same_product_wrong_closeout": 39
+  },
+  "product_counts_top": {
+    "Tobacco": 194,
+    "Food & Beverages": 158,
+    "Drugs": 138,
+    "Medical Devices": 128,
+    "Drugs | Food & Beverages": 56,
+    "Animal & Veterinary | Food & Beverages": 30,
+    "Dietary Supplements": 28,
+    "Biologics": 26,
+    "Animal & Veterinary": 12,
+    "Animal & Veterinary | Drugs": 10,
+    "Dietary Supplements | Food & Beverages": 8,
+    "Dietary Supplements | Drugs": 4
+  },
+  "split_sizes": {
+    "train": 480,
+    "dev": 160,
+    "test": 160
+  },
+  "split_label_counts": {
+    "train": {
+      "matched": 240,
+      "mismatched": 240
+    },
+    "dev": {
+      "matched": 80,
+      "mismatched": 80
+    },
+    "test": {
+      "matched": 80,
+      "mismatched": 80
+    }
+  },
+  "test_time_fields": [
+    "warning_text",
+    "candidate_closeout_text",
+    "product",
+    "subject",
+    "issuing_office"
+  ],
+  "hidden_fields": [
+    "true_closeout_url",
+    "fda_trace_label",
+    "binary_label",
+    "category_feedback",
+    "full_feedback"
+  ],
+  "label_definition": "matched iff the candidate closeout letter is the actual linked FDA closeout for the warning letter; mismatched iff it is a wrong closeout letter sampled as a hard negative."
+}

@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates a failure to administer medications as prescribed, specifically nebulizer treatments for Resident #28, which is a violation of the resident's rights and the facility's medication administration policies. The plan of correction outlines educational initiatives and monitoring systems to prevent future medication errors, which addresses the identified issues. However, the plan lacks specific measures to ensure that the resident's immediate needs are met and does not sufficiently address the systemic issues that led to the medication errors.",
+    "material_obligations": "1. Follow facility policy related to medication administration.\n2. Adhere to the 6 rights of medication administration.\n3. Ensure timely administration of prescribed medications.\n4. Respect resident's rights and requests for treatment.",
+    "covered_elements": "1. Education on the 6 rights of medication administration for all nursing staff.\n2. Medication administration audits conducted to ensure compliance.\n3. Daily review of staffing schedules to ensure training completion.",
+    "missing_or_weak_elements": "1. Specific actions to address the immediate needs of Resident #28 and prevent recurrence of similar issues.\n2. Clear accountability measures for staff who fail to administer medications as prescribed.\n3. Ongoing monitoring and assessment of resident outcomes related to medication administration.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the immediate and systemic issues that led to the medication errors, leaving a material gap in ensuring resident safety and compliance with medication administration policies."
+}

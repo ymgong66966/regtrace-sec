@@ -1,0 +1,8 @@
+{
+    "reasoning": "The facility failed to notify residents and their Responsible Parties in writing regarding transfers to the hospital, which is a clear violation of the requirements outlined in F-tag 623. The plan of correction addresses the issue by ensuring that notices are sent to the Responsible Parties and that staff are re-educated on the process. However, it does not fully address the lack of written notification for all affected residents, particularly for those who are no longer in the facility.",
+    "material_obligations": "1. Notify the resident and their Responsible Party in writing of the transfer and the reasons for the move.\n2. Record the reasons for the transfer in the resident's medical record.",
+    "covered_elements": "1. Notices of transfer were mailed to the Responsible Parties for Residents 1, 73, and 77.\n2. Staff re-education on providing notices upon transfer/discharge.\n3. Social Service staff trained to mail notices and upload them into the medical record.",
+    "missing_or_weak_elements": "1. No written notification was provided for Residents 72 and 110, who are no longer in the facility.\n2. The plan does not specify how to address the lack of notification for residents who have already been transferred without proper documentation.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the material obligations for all affected residents, particularly those who are no longer in the facility, leaving a gap in compliance with the notification requirement."
+}

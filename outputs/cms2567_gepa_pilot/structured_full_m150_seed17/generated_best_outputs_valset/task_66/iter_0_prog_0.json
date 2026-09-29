@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to implement care planned fall precautions for R1, specifically the requirement for a low bed and a bedside mat, which directly contributed to R1's fall and subsequent injuries. The plan of correction states that no plan is required due to past noncompliance, which does not address the material obligations identified in the deficiency.",
+    "material_obligations": "1. Ensure R1's bed is maintained at a low position as per the care plan.\n2. Ensure a bedside mat is in place to prevent falls.",
+    "covered_elements": "None, as the plan of correction states no plan is required.",
+    "missing_or_weak_elements": "1. No corrective actions or plans to ensure compliance with the care plan regarding bed height and mat placement.\n2. Lack of training or reminders for staff regarding the importance of following the care plan.",
+    "label": "not_adequate",
+    "reason": "The plan of correction is not adequate as it fails to address the material obligations related to R1's care plan, which directly contributed to the incident. There are no corrective actions proposed to prevent future occurrences."
+}

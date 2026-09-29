@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to implement timely fall interventions and update care plans for residents at risk of falls. Specifically, it highlights the lack of neurochecks for Resident 57 after an unwitnessed fall, which is a critical safety intervention. The plan of correction addresses some care plan revisions for residents but does not explicitly mention the implementation of neurochecks or a review of the fall risk assessments for all residents, which are essential to prevent future incidents.",
+    "material_obligations": "1. Timely implementation of fall interventions.\n2. Updating care plans with identified safety interventions.\n3. Conducting neurochecks after unwitnessed falls.",
+    "covered_elements": "1. Revised care plans for Resident 74 and Resident L to include specific safety interventions.\n2. Visual checks to ensure safety equipment (pool noodles) is correctly placed.",
+    "missing_or_weak_elements": "1. No mention of implementing neurochecks for residents after falls.\n2. Lack of a comprehensive review of fall risk assessments for all residents who experienced falls.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the critical obligation of conducting neurochecks after unwitnessed falls, which is essential for resident safety and preventing further incidents."
+}

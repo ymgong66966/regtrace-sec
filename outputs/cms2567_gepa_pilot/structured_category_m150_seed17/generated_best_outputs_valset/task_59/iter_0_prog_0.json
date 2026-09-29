@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to provide R141 with the appropriate food texture as per the care plan and physician's orders, which is a critical aspect of meeting the resident's nutritional needs. The plan of correction addresses the immediate issue by correcting R141's diet texture and verifying all diet orders for accuracy. It also includes training for staff and a robust auditing process to ensure compliance. However, while the plan addresses the immediate correction and verification of diet orders, it does not explicitly mention ongoing staff education or monitoring to prevent recurrence of the issue, which is essential for long-term compliance.",
+    "material_obligations": "1. Ensure R141 receives the prescribed regular texture food.\n2. Follow the policy and procedure for transmission of diet orders.\n3. Verify accuracy of diet orders in the tray tracking system.",
+    "covered_elements": "1. R141's diet texture was corrected to regular texture.\n2. Verification of all diet orders for accuracy was conducted.\n3. Additional training for food service staff on transmission of diet orders.\n4. Implementation of an auditing process for diet order compliance.",
+    "missing_or_weak_elements": "1. Ongoing staff education and monitoring to ensure adherence to diet orders.\n2. Specific measures to address potential staff awareness issues regarding diet orders.",
+    "label": "not_adequate",
+    "reason": "The plan does not sufficiently address the need for ongoing staff education and monitoring to prevent future occurrences of incorrect diet orders, which is a material gap tied to the cited deficiency."
+}

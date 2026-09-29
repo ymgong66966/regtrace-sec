@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to ensure that food was prepared in a manner that met the specific dietary needs of resident #1, leading to actual harm. The plan of correction includes auditing resident diets for compliance and educating staff on matching diet orders with meal tickets. However, it lacks specific measures to prevent the recurrence of similar incidents, such as ensuring that dietary managers verify compliance with diet orders before approving meal requests.",
+    "material_obligations": "1. Ensure food is prepared according to the resident's prescribed diet.\n2. Verify that dietary staff follow diet orders and meal tickets accurately.\n3. Implement monitoring to prevent future incidents of non-compliance.",
+    "covered_elements": "1. Auditing of resident diets for compliance.\n2. Education provided to dietary staff on matching diet cards to meal tickets.\n3. Education for nursing staff on checking meal tickets with trays served.",
+    "missing_or_weak_elements": "1. Specific measures to ensure dietary managers verify compliance with diet orders before meal approval.\n2. Detailed monitoring protocols to prevent future incidents of inappropriate food being served.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the critical obligation of ensuring that dietary managers verify compliance with prescribed diets, which is essential to prevent recurrence of choking incidents."
+}

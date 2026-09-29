@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that there were significant lapses in monitoring and responding to changes in residents' health conditions, particularly for Residents 39 and 35. Key obligations include timely assessment of changes in condition, proper notification of providers and family, and adherence to medication administration parameters. The plan of correction addresses some of these obligations through staff education and audits, but it lacks specific measures to ensure immediate corrective actions for residents currently experiencing changes in condition.",
+    "material_obligations": "1. Timely assessment of changes in resident health conditions.\n2. Notification of provider and family regarding changes in condition.\n3. Adherence to medication administration parameters.\n4. Implementation of alert charting for residents with changes in condition.",
+    "covered_elements": "1. Staff education on Change in Condition policy.\n2. Updated Oxycodone order to clarify administration parameters.\n3. Facility-wide audit to rule out changes in condition.\n4. Audits to ensure abnormal vitals are followed up on and providers are notified.",
+    "missing_or_weak_elements": "1. Immediate corrective actions for residents currently experiencing changes in condition.\n2. Specific measures to ensure alert charting is consistently implemented.\n3. Follow-up on the rescheduling of the CT scan for Resident 35.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address immediate corrective actions for residents currently experiencing changes in condition, which is a critical gap given the severity of the deficiencies noted."
+}

@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to properly store food, leading to expired items remaining in both the pantry and refrigerators, which poses a risk of food-borne illnesses. The plan of correction outlines a systematic approach to auditing and discarding expired or improperly dated food items, along with staff education on proper food storage practices. However, while the plan addresses the immediate issues of expired food and proper dating, it lacks specific details on how the effectiveness of these measures will be ensured over time, particularly in preventing future occurrences.",
+    "material_obligations": "1. Discard expired foods from all storage areas.\n2. Ensure all food items have proper open and expiration dates.\n3. Conduct regular audits of food storage areas.",
+    "covered_elements": "1. Audits of dry pantry and refrigerators conducted and expired/wilted/open undated food discarded.\n2. Daily audits planned for food items in storage.\n3. Education provided to Dietary Staff on proper food storage and dating.\n4. Monitoring of food audits for compliance by Dietary Manager or Designee.",
+    "missing_or_weak_elements": "1. Lack of a clear long-term strategy to prevent recurrence of expired food items.\n2. No specific details on how staff will be held accountable for compliance beyond initial education.\n3. Insufficient emphasis on the frequency and thoroughness of audits after the initial monitoring period.",
+    "label": "not_adequate",
+    "reason": "The plan does not sufficiently address the long-term prevention of expired food items, leaving a material gap in ensuring ongoing compliance with food safety standards."
+}

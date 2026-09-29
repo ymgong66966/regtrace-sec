@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to initiate antibiotic therapy for two residents who met the criteria for treatment based on positive urine cultures. The plan of correction includes actions to address this failure, such as reviewing current residents with active UTIs, conducting a root cause analysis, providing education to licensed nurses, and implementing audits to ensure compliance with antibiotic prescribing protocols. However, while the plan outlines educational and auditing measures, it does not specifically address the immediate failure to administer antibiotics for the two residents in question, which is a critical gap.",
+    "material_obligations": "1. Initiate antibiotic therapy for residents with positive urine cultures who meet the criteria.\n2. Ensure timely notification of positive urine culture results to the provider for prompt treatment initiation.",
+    "covered_elements": "1. Review of current residents with active UTIs and orders for antibiotic treatments.\n2. Education for licensed nurses on notification practices for positive urine culture reports.\n3. Implementation of audits to ensure antibiotics are prescribed as indicated.",
+    "missing_or_weak_elements": "1. Immediate corrective action for the failure to administer antibiotics to RQ and R58.\n2. Specific measures to prevent recurrence of the failure to initiate treatment in a timely manner.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the immediate failures related to the specific residents who did not receive timely antibiotic treatment, leaving a material gap in compliance with the deficiency requirements."
+}

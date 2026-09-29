@@ -30,6 +30,11 @@ def main() -> int:
     parser.add_argument("--input", default="outputs/cms2567_poc_adjudication/calibrated_audit_balanced_50_input.jsonl")
     parser.add_argument("--primary", default="outputs/cms2567_poc_adjudication/sample_120_calibrated_primary/adjudications.jsonl")
     parser.add_argument("--audit", default="outputs/cms2567_poc_adjudication/calibrated_audit_balanced_50_gpt4omini/adjudications.jsonl")
+    parser.add_argument(
+        "--benchmark",
+        default="",
+        help="Optional canonical benchmark JSONL with cms_poc_binary_label. If set, ignores --input/--primary/--audit.",
+    )
     parser.add_argument("--mode", choices=MODES, required=True)
     parser.add_argument("--model", default="gpt-4o-mini")
     parser.add_argument("--max-tokens", type=int, default=520)
@@ -39,7 +44,11 @@ def main() -> int:
     parser.add_argument("--estimate-only", action="store_true")
     args = parser.parse_args()
 
-    rows = build_consensus_rows(Path(args.input), Path(args.primary), Path(args.audit))
+    rows = build_benchmark_rows(Path(args.benchmark)) if args.benchmark else build_consensus_rows(
+        Path(args.input),
+        Path(args.primary),
+        Path(args.audit),
+    )
     estimate = estimate_cost(rows, args.mode, args.model, args.max_tokens)
     if args.estimate_only:
         print(json.dumps(estimate, indent=2, ensure_ascii=False))
@@ -58,6 +67,7 @@ def main() -> int:
     summary = summarize(predictions)
     result = {
         "input": args.input,
+        "benchmark": args.benchmark,
         "primary": args.primary,
         "audit": args.audit,
         "mode": args.mode,
@@ -163,6 +173,18 @@ def build_consensus_rows(input_path: Path, primary_path: Path, audit_path: Path)
         row["_primary_label"] = primary_label
         row["_audit_label"] = audit_label
         rows.append(row)
+    rows.sort(key=lambda row: row["example_id"])
+    return rows
+
+
+def build_benchmark_rows(path: Path) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for row in load_jsonl(path):
+        out = dict(row)
+        out["_gold_binary"] = normalize_binary(row.get("cms_poc_binary_label"))
+        out["_primary_label"] = row.get("cms_poc_adequacy_label", "")
+        out["_audit_label"] = ""
+        rows.append(out)
     rows.sort(key=lambda row: row["example_id"])
     return rows
 

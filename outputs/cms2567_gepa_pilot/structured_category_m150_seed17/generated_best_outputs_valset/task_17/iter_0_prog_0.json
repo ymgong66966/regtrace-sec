@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative outlines several material obligations related to food safety and sanitation practices, including proper labeling, dating, and covering of foods, monitoring temperatures, and ensuring sanitary conditions during food service. The plan of correction addresses these obligations through staff education and the implementation of audits to ensure compliance. However, the plan does not sufficiently address the ongoing lack of a dietary manager or food service director, which is critical for maintaining oversight and accountability in food safety practices.",
+    "material_obligations": "1. Proper labeling, dating, and covering of foods.\n2. Disposing of foods past the best-by date.\n3. Monitoring dish machine temperatures.\n4. Proper use of the three-compartment sink.\n5. Maintaining sanitizing buckets at appropriate ppm.\n6. Cleaning and sanitizing food thermometers.\n7. Maintaining appropriate cold food and beverage temperatures for resident consumption.",
+    "covered_elements": "- Staff education on proper food handling, labeling, and temperature control.\n- Discarding food items past their best-by date.\n- Implementation of focused random audits to ensure compliance.",
+    "missing_or_weak_elements": "- Lack of a designated dietary manager or food service director to oversee food safety practices.\n- No specific measures to ensure accountability and consistent monitoring of compliance beyond education and audits.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the critical oversight role of a dietary manager or food service director, which is essential for ensuring ongoing compliance with food safety practices."
+}

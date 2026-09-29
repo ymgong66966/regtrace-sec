@@ -1,0 +1,8 @@
+{
+    "reasoning": "The plan of correction adequately addresses the specific obligation of reviewing clinical records related to oxygen therapy for the identified residents. However, it does not extend to all residents receiving oxygen therapy, which is a broader obligation mentioned in the deficiency narrative.",
+    "material_obligations": "1. Review of clinical records for all residents receiving oxygen therapy.\n2. Assessment by a licensed nurse for potential complications associated with altered oxygen settings.",
+    "covered_elements": "The plan covers the review of clinical records for Residents 25, 53, and 57 and confirms that no adverse outcomes were identified.",
+    "missing_or_weak_elements": "The plan does not explicitly mention the review of physician orders, oxygen settings, and documentation for all residents receiving oxygen therapy, which is a material obligation.",
+    "label": "not_adequate",
+    "reason": "The plan fails to address the obligation to review all residents receiving oxygen therapy, leaving a material gap in compliance with the deficiency."
+}

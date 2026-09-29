@@ -1,0 +1,115 @@
+{
+  "input": "outputs/cms2567_poc_adjudication/cms2567_poc_sample_120.jsonl",
+  "model": "gpt-5.4-mini",
+  "audit_model": "",
+  "rubric_version": "calibrated",
+  "num_rows": 120,
+  "estimate": {
+    "rows": 120,
+    "calls": 120,
+    "by_model": [
+      {
+        "model": "gpt-5.4-mini",
+        "role": "primary",
+        "input_tokens_est": 221531,
+        "output_tokens_est": 91200,
+        "cost_usd_est": 0.57654825
+      }
+    ],
+    "total_cost_usd_est": 0.576548
+  },
+  "summary": {
+    "primary_label_counts": {
+      "adequate": 28,
+      "inadequate": 10,
+      "partial": 82
+    },
+    "audit_label_counts": {},
+    "primary_binary_counts": {
+      "adequate": 28,
+      "not_adequate": 92
+    },
+    "binary_agreement": null,
+    "three_way_agreement": null,
+    "mean_primary_confidence": 0.9228,
+    "median_days_to_correction_by_primary_binary": {
+      "adequate": 35,
+      "not_adequate": 36
+    },
+    "by_severity_band": {
+      "actual_harm": {
+        "adequate": 5,
+        "partial": 20,
+        "inadequate": 3
+      },
+      "immediate_jeopardy": {
+        "inadequate": 3,
+        "partial": 24,
+        "adequate": 3
+      },
+      "low_severity": {
+        "adequate": 7,
+        "partial": 6,
+        "inadequate": 1
+      },
+      "potential_harm": {
+        "inadequate": 3,
+        "adequate": 13,
+        "partial": 32
+      }
+    },
+    "by_ftag_group": {
+      "abuse_neglect": {
+        "partial": 18,
+        "adequate": 1,
+        "inadequate": 2
+      },
+      "care_planning_records": {
+        "adequate": 4,
+        "partial": 8
+      },
+      "food_safety": {
+        "adequate": 2,
+        "partial": 7
+      },
+      "infection_control": {
+        "inadequate": 2,
+        "partial": 7,
+        "adequate": 2
+      },
+      "other": {
+        "partial": 18,
+        "adequate": 8,
+        "inadequate": 1
+      },
+      "resident_care_safety": {
+        "inadequate": 5,
+        "partial": 12,
+        "adequate": 4
+      },
+      "resident_rights": {
+        "adequate": 7,
+        "partial": 12
+      }
+    }
+  },
+  "label_policy": {
+    "test_time_fields": [
+      "deficiency_text",
+      "plan_of_correction_text",
+      "ftag",
+      "scope_severity"
+    ],
+    "hidden_from_adjudicator": [
+      "deficiency_corrected",
+      "correction_date",
+      "source_url"
+    ],
+    "primary_label": "cms_poc_adequacy_label",
+    "binary_mapping": {
+      "adequate": "adequate",
+      "partial": "not_adequate",
+      "inadequate": "not_adequate"
+    }
+  }
+}

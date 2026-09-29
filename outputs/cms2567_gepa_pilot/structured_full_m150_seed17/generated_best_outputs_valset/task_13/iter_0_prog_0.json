@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to ensure safe discharge planning for a resident with cognitive impairments, leading to an unsafe discharge to a homeless shelter without necessary medications. The plan of correction includes audits and staff education on discharge policies, which addresses the need for proper discharge planning. However, it lacks specific measures to prevent similar incidents in the future, particularly for residents with cognitive impairments.",
+    "material_obligations": "1. Ensure safe discharge planning for residents, particularly those with cognitive impairments.\n2. Assess residents' health and safety needs before discharge.\n3. Implement safeguards to prevent unsafe discharges.",
+    "covered_elements": "1. Audit of residents with discharges/transfers to validate discharge locations.\n2. Education of the interdisciplinary team and licensed nurses on discharge policies.\n3. Random audits of resident transfers/discharges by the Administrator or designee.",
+    "missing_or_weak_elements": "1. Specific strategies to assess cognitive capacity and decision-making ability of residents before discharge.\n2. Clear protocols for contacting family or social services prior to discharges, especially for cognitively impaired residents.\n3. Detailed follow-up actions to ensure compliance with discharge policies.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the specific needs of cognitively impaired residents during discharge, leaving a material gap in ensuring their safety and health needs are met."
+}

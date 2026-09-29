@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to provide necessary interventions for a resident with a pressure ulcer, including timely repositioning and application of pressure-relieving devices. The plan of correction outlines several steps to address these failures, including staff education, updates to care plans, and audits to ensure compliance. However, while the plan includes some corrective actions, it lacks specific measures to ensure immediate and consistent application of the interventions required for Resident #26, particularly regarding the timely repositioning and use of pressure-relieving boots.",
+    "material_obligations": "1. Reposition Resident #26 every 2 hours.\n2. Apply pressure-relieving boots as ordered.\n3. Notify nursing staff of soiled dressings.\n4. Document refusals of care interventions.",
+    "covered_elements": "1. Updated care plan to include interventions for refusals.\n2. Staff education on the \"Pressure Ulcer\" policy and procedures.\n3. Communication to nursing staff regarding care plan adherence.\n4. Audits to verify compliance with repositioning and dressing changes.",
+    "missing_or_weak_elements": "1. Specific measures to ensure timely repositioning every 2 hours.\n2. Immediate application of pressure-relieving boots after dressing changes.\n3. Clear accountability for staff to report and document refusals and soiled dressings.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the immediate and consistent application of critical interventions for Resident #26, particularly the timely repositioning and use of pressure-relieving devices, which are essential to prevent further deterioration of the pressure ulcer."
+}

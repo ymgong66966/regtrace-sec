@@ -1,0 +1,47 @@
+{
+  "input": "outputs/cms2567_poc_adjudication/calibrated_audit_balanced_50_input.jsonl",
+  "primary": "outputs/cms2567_poc_adjudication/sample_120_calibrated_primary/adjudications.jsonl",
+  "audit": "outputs/cms2567_poc_adjudication/calibrated_audit_balanced_50_gpt4omini/adjudications.jsonl",
+  "mode": "regtrace_calibrated",
+  "model": "gpt-4o-mini",
+  "num_rows": 37,
+  "gold_counts": {
+    "adequate": 20,
+    "not_adequate": 17
+  },
+  "estimate": {
+    "rows": 37,
+    "model": "gpt-4o-mini",
+    "mode": "regtrace_calibrated",
+    "input_tokens_est": 56096,
+    "output_tokens_est": 19240,
+    "cost_usd_est": 0.0199584
+  },
+  "summary": {
+    "accuracy": 0.8108,
+    "macro_f1": 0.7959,
+    "label_counts": {
+      "adequate": 20,
+      "not_adequate": 17
+    },
+    "pred_counts": {
+      "adequate": 27,
+      "not_adequate": 10
+    },
+    "per_label": {
+      "adequate": {
+        "precision": 0.7407,
+        "recall": 1.0,
+        "f1": 0.8511,
+        "support": 20
+      },
+      "not_adequate": {
+        "precision": 1.0,
+        "recall": 0.5882,
+        "f1": 0.7407,
+        "support": 17
+      }
+    },
+    "cost_usd": 0.010051
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that Resident 25's care plan was not revised following a fall, which is a critical obligation to ensure resident safety and prevent further incidents. The plan of correction outlines training for staff on the importance of timely care plan revisions and includes a monitoring process to ensure compliance. However, while the plan addresses the need for revisions and audits, it does not explicitly state how the facility will ensure that all residents' care plans are consistently updated following changes in condition, which is a key obligation.",
+    "material_obligations": "1. Revise care plans within seven days of assessments and following changes in resident condition.\n2. Document appropriate interventions to address new risks after incidents such as falls.",
+    "covered_elements": "1. In-service training on care plan revision requirements.\n2. Implementation of random weekly audits of care plan revisions.\n3. Revision of Resident 25's care plan to address the fall.",
+    "missing_or_weak_elements": "1. Assurance that all residents' care plans are revised consistently following changes in condition, not just for Resident 25.\n2. Specific strategies to prevent future lapses in care plan revisions for all residents.",
+    "label": "not_adequate",
+    "reason": "The plan does not sufficiently address the systemic issue of ensuring all residents' care plans are revised following changes in condition, leaving a material gap in compliance with the obligation to protect resident safety."
+}

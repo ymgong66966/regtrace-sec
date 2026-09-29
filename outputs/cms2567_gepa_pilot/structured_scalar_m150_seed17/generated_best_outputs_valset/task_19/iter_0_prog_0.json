@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to provide necessary skin care for Resident 1, who had a rash that was not assessed or treated by nursing staff despite multiple reports from the resident. Additionally, the facility did not ensure that Resident 58 was weighed daily as required for medication management related to heart failure. The plan of correction does not address specific actions to rectify these failures or ensure compliance with care protocols.",
+    "material_obligations": "1. Timely assessment and treatment of skin conditions for residents.\n2. Daily weighing of Resident 58 to monitor weight gain related to medication management.",
+    "covered_elements": "The plan of correction does not specify any actions or measures that directly address the material obligations identified in the deficiency.",
+    "missing_or_weak_elements": "1. Specific procedures for assessing and treating skin conditions.\n2. Implementation of a daily weighing protocol for Resident 58.",
+    "label": "not_adequate",
+    "reason": "The plan of correction lacks specific actions to address the identified deficiencies, leaving material obligations unaddressed and residents at risk."
+}

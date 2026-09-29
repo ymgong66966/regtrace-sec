@@ -1,0 +1,5 @@
+{
+    "reasoning": "The Plan of Correction addresses the identified deficiencies by implementing a new protocol checklist for monitoring residents experiencing sudden changes in condition, which includes timely notification of physicians and family representatives. It also emphasizes regular audits and staff training on the updated policies. However, while the plan introduces new measures, it does not specifically address the gaps in documentation and monitoring that led to the resident's decline. The effectiveness of the plan will depend on consistent implementation and adherence by the staff, which is not guaranteed.",
+    "label": "not_adequate",
+    "reason": "The Plan of Correction does not sufficiently resolve the deficiencies related to the specific monitoring and documentation failures that contributed to the resident's decline and eventual death."
+}

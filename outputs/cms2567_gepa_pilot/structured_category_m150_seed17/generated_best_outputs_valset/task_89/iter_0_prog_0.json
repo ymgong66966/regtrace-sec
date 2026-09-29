@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates multiple failures in medication management, supervision during meals, and maintaining resident dignity. The plan of correction addresses some of these issues through staff re-education and audits, but it lacks specific measures to ensure immediate supervision for residents at risk during meals and does not adequately address the medication management failures for Residents 35 and 79.",
+    "material_obligations": "1. Ensure medications are managed and supervised appropriately.\n2. Provide supervision for residents during meals, especially those with swallowing precautions.\n3. Maintain resident dignity and provide timely care.",
+    "covered_elements": "1. Re-education of Nursing/CNA staff on ensuring resident dignity and care.\n2. Audits of meal times for residents to ensure timely delivery of meals.\n3. Audits of residents with a history of removing clothing to maintain dignity.",
+    "missing_or_weak_elements": "1. Specific measures to ensure supervision during meals for residents at risk (e.g., those with dysphagia).\n2. Clear protocols for medication management and supervision for Residents 35 and 79.\n3. Immediate action plans for staff when observing residents in need of care.",
+    "label": "not_adequate",
+    "reason": "The plan does not sufficiently address the critical need for supervision during meals for at-risk residents and lacks a robust strategy for managing medications, leaving material gaps in care."
+}

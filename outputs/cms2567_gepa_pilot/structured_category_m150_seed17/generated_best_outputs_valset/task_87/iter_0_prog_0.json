@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative outlines significant failures in wound care practices and PPE usage, which are critical to infection control. The plan of correction addresses these issues through re-education of staff and implementation of audits to ensure compliance. However, while the plan includes training and audits, it lacks specific details on how the facility will ensure that the re-education is effective and that the practices will be sustained over time.",
+    "material_obligations": "1. Complete wound care to prevent cross-contamination.\n2. Properly wear PPE when entering contact isolation rooms.",
+    "covered_elements": "1. Re-education of RN2 on clean dressing changes and proper PPE donning.\n2. Re-education of housekeeping staff on PPE use in isolation rooms.\n3. Implementation of random audits to verify compliance.",
+    "missing_or_weak_elements": "1. Specific strategies to ensure the effectiveness of re-education.\n2. Details on how the facility will monitor long-term compliance beyond the audit schedule.",
+    "label": "not_adequate",
+    "reason": "The plan does not sufficiently address the need for effective monitoring and sustainability of the corrective actions, leaving a material gap in ensuring compliance with infection control practices."
+}

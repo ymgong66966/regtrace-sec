@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to implement a 14-day stop date for PRN psychotropic medications, specifically lorazepam and haldol, which is a requirement to evaluate the necessity of continued use. The plan of correction outlines steps to ensure compliance with this requirement, including practitioner evaluations and audits to verify adherence to the 14-day stop date policy. However, while the plan includes education and audits, it does not explicitly address the immediate need for a 14-day stop date for all current residents, particularly for those already on PRN medications.",
+    "material_obligations": "1. Implement a 14-day stop date for PRN psychotropic medications.\n2. Ensure evaluations are conducted to assess the appropriateness of continued medication use.\n3. Maintain documentation of rationale for extending medication orders.",
+    "covered_elements": "1. Practitioner evaluations for current residents on PRN psychotropic medications.\n2. Daily audits to verify compliance with the 14-day stop date requirement.\n3. Education for licensed nurses on medication management protocols.",
+    "missing_or_weak_elements": "1. Immediate implementation of 14-day stop dates for all current PRN psychotropic medications.\n2. Clear documentation of rationale for extending medication orders, particularly for those already prescribed.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the immediate need for compliance with the 14-day stop date requirement for all current residents, leaving a material gap in addressing the deficiency."
+}

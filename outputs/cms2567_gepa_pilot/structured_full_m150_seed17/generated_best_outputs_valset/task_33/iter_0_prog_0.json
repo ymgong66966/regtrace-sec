@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to provide quarterly financial statements for resident trust accounts, specifically for Resident 6, which is a violation of the requirement to maintain accurate accounting records. The plan of correction outlines steps to ensure compliance, including audits and in-service training for the Business Office Manager. However, while the plan addresses the immediate issue for Resident 6, it lacks specificity on how it will ensure ongoing compliance for all residents with trust accounts, which is a critical aspect of the obligation.",
+    "material_obligations": "1. Provide quarterly financial statements for resident trust accounts.\n2. Maintain a system for full and complete accounting of personal funds.",
+    "covered_elements": "1. Business Office Manager will audit residents with trust accounts to ensure they are receiving quarterly financial statements.\n2. Business Office Manager will be in-serviced on the regulation F-0568.\n3. Resident #6 has received the required quarterly statements for the specified months.",
+    "missing_or_weak_elements": "1. Ongoing compliance measures for all residents with trust accounts are not clearly defined.\n2. The plan does not specify how the facility will prevent future lapses in providing financial statements.",
+    "label": "not_adequate",
+    "reason": "The plan does not sufficiently address the need for ongoing compliance for all residents with trust accounts, leaving a material gap in ensuring that all residents receive their quarterly financial statements as required."
+}

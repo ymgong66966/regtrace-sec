@@ -1,0 +1,87 @@
+{
+  "category_distribution": {
+    "crypto": 28,
+    "cybersecurity": 1,
+    "non_gaap": 16,
+    "other": 183,
+    "revenue_recognition": 75,
+    "risk_factor": 91,
+    "spac_disclosure": 78
+  },
+  "decision": "go-primary-benchmark",
+  "domain": "SEC comment-letter review",
+  "feedback_policy": {
+    "category": "issue_category plus coarse gap/category feedback",
+    "external_text": "later same-topic SEC follow-up text, used only as noisy corroboration",
+    "forbidden_test_time_fields": [
+      "feedback_*",
+      "full_feedback",
+      "amended_evidence_* adjudication fields",
+      "real_followup_text"
+    ],
+    "full_text": "natural-language feedback describing the SEC request, company action, visible evidence coverage, and unmet requirement",
+    "scalar": "binary correctness against visible_evidence_resolution_label"
+  },
+  "instance_count": 472,
+  "label_definition": "resolved iff the visible amended-filing evidence substantially satisfies the material SEC request; unresolved iff a material requested item, quantification, exhibit, document, legal/accounting analysis, or other obligation is still missing from the visible evidence.",
+  "label_distribution": {
+    "resolved": 153,
+    "unresolved": 319
+  },
+  "next_action": "Use as the primary benchmark and report retrieval-conditioned limitations.",
+  "risks": [
+    "Labels are visible-evidence judgments and do not replace expert legal/accounting review.",
+    "Retrieval-conditioned labels can be affected by missing amended-filing evidence."
+  ],
+  "role_mapping": {
+    "evidence": [
+      "retrieved_snippets",
+      "amended_evidence_best_snippet"
+    ],
+    "external_corroboration": [
+      "real_followup_text",
+      "has_real_followup"
+    ],
+    "feedback": [
+      "scalar_feedback",
+      "category_feedback",
+      "full_feedback",
+      "feedback_sec_request",
+      "feedback_company_action",
+      "feedback_evidence_summary",
+      "feedback_unmet_requirement"
+    ],
+    "label": [
+      "visible_evidence_resolution_label"
+    ],
+    "metadata": [
+      "review_thread_id",
+      "cik",
+      "review_file_no",
+      "issue_category",
+      "response_year"
+    ],
+    "request": [
+      "sec_comment"
+    ],
+    "response": [
+      "company_response"
+    ]
+  },
+  "strengths": [
+    "Request, response, amended evidence, label, feedback, and follow-up roles are all observable.",
+    "Natural-language feedback is aligned with the reasoning failures the reviewer must learn.",
+    "236 examples have later same-topic SEC follow-up for external corroboration."
+  ],
+  "task_name": "visible-evidence response-resolution review",
+  "utility": {
+    "evidence_availability": 4.5,
+    "external_corroboration": 4.0,
+    "feedback_richness": 5.0,
+    "label_viability": 4.0,
+    "mean": 4.571,
+    "optimization_suitability": 5.0,
+    "release_viability": 4.5,
+    "role_observability": 5.0
+  }
+}

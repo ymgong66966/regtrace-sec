@@ -1,0 +1,84 @@
+{
+  "domain": "sec",
+  "task_name": "visible-evidence response-resolution review",
+  "decision": "go-primary-benchmark",
+  "role_mapping": {
+    "request": [
+      "sec_comment"
+    ],
+    "response": [
+      "company_response"
+    ],
+    "evidence": [
+      "retrieved_snippets",
+      "amended_evidence_best_snippet"
+    ],
+    "label": [
+      "visible_evidence_resolution_label"
+    ],
+    "feedback": [
+      "scalar_feedback",
+      "category_feedback",
+      "full_feedback",
+      "feedback_sec_request",
+      "feedback_company_action",
+      "feedback_evidence_summary",
+      "feedback_unmet_requirement"
+    ],
+    "external_corroboration": [
+      "real_followup_text",
+      "has_real_followup"
+    ],
+    "metadata": [
+      "review_thread_id",
+      "cik",
+      "review_file_no",
+      "issue_category",
+      "response_year"
+    ]
+  },
+  "label_policy": {
+    "definition": "resolved iff the visible amended-filing evidence substantially satisfies the material SEC request; unresolved iff a material requested item, quantification, exhibit, document, legal/accounting analysis, or other obligation is still missing from the visible evidence."
+  },
+  "feedback_policy": {
+    "scalar": "binary correctness against visible_evidence_resolution_label",
+    "category": "issue_category plus coarse gap/category feedback",
+    "full_text": "natural-language feedback describing the SEC request, company action, visible evidence coverage, and unmet requirement",
+    "external_text": "later same-topic SEC follow-up text, used only as noisy corroboration",
+    "forbidden_test_time_fields": [
+      "feedback_*",
+      "full_feedback",
+      "amended_evidence_* adjudication fields",
+      "real_followup_text"
+    ]
+  },
+  "utility_scores": {
+    "role_observability": 5.0,
+    "evidence_availability": 4.5,
+    "label_viability": 4.0,
+    "feedback_richness": 5.0,
+    "external_corroboration": 4.0,
+    "release_viability": 4.5,
+    "optimization_suitability": 5.0,
+    "mean": 4.571
+  },
+  "risks": [
+    "Labels are visible-evidence judgments and do not replace expert legal/accounting review.",
+    "Retrieval-conditioned labels can be affected by missing amended-filing evidence."
+  ],
+  "minimal_experiment": {
+    "description": "Conduct a small-scale review of a subset of SEC comments and corresponding company responses to validate the role mapping and feedback policy.",
+    "size": "10-20 examples",
+    "focus": "Assess the accuracy of labels and feedback richness."
+  },
+  "paper_claim": "The proposed role mapping and feedback policy effectively align with the SEC's regulatory review process, ensuring that the evidence provided by companies is adequately evaluated against the requests made by the SEC.",
+  "_latency_sec": 7.509,
+  "_usage": {
+    "prompt_tokens": 9422,
+    "completion_tokens": 634,
+    "total_tokens": 10056
+  },
+  "_domain": "sec",
+  "_model": "gpt-4o-mini",
+  "_sample_size": 4
+}

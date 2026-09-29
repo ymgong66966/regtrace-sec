@@ -1,0 +1,5 @@
+{
+    "reasoning": "The plan of correction includes several measures aimed at addressing the deficiencies related to the use of mechanical lifts, such as inspections, staff education, and audits. However, it lacks a clear and specific corrective action plan that directly addresses the immediate cause of the incident, which was the absence of safety clips on the mechanical lift. While the plan mentions inspections and education, it does not explicitly state how the facility will ensure compliance with manufacturer's instructions moving forward or how it will prevent similar incidents in the future. Therefore, the plan is not adequate.",
+    "label": "not_adequate",
+    "reason": "The plan of correction does not adequately address the specific failure that led to the incident, particularly the lack of safety clips on the mechanical lift, and lacks a clear strategy for ensuring compliance with safety protocols."
+}

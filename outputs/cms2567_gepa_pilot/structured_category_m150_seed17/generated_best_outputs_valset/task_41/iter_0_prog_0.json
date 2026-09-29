@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to post current staffing information as required by their policy and CMS regulations. The plan of correction includes re-education of staff on posting requirements and establishes a new process for ensuring compliance. However, while the plan addresses the need for staff training and audits, it does not explicitly ensure that the staffing information will be posted accurately and timely on the specified days, which is a critical obligation.",
+    "material_obligations": "1. Post daily staffing and resident census at the beginning of each shift.\n2. Ensure the posted information is current and reflects the actual staffing for the day.",
+    "covered_elements": "1. Re-education of staff on posting requirements.\n2. Identification of responsible employees for updating staffing information.\n3. Implementation of observation audits for posting accuracy.",
+    "missing_or_weak_elements": "1. Specific measures to ensure timely posting of staffing information on the actual days required (June 1 and 2, 2025).\n2. Clear accountability for immediate corrective actions if postings are not current.",
+    "label": "not_adequate",
+    "reason": "The plan does not sufficiently address the critical obligation of ensuring that staffing information is posted accurately and on time for each shift, which is essential to meet the regulatory requirements."
+}

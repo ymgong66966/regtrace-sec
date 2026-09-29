@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to ensure that the resident or their representative completed the Skilled Nursing Facility Advance Beneficiary Notice of Non-Coverage (SNFABN), which is a critical requirement for informing residents about their rights regarding Medicare Part A services. The plan of correction outlines a new policy for documenting beneficiary notices and decisions, along with an auditing process to ensure compliance. However, it does not specifically address the immediate failure for Resident #40 or provide a clear corrective action for the lack of documentation regarding the resident's choice. Therefore, while the plan introduces a new policy and auditing process, it does not adequately rectify the specific deficiency noted.",
+    "material_obligations": "1. Ensure completion of the SNFABN for residents.\n2. Document resident/representative choices regarding continuation or discontinuation of services.\n3. Inform residents of their rights regarding Medicare Part A services.",
+    "covered_elements": "1. Development of a new policy for documenting beneficiary notices and decisions.\n2. Auditing process to monitor compliance with the new policy.",
+    "missing_or_weak_elements": "1. Specific corrective action for the failure to complete the SNFABN for Resident #40.\n2. Immediate measures to ensure that residents are informed of their rights and choices regarding Medicare Part A services.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the specific failure related to Resident #40's documentation and lacks immediate corrective actions to ensure compliance with notification requirements."
+}

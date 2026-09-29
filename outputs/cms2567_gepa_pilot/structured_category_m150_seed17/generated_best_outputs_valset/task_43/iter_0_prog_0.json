@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to provide necessary respiratory care, specifically the timely procurement of a CPAP device for Resident #25, which is critical for managing severe obstructive sleep apnea. The plan of correction outlines re-education for licensed nurses on order transcription and follow-up processes, as well as audits to ensure compliance. However, it does not specifically address the immediate need for the CPAP device for Resident #25 or the systemic issues that led to the delay in obtaining it. Therefore, while the plan includes elements of training and auditing, it lacks a direct corrective action for the specific failure identified.",
+    "material_obligations": "1. Timely procurement of CPAP device for Resident #25.\n2. Follow-up on the status of respiratory care orders.\n3. Adherence to facility policy on non-invasive respiratory support.",
+    "covered_elements": "1. Re-education of licensed nurses on order transcription and follow-up.\n2. Implementation of a new process for reviewing orders within 24 hours.\n3. Audits of documentation to ensure orders are completed.",
+    "missing_or_weak_elements": "1. Specific actions to ensure the immediate procurement of the CPAP device for Resident #25.\n2. Addressing the systemic failure that led to the delay in obtaining the CPAP device.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the immediate need for the CPAP device for Resident #25 or the systemic issues that caused the delay, leaving a material gap in compliance with the deficiency cited."
+}

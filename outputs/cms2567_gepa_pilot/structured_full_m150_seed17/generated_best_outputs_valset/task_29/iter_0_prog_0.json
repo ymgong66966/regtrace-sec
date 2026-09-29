@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to adequately monitor a resident at risk for elopement, leading to the resident leaving the facility unsupervised. The plan of correction includes measures to assess and monitor residents at risk, implement a new door security system, and provide staff training on elopement procedures. However, while the plan addresses some obligations, it lacks immediate corrective actions to prevent similar incidents from occurring before the new system is installed and training is completed.",
+    "material_obligations": "1. Monitor residents at risk for elopement.\n2. Ensure exit doors are secured and monitored.\n3. Provide staff training on elopement procedures.",
+    "covered_elements": "1. Identification of residents through Wander Risk Assessment.\n2. Development of a new \"Door Monitoring and Control Access\" policy.\n3. Education of staff on elopement procedures and monitoring responsibilities.\n4. Installation of a new security system for exit doors.",
+    "missing_or_weak_elements": "1. Immediate monitoring of exit doors prior to the installation of the new security system.\n2. Assurance that staff are consistently monitoring the front entrance when unlocked.\n3. Timeliness of training completion before the new system is operational.",
+    "label": "not_adequate",
+    "reason": "The plan does not sufficiently address the immediate need for monitoring and securing exit doors, leaving a gap that could lead to further elopement incidents before the new system is installed and staff are trained."
+}

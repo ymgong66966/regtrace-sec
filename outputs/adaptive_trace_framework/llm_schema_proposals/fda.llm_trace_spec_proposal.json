@@ -1,0 +1,71 @@
+{
+  "domain": "fda",
+  "task_name": "warning-to-closeout resolution tracing",
+  "decision": "reshape-before-benchmark",
+  "role_mapping": {
+    "request": [
+      "warning_excerpt"
+    ],
+    "response": [],
+    "evidence": [
+      "closeout_excerpt"
+    ],
+    "label": [
+      "has_closeout",
+      "days_to_closeout"
+    ],
+    "feedback": [
+      "closeout_excerpt"
+    ],
+    "external_corroboration": [
+      "closeout_issue_date",
+      "closeout_url"
+    ],
+    "metadata": [
+      "product",
+      "subject",
+      "issuing_office",
+      "warning_issue_date",
+      "warning_url"
+    ]
+  },
+  "label_policy": {
+    "label_definition": "The current public snapshot supports resolution tracing from warning letter to closeout letter. It does not support SEC-style response-adequacy review because public company response letters are almost absent."
+  },
+  "feedback_policy": {
+    "scalar": "closeout existence or delay bucket, after adding negative/non-closeout controls",
+    "category": "product, subject, issuing office, and violation family",
+    "full_text": "closeout language describing FDA's evaluation of corrective actions",
+    "external_text": "closeout letter text",
+    "forbidden_test_time_fields": [
+      "closeout_excerpt for pre-closeout prediction tasks"
+    ]
+  },
+  "utility_scores": {
+    "role_observability": 3.0,
+    "evidence_availability": 2.0,
+    "label_viability": 1.0,
+    "feedback_richness": 3.0,
+    "external_corroboration": 4.0,
+    "release_viability": 4.0,
+    "optimization_suitability": 2.5,
+    "mean": 2.786
+  },
+  "risks": [
+    "Public company response letters are almost absent, so request-response-evidence review is not directly observable.",
+    "The current linked candidate set is positive-only; classification needs negative or not-yet-closeout controls."
+  ],
+  "minimal_experiment": {
+    "next_action": "Use as an adaptive-construction probe. Build a benchmark only after adding non-closeout controls or contrastive negatives."
+  },
+  "paper_claim": "FDA provides public warning and closeout letters with regulatory resolution language. The domain is a useful stress test because a good construction agent should not force an SEC-style schema. Linked warning-closeout pairs can support outcome tracing or contrastive resolution verification.",
+  "_latency_sec": 4.842,
+  "_usage": {
+    "prompt_tokens": 3591,
+    "completion_tokens": 549,
+    "total_tokens": 4140
+  },
+  "_domain": "fda",
+  "_model": "gpt-4o-mini",
+  "_sample_size": 4
+}

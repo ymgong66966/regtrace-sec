@@ -1,0 +1,8 @@
+{
+    "reasoning": "The facility failed to ensure that the PASARR level I was obtained annually for Resident #6, which is a critical requirement for residents with mental health diagnoses. Additionally, there were issues with the supervision of residents, particularly concerning the incident involving Resident #23 and the use of razors. The plan of correction includes education on gradual dose reduction for psychotropic drugs and updates to care plans, but it does not adequately address the failure to obtain PASARR assessments or the supervision issues that led to the incidents.",
+    "material_obligations": "1. Ensure annual PASARR level I assessments are completed for residents with mental health diagnoses.\n2. Provide adequate supervision to prevent falls and accidents.\n3. Implement gradual dose reductions for psychotropic medications when appropriate.",
+    "covered_elements": "1. Education on gradual dose reduction policy.\n2. Auditing of residents for GDR attempts.\n3. Review and update of care plans.",
+    "missing_or_weak_elements": "1. No mention of a plan to ensure annual PASARR assessments are completed.\n2. Lack of specific measures to improve supervision and prevent incidents like the razor incident.\n3. No clear follow-up actions for the supervision failures noted in the deficiency.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the critical obligation of ensuring annual PASARR assessments and lacks sufficient measures to improve resident supervision, which are essential to prevent further incidents."
+}

@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to properly assess R7's ability to self-administer medications, leading to medications being left at the bedside, which poses a risk to the resident's safety. The plan of correction addresses this by auditing residents, re-educating staff, and implementing ongoing monitoring to ensure compliance with medication administration protocols. However, the plan does not specifically address the immediate risk posed to R7 or the lack of a proper self-administration assessment prior to leaving medications at her bedside.",
+    "material_obligations": "1. Assess residents' ability to self-administer medications.\n2. Ensure medications are not left at the bedside unless the resident is capable of self-administration.\n3. Provide education to staff regarding medication administration protocols.",
+    "covered_elements": "1. Auditing of alert and oriented residents for self-administration capability.\n2. Re-education of licensed staff on medication self-administration processes.\n3. Implementation of weekly audits to monitor compliance.",
+    "missing_or_weak_elements": "1. Immediate assessment of R7's self-administration capability was not conducted prior to the incident.\n2. Specific actions to address the immediate risk to R7 were not outlined in the plan.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the immediate risk to R7 and lacks specific measures to ensure that her self-administration capability is assessed and managed appropriately, leaving a material gap in compliance with the cited deficiency."
+}

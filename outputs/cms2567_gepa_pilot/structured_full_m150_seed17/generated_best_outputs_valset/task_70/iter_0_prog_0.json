@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that Resident #1 fell from her bed during care due to improper handling and lack of adequate safety measures, specifically regarding the use of side rails and staff assistance. The plan of correction outlines several measures to address these issues, including monitoring bed height, ensuring proper staff presence during care, and conducting staff education on safety protocols. However, while the plan includes audits and staff training, it does not explicitly address the immediate corrective actions taken to prevent similar incidents from occurring in the future, such as ensuring that staff are consistently following the protocols for using side rails and providing adequate assistance during care.",
+    "material_obligations": "1. Ensure proper use of side rails during resident care.\n2. Provide adequate staff assistance during personal care.\n3. Monitor bed height to ensure safety.\n4. Conduct regular assessments of resident handling and safety protocols.",
+    "covered_elements": "1. Monitoring of bed height.\n2. Staff education on safety during care.\n3. Audits of resident care practices.\n4. Implementation of a monitoring tool for resident safety.",
+    "missing_or_weak_elements": "1. Immediate corrective actions to ensure staff consistently use side rails during care.\n2. Specific measures to ensure that staff do not leave residents unattended during care.\n3. Clear documentation of how staff will be held accountable for following safety protocols.",
+    "label": "not_adequate",
+    "reason": "The plan lacks specific immediate corrective actions to address the critical safety issues that led to the fall, indicating a material gap in addressing the deficiency."
+}

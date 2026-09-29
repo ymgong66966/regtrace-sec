@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to provide adequate supervision and care to prevent falls, resulting in serious injuries to multiple residents. The plan of correction outlines staff training and the implementation of safety measures, such as removing the bedside table and using foam protectors. However, it lacks specific details on how the training will be monitored for effectiveness and does not address the ongoing risk of falls adequately.",
+    "material_obligations": "1. Provide adequate supervision to prevent falls.\n2. Ensure proper staffing levels for resident care.\n3. Implement and adhere to care plans for high-risk residents.",
+    "covered_elements": "1. Staff training on turning, repositioning, and lifting of residents.\n2. Removal of the bedside table and installation of foam protectors.\n3. Implementation of door magnets for staff assistance requirements.",
+    "missing_or_weak_elements": "1. Ongoing monitoring and evaluation of staff compliance with care plans.\n2. Specific strategies to ensure adherence to care plans for high-risk residents.\n3. Detailed follow-up procedures to assess the effectiveness of the training.",
+    "label": "not_adequate",
+    "reason": "The plan does not sufficiently address the ongoing risk of falls and lacks a robust monitoring system to ensure compliance with care plans, leaving material gaps in resident safety."
+}

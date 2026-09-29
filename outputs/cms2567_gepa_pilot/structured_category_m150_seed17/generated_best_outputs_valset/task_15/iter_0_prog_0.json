@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to follow physician orders for medication administration and did not provide timely treatment for urinary tract infections, leading to significant health deterioration for residents. The plan of correction outlines steps to improve communication regarding lab results and medication administration, but it does not specifically address the failure to adhere to medication parameters for R35 and R41, nor does it provide a clear corrective action for the missed treatments for UTIs.",
+    "material_obligations": "1. Administer medications according to physician orders and established parameters.\n2. Provide timely treatment for urinary tract infections as per clinical standards.",
+    "covered_elements": "1. Contracting with a new lab service to ensure timely availability of lab results in the electronic medical record.\n2. Education for licensed staff on the timeliness of reporting lab results.",
+    "missing_or_weak_elements": "1. Specific corrective actions to ensure adherence to medication administration parameters for R35 and R41.\n2. Clear steps to address the failure to treat urinary tract infections in a timely manner.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the critical failures related to medication administration and timely treatment of UTIs, which are central to the cited deficiency."
+}

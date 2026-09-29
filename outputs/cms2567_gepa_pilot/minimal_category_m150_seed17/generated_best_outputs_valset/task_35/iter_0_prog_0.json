@@ -1,0 +1,5 @@
+{
+    "reasoning": "The plan of correction addresses the deficiency by implementing audits to ensure compliance with diet orders and providing education to dietary and nursing staff. However, it lacks specific measures to prevent the recurrence of incidents like the choking episodes experienced by resident #1. While the audits and education are steps in the right direction, they do not fully resolve the underlying issue of ensuring that all staff consistently adhere to dietary restrictions, particularly in high-risk situations. Therefore, the plan is not adequate to ensure the safety of residents with similar needs.",
+    "label": "not_adequate",
+    "reason": "The plan of correction does not sufficiently address the need for ongoing monitoring and enforcement of dietary compliance to prevent future choking incidents, which is critical given the severity of the harm experienced by resident #1."
+}

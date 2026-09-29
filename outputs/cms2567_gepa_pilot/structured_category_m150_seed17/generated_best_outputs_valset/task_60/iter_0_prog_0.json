@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to ensure that residents' call lights were within reach, which is a critical aspect of resident safety and autonomy. The plan of correction includes staff education, audits, and a new facility practice to check call light placement, which directly addresses the identified deficiency. However, while the plan outlines steps to ensure compliance, it does not specify how the education will be reinforced or how staff will be held accountable for ongoing compliance beyond the initial audits.",
+    "material_obligations": "1. Ensure residents have a method of calling for assistance.\n2. Place call lights within easy reach of residents when leaving the room.",
+    "covered_elements": "1. Staff education on the importance of call light placement.\n2. Daily checks of call light placement in residents' rooms.\n3. Observation audits conducted by DNS or designee.",
+    "missing_or_weak_elements": "1. Lack of details on how ongoing compliance will be monitored after the initial audits.\n2. No mention of consequences for staff who fail to comply with the call light policy.",
+    "label": "not_adequate",
+    "reason": "The plan addresses the immediate need for education and audits but lacks a robust mechanism for ensuring long-term compliance and accountability, leaving a material gap in addressing the deficiency."
+}

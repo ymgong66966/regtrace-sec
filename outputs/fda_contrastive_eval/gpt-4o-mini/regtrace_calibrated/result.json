@@ -1,0 +1,45 @@
+{
+  "input": "data/fda_warning_letters/contrastive_benchmark_v1/test.jsonl",
+  "mode": "regtrace_calibrated",
+  "model": "gpt-4o-mini",
+  "num_rows": 160,
+  "gold_counts": {
+    "matched": 80,
+    "mismatched": 80
+  },
+  "estimate": {
+    "rows": 160,
+    "mode": "regtrace_calibrated",
+    "model": "gpt-4o-mini",
+    "estimated_prompt_tokens": 344539,
+    "estimated_completion_tokens": 67200,
+    "estimated_cost_usd": 0.09200085
+  },
+  "summary": {
+    "accuracy": 0.95,
+    "macro_f1": 0.949874686716792,
+    "per_label": {
+      "matched": {
+        "precision": 1.0,
+        "recall": 0.9,
+        "f1": 0.9473684210526316,
+        "support": 80
+      },
+      "mismatched": {
+        "precision": 0.9090909090909091,
+        "recall": 1.0,
+        "f1": 0.9523809523809523,
+        "support": 80
+      }
+    },
+    "pred_counts": {
+      "matched": 72,
+      "mismatched": 88
+    },
+    "confusion": {
+      "matched->matched": 72,
+      "mismatched->mismatched": 80,
+      "matched->mismatched": 8
+    }
+  }
+}

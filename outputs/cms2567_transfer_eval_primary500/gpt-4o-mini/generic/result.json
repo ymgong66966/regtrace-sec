@@ -1,0 +1,48 @@
+{
+  "input": "outputs/cms2567_poc_adjudication/calibrated_audit_balanced_50_input.jsonl",
+  "benchmark": "data/cms2567_poc_gepa_splits/grouped_seed17/test.jsonl",
+  "primary": "outputs/cms2567_poc_adjudication/sample_120_calibrated_primary/adjudications.jsonl",
+  "audit": "outputs/cms2567_poc_adjudication/calibrated_audit_balanced_50_gpt4omini/adjudications.jsonl",
+  "mode": "generic",
+  "model": "gpt-4o-mini",
+  "num_rows": 140,
+  "gold_counts": {
+    "not_adequate": 103,
+    "adequate": 37
+  },
+  "estimate": {
+    "rows": 140,
+    "model": "gpt-4o-mini",
+    "mode": "generic",
+    "input_tokens_est": 180597,
+    "output_tokens_est": 72800,
+    "cost_usd_est": 0.07076955
+  },
+  "summary": {
+    "accuracy": 0.7071,
+    "macro_f1": 0.694,
+    "label_counts": {
+      "not_adequate": 103,
+      "adequate": 37
+    },
+    "pred_counts": {
+      "not_adequate": 66,
+      "adequate": 74
+    },
+    "per_label": {
+      "adequate": {
+        "precision": 0.473,
+        "recall": 0.9459,
+        "f1": 0.6306,
+        "support": 37
+      },
+      "not_adequate": {
+        "precision": 0.9697,
+        "recall": 0.6214,
+        "f1": 0.7574,
+        "support": 103
+      }
+    },
+    "cost_usd": 0.035342
+  }
+}

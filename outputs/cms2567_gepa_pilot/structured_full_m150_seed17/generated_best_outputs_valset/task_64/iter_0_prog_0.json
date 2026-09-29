@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to adequately update the care plan and provide sufficient supervision to prevent falls for a cognitively impaired resident identified as high risk. The plan of correction includes updates to the care plan and interventions aimed at monitoring and preventing falls. However, while the plan addresses some aspects of the obligations, it does not sufficiently demonstrate a comprehensive approach to preventing falls, particularly in the context of the resident's cognitive impairment and history of falls.",
+    "material_obligations": "1. Implement adequate supervision and assistance to prevent falls with injury.\n2. Update care plans with new interventions at the time of each fall.\n3. Maintain fall risk precautions as per physician's orders.",
+    "covered_elements": "1. Updated care plan to reflect close monitoring every shift for fall risk.\n2. Interventions including ER transfer and Fall EZZ mat placement.\n3. Facility-wide fall evaluation and hourly monitoring for high-risk residents.\n4. In-service training for staff on monitoring tools and documentation.",
+    "missing_or_weak_elements": "1. Specific strategies to address the cognitive impairment of the resident.\n2. Evidence of consistent implementation of monitoring and supervision protocols.\n3. Detailed follow-up on the effectiveness of the interventions post-implementation.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the specific needs of the cognitively impaired resident and lacks a comprehensive strategy to ensure consistent supervision and monitoring, which are critical to preventing further falls."
+}

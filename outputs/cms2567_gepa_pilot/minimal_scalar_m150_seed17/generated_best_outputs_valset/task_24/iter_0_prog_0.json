@@ -1,0 +1,5 @@
+{
+    "reasoning": "The plan of correction outlines steps taken by the transport company to ensure that the lift is level before unloading residents, which addresses the immediate cause of the incident involving Resident # 7. However, it lacks specific details on how the facility will monitor compliance with these new procedures or how they will assess the effectiveness of the training provided to drivers. Additionally, there is no mention of follow-up actions for residents who may have been affected by the deficient practice, which is critical in ensuring their safety and addressing any ongoing concerns. Therefore, while some measures have been implemented, the overall plan does not adequately resolve the deficiency.",
+    "label": "not_adequate",
+    "reason": "The plan of correction lacks sufficient detail on monitoring compliance and follow-up actions for affected residents, which is necessary to ensure the safety of all residents during transport."
+}

@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates a failure to adequately assess and manage resident 49's pain, which resulted in significant discomfort during care. The plan of correction includes an audit of pain management practices and staff education on the facility's Pain Policy, which addresses the identified issues. However, the plan does not directly address the specific failure to administer prescribed pain medication or the need for timely pain assessments, particularly for residents unable to communicate their pain effectively.",
+    "material_obligations": "1. Adequate pain assessment and management for residents.\n2. Administration of prescribed pain medication as needed.\n3. Regular monitoring and documentation of pain levels.",
+    "covered_elements": "1. Audit of pain management practices.\n2. Education of nursing staff on the Pain Policy.\n3. Implementation of the PAINAD scale for non-verbal residents.",
+    "missing_or_weak_elements": "1. Specific actions to ensure timely administration of prescribed pain medication.\n2. Direct measures to improve pain assessment documentation practices.\n3. No mention of how to address the systemic issues that led to the failure in pain management for resident 49.",
+    "label": "not_adequate",
+    "reason": "The plan does not sufficiently address the critical failure to administer prescribed pain medication and lacks specific measures to ensure timely and effective pain management for residents, leaving a material gap in addressing the deficiency."
+}

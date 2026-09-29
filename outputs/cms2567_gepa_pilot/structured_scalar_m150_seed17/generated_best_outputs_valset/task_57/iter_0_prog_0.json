@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to provide outdoor activities for residents R20 and R80 as per their care plans, which emphasized the importance of outdoor access for fresh air. The plan of correction addresses the issue for R80 by reviewing activity preferences, educating staff on residents' rights, and conducting audits to ensure compliance. However, it does not adequately address the systemic failure that led to the lack of outdoor activities for both residents, particularly since R20 is no longer in the facility and the plan does not provide a clear strategy for ensuring that similar issues do not arise for other residents.",
+    "material_obligations": "1. Provide outdoor activities for residents as per their care plans.\n2. Ensure residents have access to outdoor activities during appropriate weather.\n3. Educate staff on residents' rights to choose outdoor activities.",
+    "covered_elements": "1. Meeting with R80 to review activity preferences.\n2. Educating staff on residents' rights to choose outdoor activities.\n3. Conducting weekly audits to ensure compliance.",
+    "missing_or_weak_elements": "1. No clear plan to ensure outdoor access for all residents, especially those with similar needs as R20.\n2. Lack of a comprehensive strategy to prevent recurrence of the issue for other residents.\n3. No specific measures to address the supervision issue that was highlighted by both residents.",
+    "label": "not_adequate",
+    "reason": "The plan does not sufficiently address the systemic issues that led to the failure to provide outdoor activities for residents, particularly for those who may have similar needs as R20."
+}

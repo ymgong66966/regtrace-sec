@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative outlines specific requirements for an infection prevention and control program (IPCP), including the establishment of a system for preventing and controlling infections, written standards and procedures, and a system for recording incidents. The plan of correction primarily focuses on auditing and monitoring but does not address the specific elements required for the IPCP, such as the development of written policies, procedures for reporting infections, or hand hygiene protocols. Therefore, the plan does not adequately cover the material obligations outlined in the deficiency.",
+    "material_obligations": "1. Establish an infection prevention and control program (IPCP).\n2. Develop written standards, policies, and procedures for the IPCP.\n3. Implement a system for preventing, identifying, reporting, investigating, and controlling infections.\n4. Establish a system for recording incidents and corrective actions.",
+    "covered_elements": "1. Monthly audits presented to the Quality Assurance committee.\n2. Ongoing monitoring of the IPCP.",
+    "missing_or_weak_elements": "1. Development of written standards, policies, and procedures for the IPCP.\n2. Specific procedures for reporting infections and communicable diseases.\n3. Detailed hand hygiene procedures for staff.\n4. A comprehensive system for preventing and controlling infections.",
+    "label": "not_adequate",
+    "reason": "The plan of correction lacks specific measures to address the critical components of the infection prevention and control program as required by the deficiency, resulting in a material gap."
+}

@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates a failure to provide adequate supervision to prevent resident injuries, specifically for resident #10 who has cognitive impairments. The plan of correction introduces the \"Stop and Watch\" function to improve communication regarding supervision needs and staffing adjustments, which is a step towards addressing the identified deficiency. However, it does not directly address the immediate need for enhanced supervision or specific measures to prevent incidents for residents with cognitive impairments.",
+    "material_obligations": "1. Ensure adequate supervision to prevent resident injuries.\n2. Address the specific needs of residents with cognitive impairments.",
+    "covered_elements": "1. Implementation of the \"Stop and Watch\" function for communication.\n2. Education of staff on the proper use of the tool.\n3. Review of submissions during IDT Standup meetings.",
+    "missing_or_weak_elements": "1. Direct measures to enhance supervision for residents with cognitive impairments.\n2. Specific strategies to prevent incidents for resident #10 and similar residents.",
+    "label": "not_adequate",
+    "reason": "The plan does not sufficiently address the immediate need for enhanced supervision for residents with cognitive impairments, leaving a material gap in the response to the deficiency."
+}

@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to ensure that resident #12 received the pneumococcal vaccine as required by their policies and CDC guidelines. The plan of correction includes measures to verify immunization status and track vaccinations, which directly addresses the obligation to ensure residents receive necessary vaccinations. However, the plan does not specify how the facility will ensure that the vaccine is administered within the required timeframe after admission, which is a critical aspect of the deficiency.",
+    "material_obligations": "1. Assess residents for eligibility to receive the pneumococcal vaccine series prior to or upon admission.\n2. Offer the vaccine series within 30 days of admission unless contraindicated.\n3. Administer pneumococcal vaccines in accordance with CDC recommendations.",
+    "covered_elements": "1. Verification of immunizations during the admission process.\n2. Implementation of a centralized vaccine tracking system.\n3. Weekly review of new admissions for compliance by the Infection Preventionist.",
+    "missing_or_weak_elements": "1. Specific measures to ensure the pneumococcal vaccine is administered within 30 days of admission.\n2. Clear accountability for timely administration of the vaccine.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the critical obligation to administer the pneumococcal vaccine within the required timeframe after admission, leaving a material gap in compliance with the deficiency."
+}

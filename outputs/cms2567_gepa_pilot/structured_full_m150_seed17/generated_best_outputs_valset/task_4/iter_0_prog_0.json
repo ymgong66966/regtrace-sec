@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to accurately document daily nurse staffing information, specifically regarding the actual hours worked by licensed and unlicensed nursing staff. The plan of correction includes updates to the staffing form, reeducation of staff, and audits to ensure compliance. However, it does not address the root cause of the inaccuracies or provide a clear timeline for ongoing compliance beyond the initial audits.",
+    "material_obligations": "1. Post accurate daily nurse staffing information including actual hours worked by licensed and unlicensed staff.\n2. Ensure that the staffing data reflects the actual staff working each shift.",
+    "covered_elements": "1. The posted Nurse staffing form was updated to reflect accurate hours worked.\n2. Reeducation of the staffing coordinator and Director of Nursing on the new form and staffing posting requirements.\n3. Implementation of weekly and monthly audits to ensure compliance.",
+    "missing_or_weak_elements": "1. No clear plan to address the root cause of the inaccuracies in documentation.\n2. Lack of ongoing monitoring beyond the initial audit period.\n3. No specific corrective actions for the identified discrepancies in the staffing data.",
+    "label": "not_adequate",
+    "reason": "The plan does not sufficiently address the root causes of the inaccuracies in staffing documentation and lacks a long-term strategy for ensuring compliance, leaving material gaps in the obligations outlined in the deficiency."
+}

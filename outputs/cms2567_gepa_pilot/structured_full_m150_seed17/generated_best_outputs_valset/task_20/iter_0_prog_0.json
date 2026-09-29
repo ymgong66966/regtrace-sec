@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to ensure that clinical documentation was sent with residents during transfers, which is a critical obligation for ensuring continuity of care. The plan of correction mentions in-servicing staff on the requirements for notifying residents and their representatives about transfers, but it does not specifically address the obligation to send clinical documentation with residents during transfers. Therefore, while there are some corrective actions mentioned, they do not adequately cover the specific material obligation identified in the deficiency.",
+    "material_obligations": "1. Ensure clinical documentation is sent with residents during transfers.",
+    "covered_elements": "1. In-servicing of Social Service Director and Director of Nursing on notifying residents and representatives about transfers.",
+    "missing_or_weak_elements": "1. Specific actions to ensure clinical documentation is sent with residents during transfers.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the critical obligation of sending clinical documentation with residents during transfers, leaving a material gap in compliance."
+}

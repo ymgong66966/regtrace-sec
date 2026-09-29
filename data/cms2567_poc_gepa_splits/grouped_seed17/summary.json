@@ -1,0 +1,123 @@
+{
+  "source": "outputs/cms2567_poc_adjudication/cms2567_poc_sample_500.jsonl",
+  "adjudications": "outputs/cms2567_poc_adjudication/sample_500_calibrated_primary/adjudications.jsonl",
+  "seed": 17,
+  "num_rows": 500,
+  "num_groups": 264,
+  "splits": {
+    "train": {
+      "rows": 270,
+      "groups": 142,
+      "binary_label_counts": {
+        "not_adequate": 198,
+        "adequate": 72
+      },
+      "three_way_label_counts": {
+        "partial": 175,
+        "adequate": 72,
+        "inadequate": 23
+      },
+      "ftag_group_counts": {
+        "other": 56,
+        "care_planning_records": 30,
+        "resident_care_safety": 52,
+        "food_safety": 28,
+        "infection_control": 22,
+        "resident_rights": 41,
+        "abuse_neglect": 41
+      },
+      "severity_band_counts": {
+        "potential_harm": 182,
+        "low_severity": 23,
+        "actual_harm": 38,
+        "immediate_jeopardy": 27
+      }
+    },
+    "dev": {
+      "rows": 90,
+      "groups": 49,
+      "binary_label_counts": {
+        "not_adequate": 66,
+        "adequate": 24
+      },
+      "three_way_label_counts": {
+        "partial": 59,
+        "adequate": 24,
+        "inadequate": 7
+      },
+      "ftag_group_counts": {
+        "resident_care_safety": 27,
+        "other": 17,
+        "abuse_neglect": 12,
+        "infection_control": 6,
+        "care_planning_records": 6,
+        "resident_rights": 15,
+        "food_safety": 7
+      },
+      "severity_band_counts": {
+        "actual_harm": 20,
+        "potential_harm": 53,
+        "low_severity": 10,
+        "immediate_jeopardy": 7
+      }
+    },
+    "test": {
+      "rows": 140,
+      "groups": 73,
+      "binary_label_counts": {
+        "not_adequate": 103,
+        "adequate": 37
+      },
+      "three_way_label_counts": {
+        "partial": 84,
+        "inadequate": 19,
+        "adequate": 37
+      },
+      "ftag_group_counts": {
+        "resident_care_safety": 32,
+        "food_safety": 14,
+        "infection_control": 22,
+        "other": 30,
+        "abuse_neglect": 17,
+        "resident_rights": 9,
+        "care_planning_records": 16
+      },
+      "severity_band_counts": {
+        "immediate_jeopardy": 17,
+        "potential_harm": 90,
+        "actual_harm": 24,
+        "low_severity": 9
+      }
+    }
+  },
+  "label_policy": {
+    "gold_label": "cms_poc_binary_label",
+    "binary_mapping": {
+      "adequate": "adequate",
+      "partial": "not_adequate",
+      "inadequate": "not_adequate"
+    },
+    "test_time_fields": [
+      "deficiency_text",
+      "plan_of_correction_text",
+      "ftag",
+      "scope_severity",
+      "severity_band",
+      "ftag_group",
+      "cms_deficiency_category"
+    ],
+    "feedback_only_fields": [
+      "cms_poc_adequacy_label",
+      "cms_poc_missing_elements",
+      "cms_poc_covered_elements",
+      "cms_poc_reason",
+      "cms_poc_optimizer_feedback"
+    ],
+    "hidden_outcome_metadata": [
+      "deficiency_corrected",
+      "correction_date",
+      "days_to_correction",
+      "source_url"
+    ]
+  }
+}

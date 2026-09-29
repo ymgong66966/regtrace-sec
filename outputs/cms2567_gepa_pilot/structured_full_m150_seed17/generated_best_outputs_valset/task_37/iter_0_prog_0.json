@@ -1,0 +1,8 @@
+{
+    "reasoning": "The facility failed to monitor and initiate the bowel protocol for resident R159, leading to significant health issues, including hospitalization. The plan of correction outlines steps to address the oversight and ensure compliance with the bowel protocol, but it lacks specific corrective actions for the deficiencies noted, particularly since R159 has been discharged. While the plan includes education and audits, it does not directly address the failure to implement the bowel protocol during the specified timeframes.",
+    "material_obligations": "1. Monitor and document bowel movements.\n2. Initiate bowel protocol as per physician orders when no bowel movement occurs after 3 days.\n3. Notify the physician of lack of bowel movements and document appropriately.",
+    "covered_elements": "1. Education of nursing staff on following and documenting the bowel protocol.\n2. Daily review of residents with no bowel movements greater than 3 days.\n3. Audits by Unit Manager/Designee to ensure compliance with the bowel protocol.",
+    "missing_or_weak_elements": "1. Specific corrective actions for the failure to initiate the bowel protocol for R159 during the noted periods.\n2. Direct measures to address the lack of documentation and oversight that led to the deficiency.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the specific failures related to R159's care, particularly the lack of initiation of the bowel protocol during critical periods, which contributed to the resident's hospitalization."
+}

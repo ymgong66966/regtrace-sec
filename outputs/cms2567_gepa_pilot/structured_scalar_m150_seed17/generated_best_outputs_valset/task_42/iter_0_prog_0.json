@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to provide adequate pain assessments and management for R157, particularly prior to wound care, which resulted in harm. The plan of correction outlines steps to ensure that residents with wounds are assessed for pain management and that staff are educated on the importance of pain medication prior to dressing changes. However, the plan lacks specific details on how these assessments will be conducted and does not address the immediate need for changes in R157's pain management during her stay.",
+    "material_obligations": "1. Conduct pain assessments for residents with wounds.\n2. Administer pain medication prior to wound care.\n3. Provide clear discharge instructions regarding pain management.",
+    "covered_elements": "1. Review of active residents with wounds to ensure assessments are conducted.\n2. Education for licensed nurses on clarifying discharge instructions related to pain medication.",
+    "missing_or_weak_elements": "1. Specific procedures for conducting pain assessments prior to wound care.\n2. Immediate changes to pain management protocols for residents like R157.\n3. Documentation of pain management orders that were not implemented.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the immediate and specific needs for pain management prior to wound care, which is critical given the harm experienced by R157. There are gaps in the plan regarding the implementation of pain assessments and medication administration that are essential to meet the obligations outlined in the deficiency."
+}

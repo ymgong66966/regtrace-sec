@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to handle food items according to established safety standards, leading to potential risks for residents. The plan of correction addresses immediate corrective actions taken, staff education, and ongoing monitoring to ensure compliance with food safety protocols. However, while the plan includes audits and staff education, it does not specify how the facility will ensure that all food items are consistently dated and discarded according to the established guidelines moving forward.",
+    "material_obligations": "1. Ensure all opened food products are dated and discarded according to use-by or expiration dates.\n2. Regularly check food items for compliance with safety standards.\n3. Maintain proper labeling of food items without expiration dates.",
+    "covered_elements": "1. Immediate discarding of expired food items (biscuits, bread, pizza, corn syrup, jam).\n2. Education of kitchen staff on food safety protocols.\n3. Implementation of audits by the Dietary Manager.",
+    "missing_or_weak_elements": "1. Lack of a detailed plan for consistent dating of all food items moving forward.\n2. No specific measures outlined to prevent future occurrences of undated food items.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the ongoing requirement to ensure all food items are consistently dated and monitored, leaving a material gap in compliance with food safety standards."
+}

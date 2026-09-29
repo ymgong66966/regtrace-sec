@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates a failure to perform hand hygiene after perineal care and glove removal, which is a critical infection control measure. The plan of correction includes education on hand hygiene and a quality assurance (QA) process to monitor compliance, which addresses the identified issues. However, the plan lacks specific details on how the root causes will be addressed beyond education, and it does not provide a clear timeline for immediate corrective actions.",
+    "material_obligations": "1. Perform hand hygiene after perineal care.\n2. Perform hand hygiene after removing gloves.\n3. Follow infection control standards during resident care.",
+    "covered_elements": "1. Education on proper hand hygiene after perineal care and glove removal.\n2. QA process to monitor compliance with hand hygiene practices.",
+    "missing_or_weak_elements": "1. Specific strategies to address the root causes of non-compliance.\n2. Immediate corrective actions to ensure compliance before the QA process begins.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the immediate need for compliance with hand hygiene practices, as it lacks specific corrective actions beyond education and does not provide a clear timeline for implementation."
+}

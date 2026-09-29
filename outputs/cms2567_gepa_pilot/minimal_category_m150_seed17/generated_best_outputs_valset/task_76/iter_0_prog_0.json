@@ -1,0 +1,5 @@
+{
+    "reasoning": "The Plan of Correction outlines specific actions taken to address the deficiencies identified, including updating medication orders, conducting facility-wide audits, and providing education to nursing staff on the Change in Condition policy and medication administration parameters. The plan also includes a schedule for ongoing audits to ensure compliance and monitoring of residents' conditions. However, the effectiveness of the plan may be limited by the fact that some residents involved in the incidents are no longer at the facility, and the resolution of issues for Resident 35 is dependent on the responsible party's actions. Overall, while the plan demonstrates a commitment to improvement, the lack of immediate corrective actions for the residents still in care may impact its adequacy.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the immediate needs of the residents still in care, particularly regarding the timely follow-up on changes in condition and the administration of medications within prescribed parameters."
+}

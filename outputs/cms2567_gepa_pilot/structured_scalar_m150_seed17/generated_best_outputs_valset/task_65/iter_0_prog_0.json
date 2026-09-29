@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to administer a critical medication (IV antibiotic) to Resident # 6 on two consecutive days, which is a significant oversight in medication management. The plan of correction outlines steps taken to ensure that IV medications are administered as ordered and includes education for nursing staff on medication administration protocols. However, while the plan addresses the immediate issue of missed doses and includes a review process, it does not specifically address the root cause of the failure to administer the medication on the specified days, nor does it provide a clear mechanism for preventing similar occurrences in the future.",
+    "material_obligations": "1. Administer IV antibiotics as ordered.\n2. Ensure proper communication regarding medication availability and administration.\n3. Educate staff on medication administration protocols.",
+    "covered_elements": "1. Resident # 6 is now receiving IV medications as ordered.\n2. Education provided to licensed nurses on medication errors and protocols.\n3. Daily review of medications not administered for compliance.",
+    "missing_or_weak_elements": "1. Lack of a clear root cause analysis for the missed doses.\n2. No specific measures to prevent future occurrences beyond education.\n3. No mention of follow-up with the pharmacy to ensure timely medication delivery.",
+    "label": "not_adequate",
+    "reason": "The plan does not adequately address the root cause of the missed medication administration and lacks specific preventive measures to ensure compliance in the future."
+}

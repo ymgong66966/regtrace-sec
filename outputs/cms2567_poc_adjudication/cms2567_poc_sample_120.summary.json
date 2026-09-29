@@ -1,0 +1,69 @@
+{
+  "input": "data/cms2567/cms2567_regtrace_candidates.jsonl",
+  "rows_loaded": 2588,
+  "rows_usable": 2588,
+  "sample_size": 120,
+  "pilot_size": 40,
+  "seed": 20260927,
+  "sample_output": "outputs/cms2567_poc_adjudication/cms2567_poc_sample_120.jsonl",
+  "pilot_output": "outputs/cms2567_poc_adjudication/cms2567_poc_pilot_40.jsonl",
+  "sample_by_severity_band": {
+    "potential_harm": 48,
+    "immediate_jeopardy": 30,
+    "actual_harm": 28,
+    "low_severity": 14
+  },
+  "sample_by_report_year": {
+    "2023": 18,
+    "2025": 48,
+    "2026": 15,
+    "2022": 4,
+    "2024": 35
+  },
+  "sample_by_state": {
+    "DE": 21,
+    "NC": 15,
+    "SD": 13,
+    "WA": 13,
+    "NM": 6,
+    "ND": 6,
+    "SC": 4,
+    "IA": 4,
+    "DC": 4,
+    "VA": 4,
+    "KY": 4,
+    "IN": 4,
+    "WY": 4,
+    "AZ": 3,
+    "AL": 3,
+    "ID": 3,
+    "MS": 2,
+    "MI": 2,
+    "KS": 1,
+    "WV": 1
+  },
+  "sample_by_ftag_group": {
+    "other": 27,
+    "abuse_neglect": 21,
+    "resident_care_safety": 21,
+    "resident_rights": 19,
+    "care_planning_records": 12,
+    "infection_control": 11,
+    "food_safety": 9
+  },
+  "pilot_by_severity_band": {
+    "potential_harm": 19,
+    "immediate_jeopardy": 11,
+    "actual_harm": 7,
+    "low_severity": 3
+  },
+  "pilot_by_ftag_group": {
+    "other": 14,
+    "resident_care_safety": 8,
+    "abuse_neglect": 7,
+    "resident_rights": 4,
+    "care_planning_records": 4,
+    "food_safety": 2,
+    "infection_control": 1
+  }
+}

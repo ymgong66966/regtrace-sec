@@ -1,0 +1,8 @@
+{
+    "reasoning": "The deficiency narrative indicates that the facility failed to serve food that was palatable and at the appropriate temperature, affecting multiple residents. The plan of correction outlines steps to address the issues, including audits and staff reeducation. However, while the plan addresses the use of Styrofoam containers and the need for staff training, it lacks specific measures to ensure immediate compliance with food temperature standards and does not provide a clear timeline for the implementation of these corrective actions.",
+    "material_obligations": "1. Food must be served at a safe and appetizing temperature.\n2. Food must be palatable and attractive.\n3. Dietary staff must be trained on food quality and palatability.",
+    "covered_elements": "1. Discontinuation of Styrofoam containers.\n2. Reeducation of dietary staff on food quality and palatability.\n3. Implementation of random audits to monitor food temperatures and resident satisfaction.",
+    "missing_or_weak_elements": "1. Specific measures to ensure immediate compliance with food temperature standards.\n2. Clear timeline for the implementation of corrective actions.\n3. Detailed plan for addressing resident complaints about food quality.",
+    "label": "not_adequate",
+    "reason": "The plan does not sufficiently address immediate compliance with food temperature standards and lacks a clear timeline for corrective actions, leaving a material gap in addressing the deficiency."
+}
