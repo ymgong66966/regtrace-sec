@@ -1,6 +1,6 @@
 # NAACL/ARR Upgrade Note
 
-This checkpoint keeps `paper/main_a2_context_feedback.tex` unchanged and creates a stronger main-venue draft at `paper/main_arr_naacl_regtrace.tex`.
+This checkpoint keeps the prior manuscript draft unchanged and creates a stronger main-venue draft in the local manuscript workspace.
 
 ## What Changed
 

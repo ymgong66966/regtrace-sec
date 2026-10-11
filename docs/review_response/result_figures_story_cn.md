@@ -6,10 +6,7 @@
 
 ## Figure 1: Evidence Ablation
 
-文件：
-
-- `paper/figures/result_1_evidence_ablation.pdf`
-- `paper/figures/result_1_evidence_ablation.png`
+图源在 manuscript-only workspace 中；anonymous release 只保留生成这些图所需的结果表和脚本。
 
 这张图讲：只看 company response 不够，因为公司经常只说“we revised the disclosure”。加入 amended filing snippets 以后，macro-F1 从 0.575 到 0.748，说明这个任务真正的核心不是判断 response 语气，而是检查 revised artifact 里有没有真的补上。
 
@@ -17,10 +14,7 @@
 
 ## Figure 2: Feedback Ladder
 
-文件：
-
-- `paper/figures/result_2_feedback_ladder.pdf`
-- `paper/figures/result_2_feedback_ladder.png`
+图源在 manuscript-only workspace 中；anonymous release 只保留生成这些图所需的结果表和脚本。
 
 这张图讲：在同样的 test-time evidence 下，full natural-language feedback 是最好的 reviewer-training signal。GEPA-full macro-F1 0.756，高于 MIPROv2 的 0.652 和 GEPA-scalar 的 0.675。
 
@@ -28,10 +22,7 @@
 
 ## Figure 3: Temporal and Topic Generalization
 
-文件：
-
-- `paper/figures/result_3_generalization.pdf`
-- `paper/figures/result_3_generalization.png`
+图源在 manuscript-only workspace 中；anonymous release 只保留生成这些图所需的结果表和脚本。
 
 这张图讲：GEPA-full 不只是某个 random split 上赢。它在 2024-2025 temporal holdout 上 macro-F1 0.791，在 topic holdout 上 0.734，也超过 baseline、MIPROv2 和 scalar GEPA。
 
@@ -39,10 +30,7 @@
 
 ## Figure 4: Cross-Domain Adaptation
 
-文件：
-
-- `paper/figures/result_4_cross_domain_adaptation.pdf`
-- `paper/figures/result_4_cross_domain_adaptation.png`
+图源在 manuscript-only workspace 中；anonymous release 只保留生成这些图所需的结果表和脚本。
 
 这张图分成 CMS 和 FDA 两边。
 
@@ -54,10 +42,7 @@ FDA 讲：constructor 不应该强行把所有数据集套成 SEC-style response
 
 ## Figure 5: Label Validation and Follow-Up Corroboration
 
-文件：
-
-- `paper/figures/result_5_label_validation.pdf`
-- `paper/figures/result_5_label_validation.png`
+图源在 manuscript-only workspace 中；anonymous release 只保留生成这些图所需的结果表和脚本。
 
 左图讲：在有 verified same-topic follow-up 的样本中，unresolved labels 有 68.1% 被后续 SEC follow-up 直接或部分佐证，而 resolved labels 只有 9.2%。这说明 visible-evidence label 和真实监管行为有很强一致性。
 
@@ -67,9 +52,7 @@ FDA 讲：constructor 不应该强行把所有数据集套成 SEC-style response
 
 ## Contact Sheet
 
-文件：
-
-- `paper/figures/result_figures_contact_sheet.png`
+Contact sheet 是 manuscript-only QA artifact，不放进 anonymous release。
 
 这是五张图的快速预览，方便检查整体视觉风格。
 
@@ -77,9 +60,9 @@ FDA 讲：constructor 不应该强行把所有数据集套成 SEC-style response
 
 正文优先级：
 
-1. `result_2_feedback_ladder`: 主方法结果。
-2. `result_1_evidence_ablation`: 证明任务定义成立。
-3. `result_5_label_validation`: 回应 label validity。
-4. `result_4_cross_domain_adaptation`: 如果走 NAACL/ARR main-venue framework story，这张很关键。
+1. Feedback ladder: 主方法结果。
+2. Evidence ablation: 证明任务定义成立。
+3. Label validation and follow-up corroboration: 回应 label validity。
+4. Cross-domain adaptation: 如果走 NAACL/ARR main-venue framework story，这张很关键。
 
 `result_3_generalization` 可以放正文或 appendix。如果篇幅紧，正文用一句话报数字，把图放 appendix。

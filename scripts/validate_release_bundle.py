@@ -30,11 +30,6 @@ REQUIRED_PATHS = [
     "data/sec_visible_evidence_benchmark_v2/splits/grouped_random_dev48_gap/fold_0/train.jsonl",
     "data/sec_visible_evidence_benchmark_v2/splits/grouped_random_dev48_gap/fold_0/dev.jsonl",
     "data/sec_visible_evidence_benchmark_v2/splits/grouped_random_dev48_gap/fold_0/test.jsonl",
-    "paper/main_coling_arr_regtrace.tex",
-    "paper/main_coling_arr_regtrace.pdf",
-    "paper/references.bib",
-    "paper/acl.sty",
-    "paper/acl_natbib.bst",
 ]
 
 SCAN_DIRS = [
@@ -43,7 +38,6 @@ SCAN_DIRS = [
     "Makefile",
     "configs",
     "docs",
-    "paper",
     "pressback",
     "regtrace_framework",
     "scripts",

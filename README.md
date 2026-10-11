@@ -14,7 +14,6 @@ This repository is organized as a release-ready bundle for the RegTrace-Agent pa
 - `outputs/`: compact raw result JSON/CSV files needed to rebuild reported tables.
 - `scripts/`: dataset, retrieval, optimization, evaluation, and analysis scripts.
 - `pressback/`: local helper package for SEC/OpenAI/DSPy utilities.
-- `paper/`: ACL/FinNLP LaTeX source and figure assets.
 - `configs/`: frozen experiment configuration summary.
 
 ## Main Benchmark Snapshot
@@ -166,5 +165,7 @@ OpenAI-backed optimization and adjudication scripts require `OPENAI_API_KEY`. Ex
 ## Release Status
 
 This is a GitHub-ready local bundle. Before public upload, confirm the final code/data license choice and remove any author-identifying metadata if the repository is used for anonymous review. For double-anonymous submission, use an identity-stripped mirror such as `https://anonymous.4open.science/` and replace the paper placeholder with the generated anonymous URL.
+
+The anonymous release intentionally omits manuscript source files and PDFs. The paper is submitted through the venue system; this repository contains the benchmark, scripts, prompts, predictions, and result artifacts needed to reproduce the empirical claims.
 
 Do not commit a populated `.env` file. Local raw downloads and render artifacts are ignored by `.gitignore`; the release package should focus on frozen benchmark files, split files, prompts, prediction outputs, result tables, scripts, and reproducibility notes.

@@ -54,11 +54,10 @@ This file maps the manuscript claims to repository artifacts.
 
 ## Manuscript
 
-- COLING/ARR LaTeX: `paper/main_coling_arr_regtrace.tex`
-- COLING/ARR PDF: `paper/main_coling_arr_regtrace.pdf`
-- ACL style files: `paper/acl.sty`, `paper/acl_natbib.bst`
-- Bibliography: `paper/references.bib`
-- Figures: `paper/figures/`
+Manuscript source files, PDFs, and rendered manuscript figures are intentionally
+omitted from the anonymous review repository. The submitted PDF is handled by the
+venue system; this release contains the benchmark, scripts, prompts,
+predictions, and result artifacts needed to reproduce the empirical claims.
 
 ## Notes For Anonymous Release
 
@@ -67,4 +66,3 @@ Do not include a populated `.env` file. The tracked cost ledger
 API keys; include it only if the submission wants detailed cost accounting.
 Otherwise, the summarized cost/configuration information in
 `docs/REPRODUCIBILITY.md` is enough.
-

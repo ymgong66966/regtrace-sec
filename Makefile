@@ -1,4 +1,4 @@
-.PHONY: followup-paired leaderboard supervised-baselines encoder-scorers multi-llm-reviewer-eval label-audit-estimate label-audit-full jev-smoke independent-feedback-estimate materialize-independent-feedback independent-gepa-ablation fda-trace-probe cms2567-trace-probe cms2567-poc-sample cms2567-poc-estimate cms2567-transfer-estimate paper release-check
+.PHONY: followup-paired leaderboard supervised-baselines encoder-scorers multi-llm-reviewer-eval label-audit-estimate label-audit-full jev-smoke independent-feedback-estimate materialize-independent-feedback independent-gepa-ablation fda-trace-probe cms2567-trace-probe cms2567-poc-sample cms2567-poc-estimate cms2567-transfer-estimate release-check
 
 release-check:
 	PYTHONPATH=. python scripts/validate_release_bundle.py
@@ -58,6 +58,3 @@ cms2567-poc-estimate:
 cms2567-transfer-estimate:
 	PYTHONPATH=. python scripts/cms2567_transfer_eval.py --mode generic --estimate-only
 	PYTHONPATH=. python scripts/cms2567_transfer_eval.py --mode regtrace_calibrated --estimate-only
-
-paper:
-	cd paper && pdflatex main_8page_v2.tex && bibtex main_8page_v2 && pdflatex main_8page_v2.tex && pdflatex main_8page_v2.tex
