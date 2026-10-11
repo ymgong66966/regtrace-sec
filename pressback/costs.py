@@ -17,6 +17,7 @@ class ModelPrice:
 MODEL_PRICES: dict[str, ModelPrice] = {
     "gpt-4o-mini": ModelPrice(input_per_1m=0.15, output_per_1m=0.60),
     "gpt-5.4-mini": ModelPrice(input_per_1m=0.75, output_per_1m=4.50),
+    "gpt-5.6-sol": ModelPrice(input_per_1m=4.00, output_per_1m=20.00),
     "text-embedding-3-small": ModelPrice(input_per_1m=0.02, output_per_1m=0.0),
 }
 

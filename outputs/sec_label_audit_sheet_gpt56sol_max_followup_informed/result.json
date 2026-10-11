@@ -1,0 +1,171 @@
+{
+  "input_csv": "docs/review_response/sec_label_audit_sheet_80.csv",
+  "output_csv": "docs/review_response/sec_label_audit_sheet_80_gpt56sol_max_followup_informed.csv",
+  "prediction_jsonl": "outputs/sec_label_audit_sheet_gpt56sol_max_followup_informed/audit_predictions.jsonl",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "max",
+  "include_followup_reference": true,
+  "estimate": {
+    "rows": 80,
+    "model": "gpt-5.6-sol",
+    "input_tokens_est": 114852,
+    "output_tokens_upper_bound": 144000,
+    "cost_usd_upper_bound_est": 3.3394079999999997
+  },
+  "summary": {
+    "rows": 80,
+    "audit_label_counts": {
+      "resolved": 5,
+      "unclear": 19,
+      "unresolved": 56
+    },
+    "evidence_sufficient_counts": {
+      "partial": 80
+    },
+    "confidence_counts": {
+      "high": 70,
+      "low": 10
+    },
+    "mean_confidence_score": 0.849,
+    "estimated_cost_usd": 1.564832,
+    "binary_agreement_excluding_unclear": {
+      "n": 61,
+      "accuracy": 0.6885,
+      "resolved": {
+        "precision": 0.4,
+        "recall": 0.1111,
+        "f1": 0.1739,
+        "support": 18
+      },
+      "unresolved": {
+        "precision": 0.7143,
+        "recall": 0.9302,
+        "f1": 0.8081,
+        "support": 43
+      },
+      "macro_f1": 0.491
+    },
+    "by_issue_category": {
+      "crypto": {
+        "n": 6,
+        "labels": {
+          "resolved": 2,
+          "unresolved": 4
+        }
+      },
+      "non_gaap": {
+        "n": 3,
+        "labels": {
+          "unclear": 1,
+          "unresolved": 2
+        }
+      },
+      "other": {
+        "n": 29,
+        "labels": {
+          "resolved": 1,
+          "unclear": 7,
+          "unresolved": 21
+        }
+      },
+      "revenue_recognition": {
+        "n": 12,
+        "labels": {
+          "unresolved": 7,
+          "unclear": 4,
+          "resolved": 1
+        }
+      },
+      "risk_factor": {
+        "n": 18,
+        "labels": {
+          "unresolved": 14,
+          "unclear": 3,
+          "resolved": 1
+        }
+      },
+      "spac_disclosure": {
+        "n": 11,
+        "labels": {
+          "unclear": 4,
+          "unresolved": 7
+        }
+      }
+    },
+    "by_gap_type": {
+      "incomplete_accounting_analysis": {
+        "n": 3,
+        "labels": {
+          "resolved": 1,
+          "unresolved": 2
+        }
+      },
+      "incomplete_legal_or_regulatory_analysis": {
+        "n": 4,
+        "labels": {
+          "unclear": 4
+        }
+      },
+      "missing_exhibit_or_document": {
+        "n": 3,
+        "labels": {
+          "unresolved": 2,
+          "unclear": 1
+        }
+      },
+      "missing_quantification": {
+        "n": 4,
+        "labels": {
+          "unclear": 3,
+          "unresolved": 1
+        }
+      },
+      "missing_specific_disclosure": {
+        "n": 30,
+        "labels": {
+          "unclear": 5,
+          "unresolved": 23,
+          "resolved": 2
+        }
+      },
+      "resolved_but_regulator_requested_more_detail": {
+        "n": 12,
+        "labels": {
+          "unresolved": 12
+        }
+      },
+      "resolved_visible_evidence": {
+        "n": 23,
+        "labels": {
+          "unresolved": 16,
+          "unclear": 5,
+          "resolved": 2
+        }
+      }
+    }
+  },
+  "blind_input_fields": [
+    "sec_comment",
+    "company_response",
+    "amended_evidence_best_snippet"
+  ],
+  "withheld_fields": [
+    "visible_evidence_resolution_label",
+    "independent_audit_label",
+    "gepa_full_pred",
+    "baseline_pred",
+    "feedback_sec_request",
+    "feedback_company_action",
+    "feedback_evidence_summary",
+    "feedback_unmet_requirement",
+    "real_followup_text",
+    "followup_corroboration_label"
+  ],
+  "audit_input_fields": [
+    "sec_comment",
+    "company_response",
+    "amended_evidence_best_snippet",
+    "real_followup_text",
+    "followup_corroboration_label"
+  ]
+}

@@ -9,6 +9,8 @@ This repository is organized as a release-ready bundle for the RegTrace-Agent pa
 - `data/sec_visible_evidence_benchmark_v2/`: frozen 472-example benchmark, split files, manifest, and dataset reports.
 - `docs/results/`: paper-ready result tables, prompt-evolution artifacts, qualitative cases, evidence ablations, temporal/topic holdouts, and feedback ablations.
 - `docs/review_response/`: additional analyses motivated by reviews, including the paired follow-up corroboration test, five-fold OOF summary, supervised baselines, encoder/Jev triage scorers, multi-LLM reviewer evaluation, independent label audit, and independent-feedback ablation.
+- `docs/RELEASE_MANIFEST.md`: map from manuscript claims to concrete data, result, prompt, and script artifacts.
+- `docs/ANONYMIZATION.md`: checklist for creating the double-anonymous review mirror.
 - `outputs/`: compact raw result JSON/CSV files needed to rebuild reported tables.
 - `scripts/`: dataset, retrieval, optimization, evaluation, and analysis scripts.
 - `pressback/`: local helper package for SEC/OpenAI/DSPy utilities.
@@ -163,4 +165,6 @@ OpenAI-backed optimization and adjudication scripts require `OPENAI_API_KEY`. Ex
 
 ## Release Status
 
-This is a GitHub-ready local bundle. Before public upload, confirm the final code/data license choice and remove any author-identifying metadata if the repository is used for anonymous review.
+This is a GitHub-ready local bundle. Before public upload, confirm the final code/data license choice and remove any author-identifying metadata if the repository is used for anonymous review. For double-anonymous submission, use an identity-stripped mirror such as `https://anonymous.4open.science/` and replace the paper placeholder with the generated anonymous URL.
+
+Do not commit a populated `.env` file. Local raw downloads and render artifacts are ignored by `.gitignore`; the release package should focus on frozen benchmark files, split files, prompts, prediction outputs, result tables, scripts, and reproducibility notes.

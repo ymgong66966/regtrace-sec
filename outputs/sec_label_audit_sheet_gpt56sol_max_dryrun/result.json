@@ -1,0 +1,65 @@
+{
+  "input_csv": "docs/review_response/sec_label_audit_sheet_80.csv",
+  "output_csv": "docs/review_response/sec_label_audit_sheet_80_gpt56sol_max_dryrun.csv",
+  "prediction_jsonl": "outputs/sec_label_audit_sheet_gpt56sol_max_dryrun/audit_predictions.jsonl",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "max",
+  "estimate": {
+    "rows": 2,
+    "model": "gpt-5.6-sol",
+    "input_tokens_est": 2536,
+    "output_tokens_upper_bound": 3600,
+    "cost_usd_upper_bound_est": 0.082144
+  },
+  "summary": {
+    "rows": 2,
+    "audit_label_counts": {
+      "resolved": 1,
+      "unclear": 1
+    },
+    "evidence_sufficient_counts": {
+      "partial": 2
+    },
+    "confidence_counts": {
+      "high": 2
+    },
+    "mean_confidence_score": 0.95,
+    "estimated_cost_usd": 0.043196,
+    "binary_agreement_excluding_unclear": {
+      "n": 1,
+      "accuracy": 0.0,
+      "resolved": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "unresolved": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1
+      },
+      "macro_f1": 0.0
+    },
+    "by_issue_category": {},
+    "by_gap_type": {}
+  },
+  "blind_input_fields": [
+    "sec_comment",
+    "company_response",
+    "amended_evidence_best_snippet"
+  ],
+  "withheld_fields": [
+    "visible_evidence_resolution_label",
+    "independent_audit_label",
+    "gepa_full_pred",
+    "baseline_pred",
+    "feedback_sec_request",
+    "feedback_company_action",
+    "feedback_evidence_summary",
+    "feedback_unmet_requirement",
+    "real_followup_text",
+    "followup_corroboration_label"
+  ]
+}

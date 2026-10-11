@@ -1,4 +1,7 @@
-.PHONY: followup-paired leaderboard supervised-baselines encoder-scorers multi-llm-reviewer-eval label-audit-estimate label-audit-full jev-smoke independent-feedback-estimate materialize-independent-feedback independent-gepa-ablation fda-trace-probe cms2567-trace-probe cms2567-poc-sample cms2567-poc-estimate cms2567-transfer-estimate paper
+.PHONY: followup-paired leaderboard supervised-baselines encoder-scorers multi-llm-reviewer-eval label-audit-estimate label-audit-full jev-smoke independent-feedback-estimate materialize-independent-feedback independent-gepa-ablation fda-trace-probe cms2567-trace-probe cms2567-poc-sample cms2567-poc-estimate cms2567-transfer-estimate paper release-check
+
+release-check:
+	PYTHONPATH=. python scripts/validate_release_bundle.py
 
 followup-paired:
 	PYTHONPATH=. python scripts/sec_followup_paired_analysis.py
